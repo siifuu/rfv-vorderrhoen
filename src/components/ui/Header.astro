@@ -2,6 +2,7 @@
 import Button from "@/components/ui/Button.astro";
 import MobileNav from "@/components/ui/MobileNav";
 import { mainNav, siteConfig } from "@/lib/site";
+import rfvImage from "../../../assets/rfv.jpg";
 
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
@@ -12,7 +13,9 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 >
   <div class="container-shell flex items-center justify-between gap-4 py-4">
     <a href="/" class="flex items-center gap-3">
-      <span class="grid h-11 w-11 place-items-center rounded-full bg-[var(--color-forest)] text-sm font-bold text-[var(--color-cream-strong)]">RFV</span>
+      <span class="block h-11 w-11 overflow-hidden rounded-full border border-[var(--color-line)] bg-[var(--color-forest)]">
+        <img src={rfvImage.src} alt="RFV" class="h-full w-full object-cover" />
+      </span>
       <div>
         <div class="font-serif text-lg font-semibold">{siteConfig.name}</div>
         <div class="text-xs uppercase tracking-[0.18em] text-[var(--color-moss)]">Voltigierverein</div>
