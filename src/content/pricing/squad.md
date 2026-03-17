@@ -1,15 +1,15 @@
 ---
-name: Squad Track
-priceLabel: 110 EUR / month
-description: Higher frequency training for athletes building toward stronger routines, performance quality, and competition readiness.
+name: Leistungsgruppe
+priceLabel: 110 EUR / Monat
+description: Hoehere Trainingsfrequenz fuer Athletinnen und Athleten, die an saubereren Kueren, Auftrittsqualitaet und Wettkampfbereitschaft arbeiten.
 features:
-  - Multiple weekly sessions
-  - Technical progression plan
-  - Priority placement for performance work
+  - Mehrere Einheiten pro Woche
+  - Gezielter Technik- und Entwicklungsplan
+  - Vorrang fuer Kuer- und Auftrittsarbeit
 highlighted: true
 order: 3
-ctaLabel: Request Placement
+ctaLabel: Platz anfragen
 ctaUrl: https://forms.gle/replace-with-your-google-form
 ---
 
-Best for committed athletes.
+Am besten fuer engagierte Athletinnen und Athleten.

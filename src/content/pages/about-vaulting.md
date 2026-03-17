@@ -1,26 +1,26 @@
 ---
-title: About Vaulting
-description: Learn what equestrian vaulting is, how training works, and why the sport develops confidence, control, and teamwork.
+title: Ueber Voltigieren
+description: Erfahre, was Voltigieren ist, wie das Training aufgebaut ist und warum dieser Sport Selbstvertrauen, Koerperkontrolle und Teamgeist foerdert.
 slug: about-vaulting
-navLabel: About
+navLabel: Ueber Voltigieren
 order: 1
-seoTitle: About Vaulting | Rhine Field Vaulters
-seoDescription: Understand the structure, athletic value, and horse partnership behind equestrian vaulting.
+seoTitle: Ueber Voltigieren | Rhine Field Vaulters
+seoDescription: Verstehe Aufbau, sportlichen Wert und Pferdepartnerschaft im Voltigieren.
 ---
 
-Vaulting is an equestrian team sport that combines elements of gymnastics, dance, rhythm, and horse partnership. Athletes perform movements on a horse that moves in a controlled circle while a lunger manages pace and balance from the center.
+Voltigieren ist ein Pferdesport im Team, der Elemente aus Gymnastik, Tanz, Rhythmus und Partnerschaft mit dem Pferd verbindet. Die Athletinnen und Athleten fuehren Bewegungen auf einem Pferd aus, das kontrolliert auf einem Zirkel laeuft, waehrend die Longenfuehrung Tempo und Balance steuert.
 
-## Why people are drawn to it
+## Warum viele Menschen diesen Sport moegen
 
-Vaulting develops physical confidence quickly. New athletes learn how to hold posture, move with intention, and stay aware of both the horse and the team. It is demanding without feeling inaccessible because progression happens in layers.
+Voltigieren entwickelt koerperliches Selbstvertrauen sehr schnell. Neue Athletinnen und Athleten lernen Haltung, bewusste Bewegung und Aufmerksamkeit fuer Pferd und Team. Der Sport ist anspruchsvoll, wirkt aber nicht unzugaenglich, weil Fortschritt in klaren Schritten entsteht.
 
-## What training usually includes
+## Was typischerweise zum Training gehoert
 
-- Ground-based warm-up and strength preparation
-- Technical work on a vaulting barrel
-- Mounted basics or routine practice
-- Stable habits and horse-care responsibilities
+- Aufwaermen am Boden und Kraftvorbereitung
+- Techniktraining auf dem Holzpferd
+- Grundlagen oder Kuerarbeit auf dem Pferd
+- Stallroutine und Verantwortung in der Pferdepflege
 
-## What makes it different
+## Was Voltigieren besonders macht
 
-Unlike many individual sports, vaulting asks athletes to pay attention to timing, trust, and cooperation at all times. The result is a sport that feels elegant on the outside and highly disciplined underneath.
+Anders als in vielen Einzelsportarten muessen Athletinnen und Athleten beim Voltigieren staendig auf Timing, Vertrauen und Zusammenarbeit achten. Daraus entsteht ein Sport, der nach aussen elegant wirkt und im Inneren sehr diszipliniert ist.

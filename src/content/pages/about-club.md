@@ -1,25 +1,25 @@
 ---
-title: About The Club
-description: Meet the culture, coaching approach, and values behind Rhine Field Vaulters.
+title: Ueber den Verein
+description: Lerne die Kultur, den Coaching-Ansatz und die Werte hinter Rhine Field Vaulters kennen.
 slug: about-club
 order: 2
-seoTitle: About The Club | Rhine Field Vaulters
-seoDescription: Discover our coaching philosophy, horse-first culture, and structured club environment.
+seoTitle: Ueber den Verein | Rhine Field Vaulters
+seoDescription: Entdecke unsere Trainingsphilosophie, pferdegerechte Vereinskultur und strukturierte Umgebung.
 ---
 
-Rhine Field Vaulters exists for athletes and families who want clarity, steadiness, and real progression. We care about technical quality, but we also care about how people feel when they enter the space.
+Rhine Field Vaulters ist fuer Athletinnen, Athleten und Familien da, die Klarheit, Verlaesslichkeit und echte Entwicklung suchen. Uns ist technische Qualitaet wichtig, aber genauso wichtig ist, wie sich Menschen fuehlen, wenn sie den Ort betreten.
 
-## Our approach
+## Unser Ansatz
 
-We coach with structure. That means clear group placement, consistent routines, and realistic expectations for growth. Beginners are given enough support to build confidence, while committed vaulters get enough challenge to keep improving.
+Wir trainieren mit Struktur. Das bedeutet klare Gruppeneinteilung, verlaessliche Ablaeufe und realistische Erwartungen an Entwicklung. Einsteiger bekommen genug Unterstuetzung fuer Selbstvertrauen, engagierte Voltigiererinnen und Voltigierer genug Herausforderung fuer Fortschritt.
 
-## Horse-first culture
+## Pferd zuerst
 
-Respect for the horse is not a decorative statement. It shapes how sessions are paced, how responsibilities are shared, and how athletes learn to think beyond their own performance.
+Respekt vor dem Pferd ist fuer uns keine leere Formel. Er bestimmt das Tempo der Einheiten, die Verteilung von Verantwortung und die Haltung, mit der Athletinnen und Athleten ueber ihre eigene Leistung hinausdenken.
 
-## What families can expect
+## Was Familien erwarten duerfen
 
-- Transparent communication
-- Consistent training rhythm
-- A calm, focused environment
-- Clear next steps after a trial or application
+- Transparente Kommunikation
+- Ein verlaesslicher Trainingsrhythmus
+- Eine ruhige und konzentrierte Umgebung
+- Klare naechste Schritte nach Probestunde oder Anmeldung

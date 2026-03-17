@@ -1,20 +1,20 @@
 ---
-title: Contact
-description: Contact Rhine Field Vaulters for trial requests, membership questions, and general club information.
+title: Kontakt
+description: Kontaktiere Rhine Field Vaulters fuer Probetraining, Mitgliedschaftsfragen und allgemeine Vereinsinformationen.
 slug: contact
 order: 7
-seoTitle: Contact | Rhine Field Vaulters
-seoDescription: Get in touch with Rhine Field Vaulters for booking and membership information.
+seoTitle: Kontakt | Rhine Field Vaulters
+seoDescription: Nimm Kontakt zu Rhine Field Vaulters auf fuer Buchungen und Vereinsinformationen.
 ---
 
-The fastest route for joining is the application or trial form. For anything else, email or call us and we will point you to the right next step.
+Der schnellste Weg zum Einstieg ist das Anmelde- oder Probetrainingsformular. Fuer alles andere kannst du uns schreiben oder anrufen, und wir zeigen dir den passenden naechsten Schritt.
 
-## Contact details
+## Kontaktdaten
 
-- Email: hello@rhinefieldvaulters.club
-- Phone: +49 30 1234 5678
-- Location: Berlin-Brandenburg Region, Germany
+- E-Mail: hallo@rhinefieldvaulters.club
+- Telefon: +49 30 1234 5678
+- Ort: Region Berlin-Brandenburg, Deutschland
 
-## Best next step
+## Der beste naechste Schritt
 
-If you are ready to visit, use the Google Form on the apply page so we can gather the details we need before the first session.
+Wenn du bereit fuer einen Besuch bist, nutze das Google-Formular auf der Anmeldeseite. So koennen wir die wichtigsten Informationen schon vor der ersten Einheit sammeln.

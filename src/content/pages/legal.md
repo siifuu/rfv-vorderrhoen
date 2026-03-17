@@ -1,20 +1,20 @@
 ---
-title: Legal Notice
-description: Legal contact and publishing information for Rhine Field Vaulters.
+title: Impressum
+description: Rechtliche Angaben und Kontaktdaten fuer Rhine Field Vaulters.
 slug: legal
 order: 9
-seoTitle: Legal Notice | Rhine Field Vaulters
-seoDescription: Legal and publishing information for the Rhine Field Vaulters website.
+seoTitle: Impressum | Rhine Field Vaulters
+seoDescription: Rechtliche Informationen fuer die Website von Rhine Field Vaulters.
 ---
 
-This is a placeholder legal notice page. Replace the content below with the club's real imprint or legal notice before publishing.
+Dies ist eine Platzhalterseite fuer das Impressum. Ersetze den Inhalt unten vor der Veroeffentlichung durch die echten rechtlichen Angaben des Vereins.
 
-## Publisher
+## Anbieter
 
 Rhine Field Vaulters  
-Berlin-Brandenburg Region, Germany
+Region Berlin-Brandenburg, Deutschland
 
-## Contact
+## Kontakt
 
-Email: hello@rhinefieldvaulters.club  
-Phone: +49 30 1234 5678
+E-Mail: hallo@rhinefieldvaulters.club  
+Telefon: +49 30 1234 5678

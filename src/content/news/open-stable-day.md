@@ -1,14 +1,14 @@
 ---
-title: Open Stable Day In April
-description: We are opening one Saturday session to families who want to watch training, meet the team, and ask questions.
+title: Offener Stalltag im April
+description: An einem Samstag oeffnen wir eine Einheit fuer Familien, die Training sehen, das Team kennenlernen und Fragen stellen moechten.
 date: 2026-04-12
 featured: true
-seoTitle: Open Stable Day In April | Rhine Field Vaulters
-seoDescription: Join Rhine Field Vaulters for an open stable day and discover how our training works.
+seoTitle: Offener Stalltag im April | Rhine Field Vaulters
+seoDescription: Besuche Rhine Field Vaulters beim offenen Stalltag und erlebe, wie unser Training aufgebaut ist.
 ---
 
-In April we are opening one Saturday session to interested families and new athletes. Visitors will be able to watch warm-up, barrel technique, and mounted group work in sequence.
+Im April oeffnen wir an einem Samstag eine Einheit fuer interessierte Familien und neue Athletinnen und Athleten. Besucherinnen und Besucher koennen Aufwaermen, Holzpferdtechnik und Gruppenarbeit auf dem Pferd direkt nacheinander beobachten.
 
-The goal is simple: make the sport feel concrete. Many people understand vaulting much faster once they have seen the rhythm of a real session.
+Das Ziel ist einfach: Der Sport soll greifbar werden. Viele Menschen verstehen Voltigieren deutlich schneller, wenn sie den Rhythmus einer echten Trainingseinheit gesehen haben.
 
-We will share the final sign-up details through the contact and apply pages.
+Die finalen Informationen zur Anmeldung teilen wir ueber die Kontakt- und Anmeldeseiten.

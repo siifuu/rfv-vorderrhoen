@@ -1,12 +1,12 @@
 ---
-title: Spring Training Schedule Published
-description: The updated spring calendar is now available, with clearer beginner slots and revised squad times.
+title: Fruehlings-Trainingsplan veroeffentlicht
+description: Der aktualisierte Fruehlingsplan ist online, mit klareren Einsteigerzeiten und ueberarbeiteten Zeiten fuer die Leistungsgruppe.
 date: 2026-03-05
 featured: true
-seoTitle: Spring Training Schedule Published | Rhine Field Vaulters
-seoDescription: Rhine Field Vaulters has published the new spring training schedule.
+seoTitle: Fruehlings-Trainingsplan veroeffentlicht | Rhine Field Vaulters
+seoDescription: Rhine Field Vaulters hat den neuen Fruehlings-Trainingsplan veroeffentlicht.
 ---
 
-The new spring schedule is now in place. The main change is a cleaner separation between beginner-oriented sessions and advanced squad work, which should make placement clearer for new families.
+Der neue Fruehlingsplan ist jetzt aktiv. Die wichtigste Aenderung ist die klarere Trennung zwischen einsteigerorientierten Einheiten und dem Training der Leistungsgruppe. Das macht die Einteilung fuer neue Familien leichter.
 
-If you recently sent a trial request, we will confirm the best session option before your first visit.
+Wenn du kuerzlich eine Probetrainingsanfrage geschickt hast, bestaetigen wir vor dem ersten Besuch die passende Einheit.

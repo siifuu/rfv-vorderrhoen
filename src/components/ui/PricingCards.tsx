@@ -42,8 +42,8 @@ export default function PricingCards({ items }: Props) {
               <p className="mt-3 text-4xl font-semibold leading-none">{item.data.priceLabel}</p>
             </div>
             {item.data.highlighted && (
-              <span className="rounded-full bg-[var(--color-forest)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-                Popular
+              <span className="rounded-full bg-[var(--color-forest)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-cream-strong)]">
+                Beliebt
               </span>
             )}
           </div>
@@ -61,11 +61,12 @@ export default function PricingCards({ items }: Props) {
 
           <a
             href={item.data.ctaUrl ?? "/apply"}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#243827]"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-[var(--color-cream-strong)] transition hover:bg-[#243827]"
+            style={{ color: "var(--color-cream-strong)" }}
             target={(item.data.ctaUrl ?? "").startsWith("http") ? "_blank" : undefined}
             rel={(item.data.ctaUrl ?? "").startsWith("http") ? "noreferrer" : undefined}
           >
-            {item.data.ctaLabel ?? "Book Now"}
+            {item.data.ctaLabel ?? "Jetzt anfragen"}
           </a>
         </motion.article>
       ))}

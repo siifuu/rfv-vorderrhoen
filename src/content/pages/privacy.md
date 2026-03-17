@@ -1,18 +1,18 @@
 ---
-title: Privacy
-description: Privacy information for visitors to the Rhine Field Vaulters website.
+title: Datenschutz
+description: Datenschutzhinweise fuer Besucherinnen und Besucher der Website von Rhine Field Vaulters.
 slug: privacy
 order: 10
-seoTitle: Privacy | Rhine Field Vaulters
-seoDescription: Privacy guidance for website visitors and Google Form applicants.
+seoTitle: Datenschutz | Rhine Field Vaulters
+seoDescription: Datenschutzhinweise fuer Website-Besucher und Personen, die das Google-Formular nutzen.
 ---
 
-This is a placeholder privacy page. Replace it with the club's actual privacy policy before publishing.
+Dies ist eine Platzhalterseite fuer den Datenschutz. Ersetze sie vor der Veroeffentlichung durch die echte Datenschutzerklaerung des Vereins.
 
-## Website usage
+## Nutzung der Website
 
-This website is static-first and does not run backend forms. Application requests are handled through external Google Forms.
+Diese Website ist statisch aufgebaut und verarbeitet keine Formulare ueber ein eigenes Backend. Anfragen laufen ueber externe Google Forms.
 
-## External services
+## Externe Dienste
 
-When a visitor opens a Google Form, Google's own privacy terms and data handling apply.
+Sobald jemand ein Google-Formular oeffnet, gelten die Datenschutzbedingungen und Datenverarbeitungsregeln von Google.

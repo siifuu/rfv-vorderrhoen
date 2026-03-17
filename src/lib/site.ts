@@ -1,82 +1,82 @@
 export const siteConfig = {
-  name: "Rhine Field Vaulters",
+  name: "RFV Vorderrhoen e.V.",
   shortName: "RFV",
   description:
-    "An equestrian vaulting club offering structured youth and adult training in a calm, athletic, nature-inspired environment.",
-  location: "Berlin-Brandenburg Region, Germany",
-  email: "hello@rhinefieldvaulters.club",
+    "Ein Voltigierverein mit strukturiertem Training fuer Kinder, Jugendliche und Erwachsene in einer ruhigen, sportlichen und naturnahen Umgebung.",
+  location: "Region Berlin-Brandenburg, Deutschland",
+  email: "hallo@rhinefieldvaulters.club",
   phone: "+49 30 1234 5678",
   applyUrl: "https://forms.gle/replace-with-your-google-form",
   trialUrl: "https://forms.gle/replace-with-your-google-form",
   instagramUrl: "https://www.instagram.com/",
-  siteUrl: "https://example.github.io/rfv-website"
+  siteUrl: "https://example.github.io/rfv-website",
 };
 
 export const mainNav = [
-  { href: "/", label: "Home" },
-  { href: "/about-vaulting", label: "About" },
+  { href: "/", label: "Start" },
+  { href: "/about-vaulting", label: "Ueber Voltigieren" },
   { href: "/training", label: "Training" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/pricing", label: "Preise" },
   { href: "/faq", label: "FAQ" },
-  { href: "/news", label: "News" },
-  { href: "/contact", label: "Contact" }
+  { href: "/news", label: "Aktuelles" },
+  { href: "/contact", label: "Kontakt" },
 ];
 
 export const footerNav = [
   ...mainNav,
-  { href: "/apply", label: "Apply" },
-  { href: "/legal", label: "Legal" },
-  { href: "/privacy", label: "Privacy" }
+  { href: "/apply", label: "Anmeldung" },
+  { href: "/legal", label: "Impressum" },
+  { href: "/privacy", label: "Datenschutz" },
 ];
 
 export const benefits = [
   {
-    title: "Athletic foundation",
-    text: "Balance, body tension, timing, and confidence are developed through progressive movement on and off the horse."
+    title: "Sportliche Basis",
+    text: "Balance, Koerperspannung, Timing und Selbstvertrauen wachsen Schritt fuer Schritt auf und neben dem Pferd.",
   },
   {
-    title: "Team-centered training",
-    text: "Vaulters learn in small groups with a clear rhythm, shared responsibility, and encouraging coaching."
+    title: "Training als Team",
+    text: "Voltigiererinnen und Voltigierer lernen in kleinen Gruppen mit klarer Struktur, gemeinsamer Verantwortung und ruhigem Coaching.",
   },
   {
-    title: "Horse-first culture",
-    text: "Respect for the horse is part of every session, from stable routines to mounted work."
-  }
+    title: "Pferd zuerst",
+    text: "Respekt fuer das Pferd ist Teil jeder Einheit, von den Stallablaeufen bis zur Arbeit auf dem Pferd.",
+  },
 ];
 
 export const trustPoints = [
-  "Structured groups for beginners, improvers, and ambitious athletes",
-  "Safety-minded coaching with clear expectations for both vaulters and families",
-  "A calm training environment designed to build trust before intensity",
-  "Static-first website architecture for fast loading and simple maintenance"
+  "Strukturierte Gruppen fuer Einsteiger, Fortgeschrittene und ambitionierte Athletinnen und Athleten",
+  "Sicherheitsorientiertes Coaching mit klaren Erwartungen fuer Voltigierer und Familien",
+  "Eine ruhige Trainingsumgebung, die Vertrauen vor Tempo setzt",
+  "Eine statische Website-Architektur fuer schnelle Ladezeiten und einfache Pflege",
 ];
 
 export const trainingHighlights = [
-  "Warm-up, mobility, and strength preparation",
-  "Barrel technique for secure skill-building",
-  "Mounted vaulting in age-appropriate groups",
-  "Stable habits, horse care, and team responsibility"
+  "Aufwaermen, Mobilitaet und Kraftvorbereitung",
+  "Techniktraining auf dem Holzpferd",
+  "Voltigieren auf dem Pferd in passenden Gruppen",
+  "Stallroutine, Pferdepflege und Verantwortung im Team",
 ];
 
 export const faqItems = [
   {
-    question: "Do we need riding experience before joining?",
+    question: "Braucht man vor dem Einstieg Reiterfahrung?",
     answer:
-      "No. Many new vaulters start without prior riding experience. Early sessions focus on confidence, coordination, and safe basics."
+      "Nein. Viele neue Voltigiererinnen und Voltigierer starten ohne Reiterfahrung. In den ersten Einheiten geht es vor allem um Sicherheit, Koordination und Grundlagen.",
   },
   {
-    question: "What age groups do you train?",
+    question: "Welche Altersgruppen trainieren bei euch?",
     answer:
-      "We currently welcome children, teens, and adults. Group placement depends on confidence, mobility, and training goals rather than age alone."
+      "Aktuell trainieren bei uns Kinder, Jugendliche und Erwachsene. Die Einteilung richtet sich nicht nur nach dem Alter, sondern auch nach Bewegungsniveau, Sicherheit und Trainingsziel.",
   },
   {
-    question: "What should we bring to a trial session?",
+    question: "Was soll man zur Probestunde mitbringen?",
     answer:
-      "Wear close-fitting sportswear, soft shoes or vaulting slippers, tie back long hair, and bring water. We share the rest during booking."
+      "Am besten enganliegende Sportkleidung, weiche Schuhe oder Voltigierschuhe, zusammengebundene Haare und etwas zu trinken. Alles Weitere teilen wir bei der Terminbestaetigung mit.",
   },
   {
-    question: "How does payment work?",
+    question: "Wie funktioniert die Bezahlung?",
     answer:
-      "Pricing is shown clearly on the pricing page. Applications and trial requests go through Google Forms, then we confirm placement and start details."
-  }
+      "Die Preise findest du klar auf der Preisseite. Anfragen fuer Probetraining und Anmeldung laufen ueber Google Forms, danach bestaetigen wir Gruppe und Startdetails.",
+  },
 ];

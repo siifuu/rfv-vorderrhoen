@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 const rise = {
   hidden: { opacity: 0, y: 26 },
-  visible: { opacity: 1, y: 0 }
+  visible: { opacity: 1, y: 0 },
 };
 
 export default function HeroMotion() {
@@ -21,27 +21,30 @@ export default function HeroMotion() {
   if (!mounted) {
     return (
       <div className="prose-flow">
-        <p className="eyebrow">Equestrian Vaulting Club</p>
+        <p className="eyebrow">Voltigierverein</p>
         <h1 className="max-w-4xl text-5xl leading-[0.96] md:text-7xl">
-          Grace above the horse. Discipline underneath every movement.
+          Eleganz auf dem Pferd. Disziplin hinter jeder Bewegung.
         </h1>
         <p className="max-w-2xl text-lg leading-8 text-[var(--color-soft-ink)] md:text-xl">
-          Rhine Field Vaulters offers structured, horse-first training for beginners and ambitious athletes who want a sport that is elegant, demanding, and deeply collaborative.
+          RFV Vorderrhoen e.V. bietet strukturiertes, pferdegerechtes Training
+          fuer Einsteiger und ambitionierte Athletinnen und Athleten, die einen
+          eleganten und anspruchsvollen Teamsport suchen.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
             href={siteConfig.applyUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#243827]"
+            className="inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-[var(--color-cream-strong)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#243827]"
+            style={{ color: "var(--color-cream-strong)" }}
           >
-            Apply / Book Trial
+            Anmelden / Probetraining
           </a>
           <a
             href="/pricing"
             className="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] bg-white/60 px-5 py-3 text-sm font-semibold text-[var(--color-ink)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--color-moss)]"
           >
-            See Pricing
+            Preise ansehen
           </a>
         </div>
       </div>
@@ -56,32 +59,43 @@ export default function HeroMotion() {
       className="prose-flow"
     >
       <motion.p variants={rise} transition={transition} className="eyebrow">
-        Equestrian Vaulting Club
+        Voltigierverein
       </motion.p>
-      <motion.h1 variants={rise} transition={transition} className="max-w-4xl text-5xl leading-[0.96] md:text-7xl">
-        Grace above the horse. Discipline underneath every movement.
+      <motion.h1
+        variants={rise}
+        transition={transition}
+        className="max-w-4xl text-5xl leading-[0.96] md:text-7xl"
+      >
+        Eleganz auf dem Pferd. Disziplin hinter jeder Bewegung.
       </motion.h1>
       <motion.p
         variants={rise}
         transition={transition}
         className="max-w-2xl text-lg leading-8 text-[var(--color-soft-ink)] md:text-xl"
       >
-        Rhine Field Vaulters offers structured, horse-first training for beginners and ambitious athletes who want a sport that is elegant, demanding, and deeply collaborative.
+        Rhine Field Vaulters bietet strukturiertes, pferdegerechtes Training
+        fuer Einsteiger und ambitionierte Athletinnen und Athleten, die einen
+        eleganten und anspruchsvollen Teamsport suchen.
       </motion.p>
-      <motion.div variants={rise} transition={transition} className="flex flex-wrap gap-3">
+      <motion.div
+        variants={rise}
+        transition={transition}
+        className="flex flex-wrap gap-3"
+      >
         <a
           href={siteConfig.applyUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#243827]"
+          className="inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-[var(--color-cream-strong)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#243827]"
+          style={{ color: "var(--color-cream-strong)" }}
         >
-          Apply / Book Trial
+          Anmelden / Probetraining
         </a>
         <a
           href="/pricing"
           className="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] bg-white/60 px-5 py-3 text-sm font-semibold text-[var(--color-ink)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--color-moss)]"
         >
-          See Pricing
+          Preise ansehen
         </a>
       </motion.div>
     </motion.div>

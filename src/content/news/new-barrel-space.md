@@ -1,11 +1,11 @@
 ---
-title: New Barrel Training Corner Ready
-description: We reorganized the indoor setup to give technical barrel work a more focused and consistent area.
+title: Neuer Holzpferd-Bereich eingerichtet
+description: Wir haben den Innenbereich neu organisiert, damit das Techniktraining am Holzpferd fokussierter und ruhiger stattfinden kann.
 date: 2026-02-14
-seoTitle: New Barrel Training Corner Ready | Rhine Field Vaulters
-seoDescription: A refreshed barrel training area improves structure and flow for Rhine Field Vaulters sessions.
+seoTitle: Neuer Holzpferd-Bereich eingerichtet | Rhine Field Vaulters
+seoDescription: Ein neuer Holzpferd-Bereich verbessert Struktur und Ablauf im Training von Rhine Field Vaulters.
 ---
 
-Our indoor training setup now includes a more dedicated barrel corner for technical work. That means cleaner rotation between warm-up, off-horse practice, and mounted phases.
+Unser Hallen-Setup beinhaltet jetzt einen staerker abgegrenzten Bereich fuer das Techniktraining am Holzpferd. Dadurch werden die Wechsel zwischen Aufwaermen, Uebungen neben dem Pferd und der Arbeit auf dem Pferd klarer.
 
-The change is small, but it improves coaching flow and gives newer athletes a calmer way to focus on basics before moving onward.
+Die Veraenderung ist klein, verbessert aber den Ablauf im Coaching und gibt neuen Athletinnen und Athleten einen ruhigeren Einstieg in die Grundlagen.

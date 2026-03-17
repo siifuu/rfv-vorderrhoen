@@ -1,14 +1,14 @@
 ---
-name: Trial Session
+name: Probetraining
 priceLabel: 25 EUR
-description: A first visit for new athletes who want to experience the coaching style, space, and group rhythm before committing.
+description: Ein erster Besuch fuer neue Athletinnen und Athleten, die Coaching-Stil, Umgebung und Gruppenrhythmus kennenlernen moechten.
 features:
-  - One guided trial session
-  - Group recommendation after the visit
-  - Short follow-up by email
+  - Eine begleitete Probestunde
+  - Gruppenvorschlag nach dem Termin
+  - Kurze Rueckmeldung per E-Mail
 order: 1
-ctaLabel: Book Trial
+ctaLabel: Probetraining buchen
 ctaUrl: https://forms.gle/replace-with-your-google-form
 ---
 
-Start here if you are new to the club.
+Der beste Einstieg, wenn du den Verein noch nicht kennst.

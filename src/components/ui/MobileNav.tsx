@@ -19,7 +19,7 @@ export default function MobileNav({ currentPath }: Props) {
         aria-controls="mobile-nav-panel"
         onClick={() => setOpen((value: boolean) => !value)}
       >
-        <span className="sr-only">Toggle navigation</span>
+        <span className="sr-only">Navigation umschalten</span>
         <div className="space-y-1.5">
           <span className="block h-0.5 w-5 bg-[var(--color-ink)]" />
           <span className="block h-0.5 w-5 bg-[var(--color-ink)]" />
@@ -42,7 +42,7 @@ export default function MobileNav({ currentPath }: Props) {
                 key={item.href}
                 href={item.href}
                 className={`block rounded-2xl px-4 py-3 text-sm font-semibold ${
-                  currentPath === item.href ? "bg-[var(--color-forest)] text-white" : "text-[var(--color-soft-ink)]"
+                  currentPath === item.href ? "bg-[var(--color-forest)] text-[var(--color-cream-strong)]" : "text-[var(--color-soft-ink)]"
                 }`}
                 onClick={() => setOpen(false)}
               >
@@ -54,7 +54,7 @@ export default function MobileNav({ currentPath }: Props) {
               className="mt-2 block rounded-2xl bg-[var(--color-sand)] px-4 py-3 text-sm font-semibold text-[var(--color-ink)]"
               onClick={() => setOpen(false)}
             >
-              Apply / Book Trial
+              Anmeldung / Probetraining
             </a>
           </motion.nav>
         )}

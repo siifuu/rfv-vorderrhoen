@@ -10,9 +10,9 @@ const entries = (await getCollection("news", ({ data }) => !data.draft)).sort(
 );
 ---
 
-<BaseLayout title="News | Rhine Field Vaulters" description="Club updates, training notes, and upcoming events from Rhine Field Vaulters.">
+<BaseLayout title="Aktuelles | Rhine Field Vaulters" description="Neuigkeiten, Trainingshinweise und kommende Termine von Rhine Field Vaulters.">
   <Section className="pb-0 pt-10 md:pt-16">
-    <PageIntro eyebrow="Club Updates" title="News" description="Fresh updates from training, events, and the rhythm of club life." />
+    <PageIntro eyebrow="Vereinsmeldungen" title="Aktuelles" description="Neue Informationen aus Training, Terminen und dem Rhythmus des Vereinsalltags." />
   </Section>
   <Section className="pt-8">
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">

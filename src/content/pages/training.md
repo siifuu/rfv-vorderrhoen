@@ -1,26 +1,26 @@
 ---
 title: Training
-description: See how our sessions are structured, what beginners can expect, and how athletes progress through the program.
+description: Sieh, wie unsere Einheiten aufgebaut sind, was Einsteiger erwartet und wie Athletinnen und Athleten sich im Programm weiterentwickeln.
 slug: training
 order: 3
 seoTitle: Training | Rhine Field Vaulters
-seoDescription: Understand session flow, group placement, and progression at Rhine Field Vaulters.
+seoDescription: Verstehe Ablauf, Gruppeneinteilung und Entwicklung bei Rhine Field Vaulters.
 ---
 
-Training is designed to feel predictable in the best sense: athletes know what the session is asking of them, and coaches can build skills progressively instead of improvising from week to week.
+Training ist im besten Sinne vorhersehbar: Die Athletinnen und Athleten wissen, was in der Einheit gefragt ist, und die Trainerinnen und Trainer koennen Faehigkeiten schrittweise aufbauen statt von Woche zu Woche zu improvisieren.
 
-## Session structure
+## Aufbau einer Einheit
 
-1. Arrival, stable routine, and check-in
-2. Warm-up, mobility, and basic strength
-3. Technique work on the barrel
-4. Mounted vaulting in small groups
-5. Reflection, care tasks, and wrap-up
+1. Ankommen, Stallroutine und kurzes Einchecken
+2. Aufwaermen, Mobilitaet und Grundkraft
+3. Techniktraining auf dem Holzpferd
+4. Voltigieren auf dem Pferd in kleinen Gruppen
+5. Reflexion, Pflegeaufgaben und Abschluss
 
-## For new vaulters
+## Fuer neue Voltigiererinnen und Voltigierer
 
-Beginners start with body awareness, simple movement patterns, and secure positions. Confidence comes before complexity.
+Einsteiger beginnen mit Koerpergefuehl, einfachen Bewegungsmustern und sicheren Positionen. Selbstvertrauen kommt vor Komplexitaet.
 
-## For developing athletes
+## Fuer fortschreitende Athletinnen und Athleten
 
-As athletes progress, training becomes more specific: cleaner lines, stronger transitions, better timing with the horse, and improved team coordination.
+Mit zunehmender Entwicklung wird das Training gezielter: klarere Linien, staerkere Uebergaenge, besseres Timing mit dem Pferd und bessere Abstimmung im Team.

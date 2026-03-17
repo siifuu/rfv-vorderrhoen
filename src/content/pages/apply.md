@@ -1,18 +1,18 @@
 ---
-title: Apply
-description: Start your trial or membership request with our simple Google Form workflow.
+title: Anmeldung
+description: Starte deine Anfrage fuer Probetraining oder Mitgliedschaft ueber unseren einfachen Google-Forms-Ablauf.
 slug: apply
 order: 8
-seoTitle: Apply | Rhine Field Vaulters
-seoDescription: Apply for a trial session or membership through our Google Form.
+seoTitle: Anmeldung | Rhine Field Vaulters
+seoDescription: Melde dich fuer ein Probetraining oder eine Mitgliedschaft ueber unser Google-Formular an.
 ---
 
-We keep applications intentionally simple. There is no account creation, no portal, and no backend form flow on this website.
+Wir halten den Anmeldeprozess bewusst einfach. Es gibt kein Nutzerkonto, kein Portal und keinen Backend-Formularprozess auf dieser Website.
 
-## How it works
+## So funktioniert es
 
-1. Open the Google Form from the button below
-2. Share the athlete details and preferred group
-3. Wait for confirmation and next steps from the club
+1. Oeffne das Google-Formular ueber den Button unten
+2. Teile die wichtigsten Angaben zur Person und zur gewuenschten Gruppe
+3. Warte auf Rueckmeldung und die naechsten Schritte vom Verein
 
-[Open the application form](https://forms.gle/replace-with-your-google-form)
+[Zum Anmeldeformular](https://forms.gle/replace-with-your-google-form)
