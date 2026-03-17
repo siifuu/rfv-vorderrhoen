@@ -1,0 +1,44 @@
+---
+import Button from "@/components/ui/Button.astro";
+import MobileNav from "@/components/ui/MobileNav";
+import { mainNav, siteConfig } from "@/lib/site";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header
+  transition:persist
+  class="sticky top-0 z-40 border-b border-[var(--color-line)] bg-[rgba(250,246,239,0.82)] backdrop-blur-xl"
+>
+  <div class="container-shell flex items-center justify-between gap-4 py-4">
+    <a href="/" class="flex items-center gap-3">
+      <span class="grid h-11 w-11 place-items-center rounded-full bg-[var(--color-forest)] text-sm font-bold text-white">RFV</span>
+      <div>
+        <div class="font-serif text-lg font-semibold">{siteConfig.name}</div>
+        <div class="text-xs uppercase tracking-[0.18em] text-[var(--color-moss)]">Vaulting Club</div>
+      </div>
+    </a>
+
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+      {mainNav.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "text-sm font-semibold transition hover:text-[var(--color-forest)]",
+            currentPath === item.href ? "text-[var(--color-forest)]" : "text-[var(--color-soft-ink)]"
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden lg:block">
+      <Button href="/apply">Apply / Book Trial</Button>
+    </div>
+
+    <div class="lg:hidden">
+      <MobileNav client:idle currentPath={currentPath} />
+    </div>
+  </div>
+</header>

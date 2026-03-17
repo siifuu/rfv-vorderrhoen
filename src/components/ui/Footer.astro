@@ -1,0 +1,32 @@
+---
+import { footerNav, siteConfig } from "@/lib/site";
+---
+
+<footer class="border-t border-[var(--color-line)] bg-[rgba(255,250,242,0.84)]">
+  <div class="container-shell grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div class="prose-flow">
+      <h2 class="text-2xl">{siteConfig.name}</h2>
+      <p class="max-w-md text-[var(--color-soft-ink)]">
+        {siteConfig.description}
+      </p>
+    </div>
+
+    <div>
+      <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]">Navigation</h3>
+      <ul class="space-y-3 text-sm text-[var(--color-soft-ink)]">
+        {footerNav.map((item) => (
+          <li><a class="transition hover:text-[var(--color-forest)]" href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]">Contact</h3>
+      <ul class="space-y-3 text-sm text-[var(--color-soft-ink)]">
+        <li>{siteConfig.location}</li>
+        <li><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+        <li><a href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}>{siteConfig.phone}</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

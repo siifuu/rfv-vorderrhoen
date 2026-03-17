@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageIntro from "@/components/ui/PageIntro.astro";
+import Section from "@/components/ui/Section.astro";
+import NewsCard from "@/components/news/NewsCard.astro";
+
+const entries = (await getCollection("news", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout title="News | Rhine Field Vaulters" description="Club updates, training notes, and upcoming events from Rhine Field Vaulters.">
+  <Section className="pb-0 pt-10 md:pt-16">
+    <PageIntro eyebrow="Club Updates" title="News" description="Fresh updates from training, events, and the rhythm of club life." />
+  </Section>
+  <Section className="pt-8">
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      {entries.map((entry) => <NewsCard entry={entry} />)}
+    </div>
+  </Section>
+</BaseLayout>

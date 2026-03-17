@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatDate } from "@/lib/utils";
+
+interface Props {
+  entry: CollectionEntry<"news">;
+  compact?: boolean;
+}
+
+const { entry, compact = false } = Astro.props;
+---
+
+<article class="panel p-5 md:p-6">
+  <p class="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]">{formatDate(entry.data.date)}</p>
+  <h3 class:list={["mt-3 leading-tight", compact ? "text-xl" : "text-2xl"]}>
+    <a href={`/news/${entry.slug}`} class="transition hover:text-[var(--color-forest)]">{entry.data.title}</a>
+  </h3>
+  <p class="mt-3 text-[var(--color-soft-ink)]">{entry.data.description}</p>
+</article>

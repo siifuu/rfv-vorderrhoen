@@ -1,0 +1,121 @@
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/manrope";
+@import "tailwindcss";
+
+:root {
+  --color-ink: #1f2620;
+  --color-soft-ink: #4c5a4d;
+  --color-moss: #5b7256;
+  --color-forest: #2f4732;
+  --color-sand: #efe3cf;
+  --color-cream: #faf6ef;
+  --color-line: rgba(47, 71, 50, 0.12);
+  --color-card: rgba(255, 252, 247, 0.82);
+  --shadow-soft: 0 12px 40px rgba(28, 35, 29, 0.08);
+  --shadow-strong: 0 24px 60px rgba(24, 31, 25, 0.14);
+  --radius-lg: 1.75rem;
+  --radius-md: 1.15rem;
+  --container: 74rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-ink);
+  background:
+    radial-gradient(circle at top left, rgba(91, 114, 86, 0.14), transparent 32%),
+    radial-gradient(circle at right 20%, rgba(239, 227, 207, 0.9), transparent 28%),
+    linear-gradient(180deg, #fffdf8 0%, #f7f1e7 100%);
+  font-family: "Manrope Variable", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Fraunces Variable", serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid #b78b35;
+  outline-offset: 3px;
+}
+
+.container-shell {
+  width: min(calc(100% - 2rem), var(--container));
+  margin-inline: auto;
+}
+
+.section-space {
+  padding: 5rem 0;
+}
+
+.panel {
+  border: 1px solid var(--color-line);
+  background: var(--color-card);
+  backdrop-filter: blur(14px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-moss);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.prose-flow > * + * {
+  margin-top: 1rem;
+}
+
+.rich-text {
+  color: var(--color-soft-ink);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.rich-text h2,
+.rich-text h3 {
+  color: var(--color-ink);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.rich-text ul {
+  padding-left: 1.2rem;
+}
+
+.rich-text li + li {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-space {
+    padding: 3.75rem 0;
+  }
+}
