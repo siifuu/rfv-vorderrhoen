@@ -9,7 +9,8 @@ features:
 highlighted: true
 order: 3
 ctaLabel: Platz anfragen
-ctaUrl: https://forms.gle/replace-with-your-google-form
+ctaUrl: https://forms.gle/Xop3ahWVMz9Rz2Lh8
+
 ---
 
 Am besten fuer engagierte Athletinnen und Athleten.

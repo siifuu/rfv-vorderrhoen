@@ -2,12 +2,13 @@
 interface Props {
   id?: string;
   className?: string;
+  spaced?: boolean;
 }
 
-const { id, className = "" } = Astro.props;
+const { id, className = "", spaced = true } = Astro.props;
 ---
 
-<section id={id} class:list={["section-space", className]}>
+<section id={id} class:list={[spaced && "section-space", className]}>
   <div class="container-shell">
     <slot />
   </div>

@@ -15,4 +15,4 @@ Wir halten den Anmeldeprozess bewusst einfach. Es gibt kein Nutzerkonto, kein Po
 2. Teile die wichtigsten Angaben zur Person und zur gewuenschten Gruppe
 3. Warte auf Rueckmeldung und die naechsten Schritte vom Verein
 
-[Zum Anmeldeformular](https://forms.gle/replace-with-your-google-form)
+[Zum Anmeldeformular](https://forms.gle/Xop3ahWVMz9Rz2Lh8)

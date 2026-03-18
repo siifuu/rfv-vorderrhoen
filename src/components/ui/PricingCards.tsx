@@ -25,11 +25,11 @@ export default function PricingCards({ items }: Props) {
       {items.map((item, index) => (
         <motion.article
           key={item.id}
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          initial={false}
           whileHover={reduceMotion ? undefined : { y: -6 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={reduceMotion ? { duration: 0 } : { duration: 0.35, delay: index * 0.06 }}
+          transition={
+            reduceMotion ? { duration: 0 } : { duration: 0.2, delay: index * 0.04 }
+          }
           className={`panel flex h-full flex-col p-6 md:p-8 ${
             item.data.highlighted ? "border-[rgba(47,71,50,0.34)] bg-[rgba(255,251,244,0.95)] shadow-[var(--shadow-strong)]" : ""
           }`}

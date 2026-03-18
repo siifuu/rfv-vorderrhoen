@@ -8,7 +8,7 @@ features:
   - Stallroutine und Pferdepflege inklusive
 order: 2
 ctaLabel: Jetzt anfragen
-ctaUrl: https://forms.gle/replace-with-your-google-form
+ctaUrl: https://forms.gle/Xop3ahWVMz9Rz2Lh8
 ---
 
 Gedacht fuer regelmaessige Teilnahme.
