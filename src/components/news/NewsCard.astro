@@ -15,10 +15,10 @@ const { entry, compact = false } = Astro.props;
   class="group block h-full rounded-[var(--radius-lg)] focus-visible:outline-none"
 >
   <article
-    class="panel relative h-full overflow-hidden p-5 transition duration-300 group-hover:-translate-y-1.5 group-hover:border-[rgba(47,71,50,0.24)] group-hover:shadow-[0_24px_58px_rgba(24,31,25,0.14)] group-focus-visible:-translate-y-1.5 group-focus-visible:border-[rgba(47,71,50,0.24)] group-focus-visible:shadow-[0_24px_58px_rgba(24,31,25,0.14)] md:p-6"
+    class="panel relative h-full overflow-hidden p-5 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5 group-hover:border-[rgba(47,71,50,0.24)] group-hover:shadow-[0_24px_58px_rgba(24,31,25,0.14)] group-focus-visible:-translate-y-1.5 group-focus-visible:border-[rgba(47,71,50,0.24)] group-focus-visible:shadow-[0_24px_58px_rgba(24,31,25,0.14)] md:p-6"
   >
     <div class="pointer-events-none absolute inset-x-6 top-0 h-px origin-left scale-x-60 bg-[linear-gradient(90deg,transparent,rgba(47,71,50,0.38),transparent)] opacity-60 transition duration-300 group-hover:scale-x-100 group-hover:opacity-100 group-focus-visible:scale-x-100 group-focus-visible:opacity-100"></div>
-    <div class="pointer-events-none absolute -right-10 top-0 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(91,114,86,0.2),transparent_70%)] opacity-0 transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"></div>
+    <div class="pointer-events-none absolute -right-16 top-0 h-48 w-48 scale-90 rounded-full bg-[radial-gradient(circle,rgba(91,114,86,0.24),transparent_70%)] opacity-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100"></div>
 
     <p class="relative text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)] transition duration-300 group-hover:text-[var(--color-forest)] group-focus-visible:text-[var(--color-forest)]">{formatDate(entry.data.date)}</p>
     <h3 class:list={["relative mt-3 leading-tight transition duration-300 group-hover:text-[var(--color-forest)] group-focus-visible:text-[var(--color-forest)]", compact ? "text-xl" : "text-2xl"]}>
