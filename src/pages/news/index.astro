@@ -6,17 +6,24 @@ import Section from "@/components/ui/Section.astro";
 import NewsCard from "@/components/news/NewsCard.astro";
 
 const entries = (await getCollection("news", ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
 ---
 
-<BaseLayout title="Aktuelles | Rhine Field Vaulters" description="Neuigkeiten, Trainingshinweise und kommende Termine von Rhine Field Vaulters.">
-  <Section className="pb-0 pt-10 md:pt-16">
-    <PageIntro eyebrow="Vereinsmeldungen" title="Aktuelles" description="Neue Informationen aus Training, Terminen und dem Rhythmus des Vereinsalltags." />
-  </Section>
-  <Section className="pt-8">
-    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-      {entries.map((entry) => <NewsCard entry={entry} />)}
-    </div>
-  </Section>
+<BaseLayout
+    title="Aktuelles | Rhine Field Vaulters"
+    description="Neuigkeiten, Trainingshinweise und kommende Termine von Rhine Field Vaulters."
+>
+    <Section spaced={false} className="pb-0 pt-10 md:pt-16">
+        <PageIntro
+            eyebrow="Vereinsmeldungen"
+            title="Aktuelles"
+            description="Neue Informationen aus Training, Terminen und dem Rhythmus des Vereinsalltags."
+        />
+    </Section>
+    <Section className="pt-8">
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {entries.map((entry) => <NewsCard entry={entry} />)}
+        </div>
+    </Section>
 </BaseLayout>
