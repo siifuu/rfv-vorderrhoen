@@ -1,0 +1,75 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    entry: CollectionEntry<"horses">;
+    compact?: boolean;
+    className?: string;
+}
+
+const { entry, compact = false, className = "" } = Astro.props;
+const imageAlt =
+    entry.data.imageAlt ??
+    `${entry.data.name} vom RFV Vorderrhoen im Pferdeprofil`;
+---
+
+<div
+    class:list={[
+        "relative overflow-hidden rounded-[1.45rem] border border-[var(--color-line)] bg-[linear-gradient(160deg,rgba(255,255,255,0.9),rgba(239,227,207,0.86))]",
+        compact ? "aspect-[5/4]" : "aspect-[6/5] min-h-[20rem] md:min-h-[25rem]",
+        className,
+    ]}
+>
+    {
+        entry.data.image ? (
+            <img
+                src={entry.data.image}
+                alt={imageAlt}
+                class="h-full w-full object-cover"
+                loading={compact ? "lazy" : "eager"}
+                decoding="async"
+            />
+        ) : (
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(91,114,86,0.28),transparent_24%),radial-gradient(circle_at_76%_20%,rgba(183,139,53,0.14),transparent_18%),linear-gradient(145deg,rgba(255,255,255,0.82),rgba(239,227,207,0.94))]"
+                aria-hidden="true"
+            >
+                <div
+                    class="absolute -left-6 bottom-8 h-40 w-40 rounded-full bg-[rgba(91,114,86,0.12)] blur-2xl"
+                >
+                </div>
+                <div
+                    class="absolute right-5 top-6 h-24 w-24 rounded-[1.6rem] border border-white/50 bg-white/35 backdrop-blur-sm"
+                >
+                </div>
+                <div
+                    class="absolute bottom-7 left-7 right-7 rounded-[1.3rem] border border-white/55 bg-[rgba(255,252,247,0.68)] p-5 shadow-[0_16px_36px_rgba(28,35,29,0.08)] backdrop-blur-sm"
+                >
+                    <p class="text-xs uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                        Bildbereich
+                    </p>
+                    <p class="mt-3 max-w-xs text-2xl leading-tight text-[var(--color-ink)] md:text-3xl">
+                        Raum fuer ein ruhiges Pferdeportrait von {entry.data.name}.
+                    </p>
+                </div>
+            </div>
+        )
+    }
+    <div
+        class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(31,38,32,0.04),transparent_26%,transparent_64%,rgba(31,38,32,0.26))]"
+        aria-hidden="true"
+    >
+    </div>
+    <div class="pointer-events-none absolute inset-x-5 top-5 flex justify-between gap-3">
+        <span
+            class="rounded-full border border-white/45 bg-[rgba(255,252,247,0.74)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-forest)] backdrop-blur-sm"
+        >
+            {entry.data.role}
+        </span>
+        <span
+            class="rounded-full border border-white/45 bg-[rgba(255,252,247,0.74)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-soft-ink)] backdrop-blur-sm"
+        >
+            {entry.data.ageLabel}
+        </span>
+    </div>
+</div>

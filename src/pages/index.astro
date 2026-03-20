@@ -6,6 +6,7 @@ import Section from "@/components/ui/Section.astro";
 import HeroMotion from "@/components/home/HeroMotion";
 import SectionReveal from "@/components/home/SectionReveal";
 import NewsCard from "@/components/news/NewsCard.astro";
+import HorseCard from "@/components/horses/HorseCard.astro";
 import {
     benefits,
     siteConfig,
@@ -17,6 +18,13 @@ const allNews = await getCollection("news", ({ data }) => !data.draft);
 const featuredNews = allNews
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
     .slice(0, 3);
+const allHorses = (await getCollection("horses")).sort(
+    (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
+);
+const featuredHorses = allHorses.filter(({ data }) => data.featured);
+const homepageHorses = (
+    featuredHorses.length ? featuredHorses : allHorses
+).slice(0, 3);
 ---
 
 <BaseLayout
@@ -119,37 +127,6 @@ const featuredNews = allNews
 
     <Section className="pt-0">
         <SectionReveal>
-            <div
-                class="panel grid gap-8 overflow-hidden p-8 md:p-10 lg:grid-cols-[1fr_0.9fr]"
-            >
-                <div class="prose-flow">
-                    <span class="eyebrow">Warum wir</span>
-                    <h2 class="text-3xl md:text-5xl">
-                        Klares Coaching. Ruhige Atmosphaere. Ernsthafte
-                        Verantwortung fuer Pferde.
-                    </h2>
-                    <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
-                        Familien entscheiden sich fuer uns, weil die Umgebung
-                        schon beim ersten Besuch verlässlich wirkt. Erwartungen
-                        sind klar, Entwicklung ist strukturiert und Training
-                        bleibt ambitioniert ohne unruhig zu werden.
-                    </p>
-                </div>
-                <ul class="space-y-4">
-                    {
-                        trustPoints.map((point) => (
-                            <li class="rounded-[1.4rem] border border-[var(--color-line)] bg-white/60 px-5 py-4 text-[var(--color-soft-ink)]">
-                                {point}
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-        </SectionReveal>
-    </Section>
-
-    <Section className="pt-0">
-        <SectionReveal>
             <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
                 <div class="panel p-8 md:p-10">
                     <span class="eyebrow">Trainingsueberblick</span>
@@ -210,6 +187,39 @@ const featuredNews = allNews
         </SectionReveal>
     </Section>
 
+    <Section id="unsere-pferde" className="pt-0">
+        <SectionReveal>
+            <div
+                class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+            >
+                <div class="prose-flow max-w-3xl">
+                    <span class="eyebrow">Unsere Pferde</span>
+                    <h2 class="text-3xl md:text-5xl">
+                        Jedes Pferd bringt einen eigenen Rhythmus in unser
+                        Training.
+                    </h2>
+                    <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
+                        Unsere Vereinspferde tragen Einsteigerarbeit,
+                        Gruppenroutine und fortgeschrittene Entwicklung auf sehr
+                        unterschiedliche Weise. Die Profile zeigen, wofuer sie
+                        im Training besonders wertvoll sind.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <Button href="/training" variant="secondary">
+                        Training ansehen
+                    </Button>
+                    <Button href={siteConfig.trialUrl} external>
+                        Probetraining anfragen
+                    </Button>
+                </div>
+            </div>
+            <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {homepageHorses.map((entry) => <HorseCard entry={entry} />)}
+            </div>
+        </SectionReveal>
+    </Section>
+    <!--
     <Section className="pt-0">
         <SectionReveal>
             <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
@@ -260,7 +270,7 @@ const featuredNews = allNews
                 </div>
             </div>
         </SectionReveal>
-    </Section>
+    </Section> -->
 
     <Section className="pt-0">
         <SectionReveal>
@@ -338,6 +348,38 @@ const featuredNews = allNews
       </div>
     </SectionReveal>
   </Section> -->
+
+    <!-- WHY US -->
+    <Section className="pt-0">
+        <SectionReveal>
+            <div
+                class="panel grid gap-8 overflow-hidden p-8 md:p-10 lg:grid-cols-[1fr_0.9fr]"
+            >
+                <div class="prose-flow">
+                    <span class="eyebrow">Warum wir</span>
+                    <h2 class="text-3xl md:text-5xl">
+                        Klares Coaching. Ruhige Atmosphaere. Ernsthafte
+                        Verantwortung fuer Pferde.
+                    </h2>
+                    <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
+                        Familien entscheiden sich fuer uns, weil die Umgebung
+                        schon beim ersten Besuch verlässlich wirkt. Erwartungen
+                        sind klar, Entwicklung ist strukturiert und Training
+                        bleibt ambitioniert ohne unruhig zu werden.
+                    </p>
+                </div>
+                <ul class="space-y-4">
+                    {
+                        trustPoints.map((point) => (
+                            <li class="rounded-[1.4rem] border border-[var(--color-line)] bg-white/60 px-5 py-4 text-[var(--color-soft-ink)]">
+                                {point}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </SectionReveal>
+    </Section>
 
     <Section className="pt-0">
         <div

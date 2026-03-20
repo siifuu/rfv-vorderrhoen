@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from "astro:content";
+import HorseVisual from "@/components/horses/HorseVisual.astro";
+
+interface Props {
+    entry: CollectionEntry<"horses">;
+}
+
+const { entry } = Astro.props;
+---
+
+<a href={`/pferde/${entry.slug}/`} class="group block h-full">
+    <article
+        class="panel relative flex h-full flex-col overflow-hidden p-4 transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:shadow-[var(--shadow-strong)] group-focus-visible:-translate-y-1 group-focus-visible:shadow-[var(--shadow-strong)]"
+    >
+        <div
+            class="absolute -right-12 top-0 h-36 w-36 rounded-full bg-[radial-gradient(circle,rgba(91,114,86,0.2)_0%,rgba(91,114,86,0.08)_36%,transparent_72%)] opacity-0 blur-3xl transition duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-focus-visible:opacity-100"
+        >
+        </div>
+        <div class="relative flex h-full flex-col">
+            <HorseVisual entry={entry} compact />
+            <div class="mt-5 flex items-start justify-between gap-4">
+                <h3 class="text-3xl leading-tight">{entry.data.name}</h3>
+            </div>
+            <p class="mt-4 text-[var(--color-soft-ink)]">
+                {entry.data.description}
+            </p>
+            <dl class="mt-6 grid gap-4 border-t border-[var(--color-line)] pt-5">
+                <div>
+                    <dt
+                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                    >
+                        Temperament
+                    </dt>
+                    <dd class="mt-2 text-base text-[var(--color-ink)]">
+                        {entry.data.temperament}
+                    </dd>
+                </div>
+                <div>
+                    <dt
+                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                    >
+                        Schwerpunkt
+                    </dt>
+                    <dd class="mt-2 text-base text-[var(--color-ink)]">
+                        {entry.data.focus}
+                    </dd>
+                </div>
+            </dl>
+            <span
+                class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-forest)]"
+            >
+                Profil ansehen
+                <span aria-hidden="true">-&gt;</span>
+            </span>
+        </div>
+    </article>
+</a>

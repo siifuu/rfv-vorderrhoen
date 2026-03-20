@@ -1,0 +1,112 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageIntro from "@/components/ui/PageIntro.astro";
+import Section from "@/components/ui/Section.astro";
+import Button from "@/components/ui/Button.astro";
+import HorseVisual from "@/components/horses/HorseVisual.astro";
+import { siteConfig } from "@/lib/site";
+
+export async function getStaticPaths() {
+    const entries = await getCollection("horses");
+
+    return entries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout
+    title={entry.data.seoTitle ?? `${entry.data.name} | RFV Vorderrhoen`}
+    description={entry.data.seoDescription ?? entry.data.description}
+>
+    <Section spaced={false} className="pb-6 pt-10 md:pb-8 md:pt-16">
+        <div class="grid items-start gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+            <PageIntro
+                eyebrow={entry.data.role}
+                title={entry.data.name}
+                description={entry.data.description}
+            />
+            <HorseVisual entry={entry} />
+        </div>
+    </Section>
+
+    <Section spaced={false} className="pb-12 pt-4 md:pb-16 md:pt-2">
+        <div class="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
+            <aside class="panel p-6 md:p-8">
+                <span class="eyebrow">Steckbrief</span>
+                <dl class="mt-6 grid gap-5">
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Alter
+                        </dt>
+                        <dd class="mt-2 text-xl font-semibold">
+                            {entry.data.ageLabel}
+                        </dd>
+                    </div>
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Rolle im Verein
+                        </dt>
+                        <dd class="mt-2 text-xl font-semibold">
+                            {entry.data.role}
+                        </dd>
+                    </div>
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Temperament
+                        </dt>
+                        <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
+                            {entry.data.temperament}
+                        </dd>
+                    </div>
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Trainingsschwerpunkt
+                        </dt>
+                        <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
+                            {entry.data.focus}
+                        </dd>
+                    </div>
+                </dl>
+            </aside>
+
+            <article
+                class="panel rich-text px-6 pb-8 pt-5 md:px-10 md:pb-12 md:pt-8"
+            >
+                <Content />
+            </article>
+        </div>
+    </Section>
+
+    <Section className="pt-0">
+        <div class="panel flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between md:p-10">
+            <div class="max-w-2xl">
+                <span class="eyebrow">Naechster Schritt</span>
+                <h2 class="mt-4 text-3xl md:text-4xl">
+                    Mehr ueber Training, Gruppen und Probetraining erfahren.
+                </h2>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <Button href="/training" variant="secondary">
+                    Training ansehen
+                </Button>
+                <Button href={siteConfig.trialUrl} external>
+                    Probetraining anfragen
+                </Button>
+            </div>
+        </div>
+    </Section>
+</BaseLayout>

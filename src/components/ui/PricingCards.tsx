@@ -28,10 +28,14 @@ export default function PricingCards({ items }: Props) {
           initial={false}
           whileHover={reduceMotion ? undefined : { y: -6 }}
           transition={
-            reduceMotion ? { duration: 0 } : { duration: 0.2, delay: index * 0.04 }
+            reduceMotion
+              ? { duration: 0 }
+              : { duration: 0.2, delay: index * 0.04 }
           }
           className={`panel flex h-full flex-col p-6 md:p-8 ${
-            item.data.highlighted ? "border-[rgba(47,71,50,0.34)] bg-[rgba(255,251,244,0.95)] shadow-[var(--shadow-strong)]" : ""
+            item.data.highlighted
+              ? "border-[rgba(47,71,50,0.34)] bg-[rgba(255,251,244,0.95)] shadow-[var(--shadow-strong)]"
+              : ""
           }`}
         >
           <div className="flex items-start justify-between gap-4">
@@ -39,16 +43,20 @@ export default function PricingCards({ items }: Props) {
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]">
                 {item.data.name}
               </p>
-              <p className="mt-3 text-4xl font-semibold leading-none">{item.data.priceLabel}</p>
+              <p className="mt-3 text-4xl font-semibold leading-none">
+                {item.data.priceLabel}
+              </p>
             </div>
             {item.data.highlighted && (
               <span className="rounded-full bg-[var(--color-forest)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-cream-strong)]">
-                Beliebt
+                Besonders gesucht
               </span>
             )}
           </div>
 
-          <p className="mt-5 text-[var(--color-soft-ink)]">{item.data.description}</p>
+          <p className="mt-5 text-[var(--color-soft-ink)]">
+            {item.data.description}
+          </p>
 
           <ul className="mt-6 flex-1 space-y-3 text-sm text-[var(--color-soft-ink)]">
             {item.data.features.map((feature) => (
@@ -63,8 +71,14 @@ export default function PricingCards({ items }: Props) {
             href={item.data.ctaUrl ?? "/apply"}
             className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-[var(--color-cream-strong)] transition hover:bg-[#243827]"
             style={{ color: "var(--color-cream-strong)" }}
-            target={(item.data.ctaUrl ?? "").startsWith("http") ? "_blank" : undefined}
-            rel={(item.data.ctaUrl ?? "").startsWith("http") ? "noreferrer" : undefined}
+            target={
+              (item.data.ctaUrl ?? "").startsWith("http") ? "_blank" : undefined
+            }
+            rel={
+              (item.data.ctaUrl ?? "").startsWith("http")
+                ? "noreferrer"
+                : undefined
+            }
           >
             {item.data.ctaLabel ?? "Jetzt anfragen"}
           </a>
