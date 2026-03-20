@@ -25,7 +25,7 @@ const featuredNews = allNews
 >
     <Section className="pb-0 pt-10 md:pt-16">
         <div class="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <HeroMotion client:load />
+            <HeroMotion />
             <div class="panel relative overflow-hidden p-8 md:p-10">
                 <div
                     class="absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(47,71,50,0.38),transparent)]"
@@ -87,7 +87,7 @@ const featuredNews = allNews
     </Section>
 
     <Section>
-        <SectionReveal client:visible>
+        <SectionReveal>
             <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                 <div class="prose-flow">
                     <span class="eyebrow">Was Voltigieren ist</span>
@@ -118,7 +118,7 @@ const featuredNews = allNews
     </Section>
 
     <Section className="pt-0">
-        <SectionReveal client:visible>
+        <SectionReveal>
             <div
                 class="panel grid gap-8 overflow-hidden p-8 md:p-10 lg:grid-cols-[1fr_0.9fr]"
             >
@@ -149,7 +149,7 @@ const featuredNews = allNews
     </Section>
 
     <Section className="pt-0">
-        <SectionReveal client:visible>
+        <SectionReveal>
             <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
                 <div class="panel p-8 md:p-10">
                     <span class="eyebrow">Trainingsueberblick</span>
@@ -211,7 +211,7 @@ const featuredNews = allNews
     </Section>
 
     <Section className="pt-0">
-        <SectionReveal client:visible>
+        <SectionReveal>
             <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
                 <div class="panel p-8 md:p-10">
                     <span class="eyebrow">Preise</span>
@@ -263,7 +263,7 @@ const featuredNews = allNews
     </Section>
 
     <Section className="pt-0">
-        <SectionReveal client:visible>
+        <SectionReveal>
             <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
                 <div
                     class="panel relative min-h-[24rem] overflow-hidden p-8 md:p-10"
@@ -317,7 +317,7 @@ const featuredNews = allNews
     </Section>
 
     <!-- <Section className="pt-0">
-    <SectionReveal client:visible>
+    <SectionReveal>
       <div class="flex items-end justify-between gap-6">
         <div class="prose-flow max-w-2xl">
           <span class="eyebrow">Aus dem Bereich Aktuelles</span>
