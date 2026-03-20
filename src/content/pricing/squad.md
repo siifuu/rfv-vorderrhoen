@@ -1,6 +1,6 @@
 ---
-name: Leistungsgruppe
-priceLabel: 110 EUR / Monat
+name: Reitbeteiligung
+priceLabel: 99 EUR / Monat
 description: Hoehere Trainingsfrequenz fuer Athletinnen und Athleten, die an saubereren Kueren, Auftrittsqualitaet und Wettkampfbereitschaft arbeiten.
 features:
   - Mehrere Einheiten pro Woche

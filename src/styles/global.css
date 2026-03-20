@@ -126,6 +126,26 @@ img {
     margin-top: 0.5rem;
 }
 
+.section-reveal {
+    transition:
+        opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 720ms cubic-bezier(0.22, 1, 0.36, 1),
+        filter 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform, filter;
+}
+
+.section-reveal[data-reveal-state="pending"] {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(4px);
+}
+
+.section-reveal[data-reveal-state="visible"] {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
 .news-card-glow {
     opacity: 0;
     border-radius: 44% 56% 58% 42% / 45% 38% 62% 55%;
@@ -173,6 +193,16 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .section-reveal {
+        transition: none;
+    }
+
+    .section-reveal[data-reveal-state="pending"] {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
     .news-card-glow {
         transition:
             opacity 250ms ease,
