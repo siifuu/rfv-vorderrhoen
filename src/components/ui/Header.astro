@@ -8,13 +8,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
 
 <header
-    transition:persist
     class="sticky top-0 z-40 border-b border-[var(--color-line)] bg-[rgba(250,246,239,0.82)] backdrop-blur-xl"
 >
-    <div class="container-shell flex items-center justify-between gap-4 py-4">
-        <a href="/" class="flex items-center gap-3">
+    <div class="container-shell flex items-center justify-between gap-3 py-4 lg:gap-5">
+        <a href="/" class="flex shrink-0 items-center gap-3">
             <span
-                class="block h-11 w-11 overflow-hidden rounded-full border border-[var(--color-line)] bg-[var(--color-forest)]"
+                class="block h-11 w-12 overflow-hidden rounded-full border border-[var(--color-line)] bg-[var(--color-forest)]"
             >
                 <img
                     src={rfvImage.src}
@@ -34,17 +33,18 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
             </div>
         </a>
 
-        <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+        <nav class="hidden flex-1 items-center justify-center gap-3 lg:flex xl:gap-4" aria-label="Primary">
             {
                 mainNav.map((item) => (
                     <a
                         href={item.href}
-                        class:list={[
-                            "text-sm font-semibold transition hover:text-[var(--color-forest)]",
-                            currentPath === item.href
-                                ? "text-[var(--color-forest)]"
-                                : "text-[var(--color-soft-ink)]",
-                        ]}
+                        aria-current={
+                            currentPath === item.href ? "page" : undefined
+                        }
+                        data-active={
+                            currentPath === item.href ? "true" : undefined
+                        }
+                        class:list={["menu-link text-sm font-semibold"]}
                     >
                         {item.label}
                     </a>
@@ -52,7 +52,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
             }
         </nav>
 
-        <div class="hidden lg:block">
+        <div class="hidden shrink-0 lg:block">
             <Button href="/apply">Anmelden / Probetraining</Button>
         </div>
 

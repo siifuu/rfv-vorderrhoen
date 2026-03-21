@@ -35,15 +35,15 @@ export default function MobileNav({ currentPath }: Props) {
             initial={reduceMotion ? false : { opacity: 0, y: -8 }}
             animate={reduceMotion ? {} : { opacity: 1, y: 0 }}
             exit={reduceMotion ? {} : { opacity: 0, y: -8 }}
-            className="panel absolute right-0 top-14 w-[min(18rem,calc(100vw-2rem))] overflow-hidden p-2"
+            className="panel absolute right-0 top-14 w-[min(2rem,calc(100vw-2rem))] overflow-hidden p-2"
           >
             {mainNav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className={`block rounded-2xl px-4 py-3 text-sm font-semibold ${
-                  currentPath === item.href ? "bg-[var(--color-forest)] text-[var(--color-cream-strong)]" : "text-[var(--color-soft-ink)]"
-                }`}
+                aria-current={currentPath === item.href ? "page" : undefined}
+                data-active={currentPath === item.href ? "true" : undefined}
+                className="menu-link menu-link--mobile text-sm font-semibold"
                 onClick={() => setOpen(false)}
               >
                 {item.label}

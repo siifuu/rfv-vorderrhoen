@@ -18,26 +18,26 @@ export const socialLinks = [
   {
     label: "Vereinsaccount",
     platform: "Instagram",
-    handle: "@rfv.vorderrhoen",
-    href: "https://www.instagram.com/"
+    handle: "@rfv_vorderrhoen",
+    href: "https://www.instagram.com/rfv_vorderrhoen",
   },
   {
     label: "Team 1",
     platform: "Instagram",
-    handle: "@rfv.team1",
-    href: "https://www.instagram.com/"
+    handle: "@vorderrhoen_1",
+    href: "https://www.instagram.com/vorderrhoen_1",
   },
-  {
-    label: "Team 2",
-    platform: "Instagram",
-    handle: "@rfv.team2",
-    href: "https://www.instagram.com/"
-  }
+  // {
+  //   label: "Team 2",
+  //   platform: "Instagram",
+  //   handle: "@rfv.team2",
+  //   href: "https://www.instagram.com/",
+  // },
 ];
 
 export const mainNav = [
   { href: "/", label: "Start" },
-  { href: "/about-vaulting", label: "Ueber Voltigieren" },
+  { href: "/about-vaulting", label: "Über Voltigieren" },
   { href: "/training", label: "Training" },
   { href: "/pricing", label: "Preise" },
   { href: "/faq", label: "FAQ" },

@@ -1,6 +1,6 @@
 ---
 name: Probetraining
-priceLabel: 25 EUR
+priceLabel: Kostenlos
 description: Ein erster Besuch fuer neue Athletinnen und Athleten, die Coaching-Stil, Umgebung und Gruppenrhythmus kennenlernen moechten.
 features:
   - Eine begleitete Probestunde
