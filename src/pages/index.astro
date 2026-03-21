@@ -125,6 +125,39 @@ const homepageHorses = (
         </SectionReveal>
     </Section>
 
+    <Section id="unsere-pferde" className="pt-0">
+        <SectionReveal>
+            <div
+                class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+            >
+                <div class="prose-flow max-w-3xl">
+                    <span class="eyebrow">Unsere Pferde</span>
+                    <h2 class="text-3xl md:text-5xl">
+                        Jedes Pferd bringt einen eigenen Rhythmus in unser
+                        Training.
+                    </h2>
+                    <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
+                        Unsere Vereinspferde tragen Einsteigerarbeit,
+                        Gruppenroutine und fortgeschrittene Entwicklung auf sehr
+                        unterschiedliche Weise. Die Profile zeigen, wofuer sie
+                        im Training besonders wertvoll sind.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <Button href="/training" variant="secondary">
+                        Training ansehen
+                    </Button>
+                    <Button href={siteConfig.trialUrl} external>
+                        Probetraining anfragen
+                    </Button>
+                </div>
+            </div>
+            <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {homepageHorses.map((entry) => <HorseCard entry={entry} />)}
+            </div>
+        </SectionReveal>
+    </Section>
+
     <Section className="pt-0">
         <SectionReveal>
             <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
@@ -195,38 +228,6 @@ const homepageHorses = (
         </SectionReveal>
     </Section>
 
-    <Section id="unsere-pferde" className="pt-0">
-        <SectionReveal>
-            <div
-                class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
-            >
-                <div class="prose-flow max-w-3xl">
-                    <span class="eyebrow">Unsere Pferde</span>
-                    <h2 class="text-3xl md:text-5xl">
-                        Jedes Pferd bringt einen eigenen Rhythmus in unser
-                        Training.
-                    </h2>
-                    <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
-                        Unsere Vereinspferde tragen Einsteigerarbeit,
-                        Gruppenroutine und fortgeschrittene Entwicklung auf sehr
-                        unterschiedliche Weise. Die Profile zeigen, wofuer sie
-                        im Training besonders wertvoll sind.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-3">
-                    <Button href="/training" variant="secondary">
-                        Training ansehen
-                    </Button>
-                    <Button href={siteConfig.trialUrl} external>
-                        Probetraining anfragen
-                    </Button>
-                </div>
-            </div>
-            <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                {homepageHorses.map((entry) => <HorseCard entry={entry} />)}
-            </div>
-        </SectionReveal>
-    </Section>
     <!--
     <Section className="pt-0">
         <SectionReveal>
