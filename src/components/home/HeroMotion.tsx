@@ -3,14 +3,12 @@ import { siteConfig } from "@/lib/site";
 export default function HeroMotion() {
   return (
     <div className="prose-flow">
-      <p className="eyebrow">
-        Voltigierverein
-      </p>
+      <p className="eyebrow">Voltigierverein</p>
       <h1 className="max-w-4xl text-5xl leading-[0.96] md:text-7xl">
         Eleganz auf dem Pferd. Disziplin hinter jeder Bewegung.
       </h1>
       <p className="max-w-2xl text-lg leading-8 text-[var(--color-soft-ink)] md:text-xl">
-        Rhine Field Vaulters bietet strukturiertes, pferdegerechtes Training
+        Wir, der RFV Vorderrhön bieten strukturiertes, pferdegerechtes Training
         fuer Einsteiger und ambitionierte Athletinnen und Athleten, die einen
         eleganten und anspruchsvollen Teamsport suchen.
       </p>

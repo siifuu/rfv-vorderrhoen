@@ -6,7 +6,7 @@ import Section from "@/components/ui/Section.astro";
 import Button from "@/components/ui/Button.astro";
 import PricingCards from "@/components/ui/PricingCards";
 import FaqAccordion from "@/components/ui/FaqAccordion";
-import { faqItems, siteConfig } from "@/lib/site";
+import { faqItems, siteConfig, socialLinks } from "@/lib/site";
 
 interface Props {
     entry: CollectionEntry<"pages">;
@@ -109,40 +109,71 @@ const pricingEntries =
     {
         entry.slug === "contact" && (
             <Section className="pt-0">
-                <div class="grid gap-5 md:grid-cols-3">
-                    <div class="panel p-6">
-                        <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
-                            E-Mail
-                        </p>
-                        <a
-                            class="mt-3 block text-xl font-semibold"
-                            href={`mailto:${siteConfig.email}`}
-                        >
-                            {siteConfig.email}
-                        </a>
+                <div class="grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
+                    <div class="grid gap-5 md:grid-cols-3">
+                        <div class="panel p-6">
+                            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                                E-Mail
+                            </p>
+                            <a
+                                class="mt-3 block text-xl font-semibold"
+                                href={`mailto:${siteConfig.email}`}
+                            >
+                                {siteConfig.email}
+                            </a>
+                        </div>
+                        <div class="panel p-6">
+                            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                                Telefon
+                            </p>
+                            <a
+                                class="mt-3 block text-xl font-semibold"
+                                href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}
+                            >
+                                {siteConfig.phone}
+                            </a>
+                        </div>
+                        <div class="panel p-6">
+                            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                                Anmeldung
+                            </p>
+                            <Button
+                                href={siteConfig.applyUrl}
+                                external
+                                className="mt-3"
+                            >
+                                Formular oeffnen
+                            </Button>
+                        </div>
                     </div>
-                    <div class="panel p-6">
-                        <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
-                            Telefon
-                        </p>
-                        <a
-                            class="mt-3 block text-xl font-semibold"
-                            href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}
-                        >
-                            {siteConfig.phone}
-                        </a>
-                    </div>
-                    <div class="panel p-6">
-                        <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
-                            Anmeldung
-                        </p>
-                        <Button
-                            href={siteConfig.applyUrl}
-                            external
-                            className="mt-3"
-                        >
-                            Formular oeffnen
-                        </Button>
+
+                    <div class="panel p-6 md:p-8">
+                        <span class="eyebrow">Socials</span>
+                        <h2 class="mt-4 text-3xl md:text-4xl">
+                            Instagram-Accounts fuer Verein und Teams
+                        </h2>
+                        <div class="mt-6 grid gap-4">
+                            {
+                                socialLinks.map((item) => (
+                                    <a
+                                        class="rounded-[1.3rem] border border-[var(--color-line)] bg-white/55 px-5 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-moss)]"
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        <span class="block text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]">
+                                            {item.platform}
+                                        </span>
+                                        <span class="mt-2 block text-xl font-semibold">
+                                            {item.label}
+                                        </span>
+                                        <span class="mt-1 block text-[var(--color-soft-ink)]">
+                                            {item.handle}
+                                        </span>
+                                    </a>
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
             </Section>

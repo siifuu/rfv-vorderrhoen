@@ -8,9 +8,30 @@ export const siteConfig = {
   phone: "+49 30 1234 5678",
   applyUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
   trialUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
-  instagramUrl: "https://www.instagram.com/",
   siteUrl: "https://example.github.io/rfv-website",
 };
+
+// Replace these placeholders with the real Vereins- und Team-Accounts.
+export const socialLinks = [
+  {
+    label: "Vereinsaccount",
+    platform: "Instagram",
+    handle: "@rfv.vorderrhoen",
+    href: "https://www.instagram.com/"
+  },
+  {
+    label: "Team 1",
+    platform: "Instagram",
+    handle: "@rfv.team1",
+    href: "https://www.instagram.com/"
+  },
+  {
+    label: "Team 2",
+    platform: "Instagram",
+    handle: "@rfv.team2",
+    href: "https://www.instagram.com/"
+  }
+];
 
 export const mainNav = [
   { href: "/", label: "Start" },
