@@ -6,8 +6,10 @@ export const siteConfig = {
   location: "Region Berlin-Brandenburg, Deutschland",
   email: "hallo@rhinefieldvaulters.club",
   phone: "+49 30 1234 5678",
-  applyUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
-  trialUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
+  applyUrl: "/apply",
+  trialUrl: "/trial",
+  applyFormUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
+  trialFormUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
   siteUrl: "https://example.github.io/rfv-website",
 };
 

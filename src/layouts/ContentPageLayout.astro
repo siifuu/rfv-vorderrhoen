@@ -6,6 +6,7 @@ import Section from "@/components/ui/Section.astro";
 import Button from "@/components/ui/Button.astro";
 import PricingCards from "@/components/ui/PricingCards";
 import FaqAccordion from "@/components/ui/FaqAccordion";
+import GoogleFormEmbed from "@/components/forms/GoogleFormEmbed.astro";
 import { faqItems, siteConfig, socialLinks } from "@/lib/site";
 
 interface Props {
@@ -89,7 +90,7 @@ const pricingEntries =
                                 anfragen.
                             </h2>
                         </div>
-                        <Button href={siteConfig.applyUrl} external>
+                        <Button href={siteConfig.applyUrl}>
                             Google-Formular oeffnen
                         </Button>
                     </div>
@@ -139,7 +140,6 @@ const pricingEntries =
                             </p>
                             <Button
                                 href={siteConfig.applyUrl}
-                                external
                                 className="mt-3"
                             >
                                 Formular oeffnen
@@ -181,18 +181,25 @@ const pricingEntries =
     }
 
     {
+        entry.slug === "trial" && (
+            <Section className="pt-0">
+                <GoogleFormEmbed
+                    title="Probetraining direkt anfragen"
+                    description="Nutze das eingebettete Formular fuer die erste Anfrage. Wenn die Einbettung in deinem Browser nicht korrekt geladen wird, kannst du das Formular jederzeit ueber den Direktlink bei Google oeffnen."
+                    formUrl={siteConfig.trialFormUrl}
+                />
+            </Section>
+        )
+    }
+
+    {
         entry.slug === "apply" && (
             <Section className="pt-0">
-                <div class="panel flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between md:p-10">
-                    <p class="max-w-2xl text-lg leading-8 text-[var(--color-soft-ink)]">
-                        Ersetze vor der Veroeffentlichung die Platzhalter-URL
-                        des Google-Formulars in <code>src/lib/site.ts</code>{" "}
-                        sowie in den Preis-Eintraegen.
-                    </p>
-                    <Button href={siteConfig.applyUrl} external>
-                        Zum Anmeldeformular
-                    </Button>
-                </div>
+                <GoogleFormEmbed
+                    title="Anmeldung direkt ausfuellen"
+                    description="Diese Seite sammelt Mitgliedschafts- und Platzanfragen direkt im eingebetteten Formular. Wenn die Einbettung in deinem Browser nicht korrekt geladen wird, kannst du das Formular jederzeit ueber den Direktlink bei Google oeffnen."
+                    formUrl={siteConfig.applyFormUrl}
+                />
             </Section>
         )
     }

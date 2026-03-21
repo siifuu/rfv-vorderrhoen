@@ -15,8 +15,6 @@ export default function HeroMotion() {
       <div className="flex flex-wrap gap-3">
         <a
           href={siteConfig.applyUrl}
-          target="_blank"
-          rel="noreferrer"
           className="inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-[var(--color-cream-strong)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#243827]"
           style={{ color: "var(--color-cream-strong)" }}
         >
