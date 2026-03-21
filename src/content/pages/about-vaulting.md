@@ -4,7 +4,7 @@ description: Erfahre, was Voltigieren ist, wie das Training aufgebaut ist und wa
 slug: about-vaulting
 navLabel: Ueber Voltigieren
 order: 1
-seoTitle: Ueber Voltigieren | Rhine Field Vaulters
+seoTitle: Ueber Voltigieren | RFV Vorderrhön
 seoDescription: Verstehe Aufbau, sportlichen Wert und Pferdepartnerschaft im Voltigieren.
 ---
 

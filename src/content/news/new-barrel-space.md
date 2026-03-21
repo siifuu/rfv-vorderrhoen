@@ -2,8 +2,8 @@
 title: Neuer Holzpferd-Bereich eingerichtet
 description: Wir haben den Innenbereich neu organisiert, damit das Techniktraining am Holzpferd fokussierter und ruhiger stattfinden kann.
 date: 2026-02-14
-seoTitle: Neuer Holzpferd-Bereich eingerichtet | Rhine Field Vaulters
-seoDescription: Ein neuer Holzpferd-Bereich verbessert Struktur und Ablauf im Training von Rhine Field Vaulters.
+seoTitle: Neuer Holzpferd-Bereich eingerichtet | RFV Vorderrhön
+seoDescription: Ein neuer Holzpferd-Bereich verbessert Struktur und Ablauf im Training von RFV Vorderrhön.
 ---
 
 Unser Hallen-Setup beinhaltet jetzt einen staerker abgegrenzten Bereich fuer das Techniktraining am Holzpferd. Dadurch werden die Wechsel zwischen Aufwaermen, Uebungen neben dem Pferd und der Arbeit auf dem Pferd klarer.

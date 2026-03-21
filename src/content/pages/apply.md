@@ -3,7 +3,7 @@ title: Anmeldung
 description: Starte deine Anfrage fuer Probetraining oder Mitgliedschaft ueber unseren einfachen Google-Forms-Ablauf.
 slug: apply
 order: 8
-seoTitle: Anmeldung | Rhine Field Vaulters
+seoTitle: Anmeldung | RFV Vorderrhön
 seoDescription: Melde dich fuer ein Probetraining oder eine Mitgliedschaft ueber unser Google-Formular an.
 ---
 

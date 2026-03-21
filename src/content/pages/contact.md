@@ -1,10 +1,10 @@
 ---
 title: Kontakt
-description: Kontaktiere Rhine Field Vaulters fuer Probetraining, Mitgliedschaftsfragen und allgemeine Vereinsinformationen.
+description: Kontaktiere RFV Vorderrhön fuer Probetraining, Mitgliedschaftsfragen und allgemeine Vereinsinformationen.
 slug: contact
 order: 7
-seoTitle: Kontakt | Rhine Field Vaulters
-seoDescription: Nimm Kontakt zu Rhine Field Vaulters auf fuer Buchungen und Vereinsinformationen.
+seoTitle: Kontakt | RFV Vorderrhön
+seoDescription: Nimm Kontakt zu RFV Vorderrhön auf fuer Buchungen und Vereinsinformationen.
 ---
 
 Der schnellste Weg zum Einstieg ist das Anmelde- oder Probetrainingsformular. Fuer alles andere kannst du uns schreiben oder anrufen, und wir zeigen dir den passenden naechsten Schritt.

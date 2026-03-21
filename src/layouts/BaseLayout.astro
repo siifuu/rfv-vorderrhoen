@@ -68,8 +68,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
               });
             },
             {
-              threshold: 0.26,
-              rootMargin: "0px 0px -14% 0px",
+              threshold: 0.18,
+              rootMargin: "0px 0px -8% 0px",
             }
           );
 
@@ -78,7 +78,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           elements.forEach((element) => {
             const rect = element.getBoundingClientRect();
             const isAlreadyVisible =
-              rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+              rect.top < window.innerHeight * 0.97 && rect.bottom > 0;
 
             if (isAlreadyVisible) {
               element.setAttribute("data-reveal-state", "visible");

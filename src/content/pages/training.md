@@ -3,8 +3,8 @@ title: Training
 description: Sieh, wie unsere Einheiten aufgebaut sind, was Einsteiger erwartet und wie Athletinnen und Athleten sich im Programm weiterentwickeln.
 slug: training
 order: 3
-seoTitle: Training | Rhine Field Vaulters
-seoDescription: Verstehe Ablauf, Gruppeneinteilung und Entwicklung bei Rhine Field Vaulters.
+seoTitle: Training | RFV Vorderrhön
+seoDescription: Verstehe Ablauf, Gruppeneinteilung und Entwicklung bei RFV Vorderrhön.
 ---
 
 Training ist im besten Sinne vorhersehbar: Die Athletinnen und Athleten wissen, was in der Einheit gefragt ist, und die Trainerinnen und Trainer koennen Faehigkeiten schrittweise aufbauen statt von Woche zu Woche zu improvisieren.

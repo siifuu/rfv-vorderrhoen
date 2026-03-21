@@ -1,9 +1,9 @@
 ---
 title: Datenschutz
-description: Datenschutzhinweise fuer Besucherinnen und Besucher der Website von Rhine Field Vaulters.
+description: Datenschutzhinweise fuer Besucherinnen und Besucher der Website von RFV Vorderrhön.
 slug: privacy
 order: 10
-seoTitle: Datenschutz | Rhine Field Vaulters
+seoTitle: Datenschutz | RFV Vorderrhön
 seoDescription: Datenschutzhinweise fuer Website-Besucher und Personen, die das Google-Formular nutzen.
 ---
 

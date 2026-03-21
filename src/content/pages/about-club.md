@@ -1,13 +1,13 @@
 ---
 title: Ueber den Verein
-description: Lerne die Kultur, den Coaching-Ansatz und die Werte hinter Rhine Field Vaulters kennen.
+description: Lerne die Kultur, den Coaching-Ansatz und die Werte hinter RFV Vorderrhön kennen.
 slug: about-club
 order: 2
-seoTitle: Ueber den Verein | Rhine Field Vaulters
+seoTitle: Ueber den Verein | RFV Vorderrhön
 seoDescription: Entdecke unsere Trainingsphilosophie, pferdegerechte Vereinskultur und strukturierte Umgebung.
 ---
 
-Rhine Field Vaulters ist fuer Athletinnen, Athleten und Familien da, die Klarheit, Verlaesslichkeit und echte Entwicklung suchen. Uns ist technische Qualitaet wichtig, aber genauso wichtig ist, wie sich Menschen fuehlen, wenn sie den Ort betreten.
+RFV Vorderrhön ist fuer Athletinnen, Athleten und Familien da, die Klarheit, Verlaesslichkeit und echte Entwicklung suchen. Uns ist technische Qualitaet wichtig, aber genauso wichtig ist, wie sich Menschen fuehlen, wenn sie den Ort betreten.
 
 ## Unser Ansatz
 
