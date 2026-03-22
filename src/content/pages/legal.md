@@ -16,5 +16,5 @@ Region Berlin-Brandenburg, Deutschland
 
 ## Kontakt
 
-E-Mail: hallo@rhinefieldvaulters.club  
+E-Mail: mail@rfv-vorderrhoen.de  
 Telefon: +49 30 1234 5678

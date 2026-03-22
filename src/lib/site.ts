@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Ein Voltigierverein mit strukturiertem Training fuer Kinder, Jugendliche und Erwachsene in einer ruhigen, sportlichen und naturnahen Umgebung.",
   location: "Region Berlin-Brandenburg, Deutschland",
-  email: "hallo@rhinefieldvaulters.club",
+  email: "mail@rfv-vorderrhoen.de",
   phone: "+49 30 1234 5678",
   applyUrl: "/apply",
   trialUrl: "/trial",

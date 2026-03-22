@@ -11,7 +11,7 @@ Der schnellste Weg zum Einstieg ist das Anmelde- oder Probetrainingsformular. Fu
 
 ## Kontaktdaten
 
-- E-Mail: hallo@rhinefieldvaulters.club
+- E-Mail: mail@rfv-vorderrhoen.de
 - Telefon: +49 30 1234 5678
 - Ort: Region Berlin-Brandenburg, Deutschland
 
