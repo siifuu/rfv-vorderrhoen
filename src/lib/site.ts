@@ -5,8 +5,8 @@ export const siteConfig = {
   shortName: "RFV",
   description:
     "Ein Voltigierverein mit strukturiertem Training fuer Kinder, Jugendliche und Erwachsene in einer ruhigen, sportlichen und naturnahen Umgebung.",
-  location: "Region Berlin-Brandenburg, Deutschland",
-  email: "mail@rfv-vorderrhoen.de",
+  location: "Fuldaer Str. 14, 36093 Künzell, Deutschland",
+  email: "rfv-vorderrhoen@web.de",
   phone: "+49 30 1234 5678",
   applyUrl: withBase("/apply"),
   trialUrl: withBase("/trial"),

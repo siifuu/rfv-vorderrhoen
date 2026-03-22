@@ -12,7 +12,7 @@ Dies ist eine Platzhalterseite fuer das Impressum. Ersetze den Inhalt unten vor 
 ## Anbieter
 
 RFV Vorderrhön  
-Region Berlin-Brandenburg, Deutschland
+Fuldaer Str. 14, 36093 Künzell, Deutschland
 
 ## Kontakt
 

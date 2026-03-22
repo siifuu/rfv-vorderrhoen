@@ -13,7 +13,7 @@ Der schnellste Weg zum Einstieg ist das Anmelde- oder Probetrainingsformular. Fu
 
 - E-Mail: mail@rfv-vorderrhoen.de
 - Telefon: +49 30 1234 5678
-- Ort: Region Berlin-Brandenburg, Deutschland
+- Ort: Fuldaer Str. 14, 36093 Künzell, Deutschland
 
 ## Der beste naechste Schritt
 
