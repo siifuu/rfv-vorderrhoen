@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
-import { mainNav } from "@/lib/site";
+import { mainNav, siteConfig } from "@/lib/site";
 
 type Props = {
   currentPath: string;
@@ -50,7 +50,7 @@ export default function MobileNav({ currentPath }: Props) {
               </a>
             ))}
             <a
-              href="/apply"
+              href={siteConfig.applyUrl}
               className="mt-2 block rounded-2xl bg-[var(--color-sand)] px-4 py-3 text-sm font-semibold text-[var(--color-ink)]"
               onClick={() => setOpen(false)}
             >

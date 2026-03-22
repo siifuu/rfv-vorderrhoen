@@ -1,4 +1,6 @@
 ---
+import { withBase } from "@/lib/paths";
+
 interface Props {
     href: string;
     variant?: "primary" | "secondary" | "ghost";
@@ -14,6 +16,7 @@ const {
     className = "",
     external = false,
 } = Astro.props;
+const resolvedHref = withBase(href);
 
 const variants = {
     primary:
@@ -25,7 +28,7 @@ const variants = {
 ---
 
 <a
-    href={href}
+    href={resolvedHref}
     class:list={[
         "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold tracking-[0.01em] transition duration-300",
         variants[variant],

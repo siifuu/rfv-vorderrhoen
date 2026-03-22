@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 const site = process.env.PUBLIC_SITE_URL ?? "https://example.github.io";
 const base =
   process.env.PUBLIC_BASE_PATH ??
-  (process.env.NODE_ENV === "development" ? "/" : "/rfv-website");
+  (process.env.NODE_ENV === "development" ? "/" : "/rfv-vorderrhoen");
 
 export default defineConfig({
   site,

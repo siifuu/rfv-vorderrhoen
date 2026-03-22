@@ -1,3 +1,5 @@
+import { withBase } from "@/lib/paths";
+
 export const siteConfig = {
   name: "RFV Vorderrhoen e.V.",
   shortName: "RFV",
@@ -6,14 +8,13 @@ export const siteConfig = {
   location: "Region Berlin-Brandenburg, Deutschland",
   email: "mail@rfv-vorderrhoen.de",
   phone: "+49 30 1234 5678",
-  applyUrl: "/apply",
-  trialUrl: "/trial",
+  applyUrl: withBase("/apply"),
+  trialUrl: withBase("/trial"),
   applyFormUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
   trialFormUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
-  siteUrl: "https://example.github.io/rfv-website",
+  siteUrl: "https://example.github.io/rfv-vorderrhoen",
 };
 
-// Replace these placeholders with the real Vereins- und Team-Accounts.
 export const socialLinks = [
   {
     label: "Vereinsaccount",
@@ -27,29 +28,23 @@ export const socialLinks = [
     handle: "@vorderrhoen_1",
     href: "https://www.instagram.com/vorderrhoen_1",
   },
-  // {
-  //   label: "Team 2",
-  //   platform: "Instagram",
-  //   handle: "@rfv.team2",
-  //   href: "https://www.instagram.com/",
-  // },
 ];
 
 export const mainNav = [
-  { href: "/", label: "Start" },
-  { href: "/about-vaulting", label: "Über Voltigieren" },
-  { href: "/training", label: "Training" },
-  { href: "/pricing", label: "Preise" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/news", label: "Aktuelles" },
-  { href: "/contact", label: "Kontakt" },
+  { href: withBase("/"), label: "Start" },
+  { href: withBase("/about-vaulting"), label: "Ueber Voltigieren" },
+  { href: withBase("/training"), label: "Training" },
+  { href: withBase("/pricing"), label: "Preise" },
+  { href: withBase("/faq"), label: "FAQ" },
+  { href: withBase("/news"), label: "Aktuelles" },
+  { href: withBase("/contact"), label: "Kontakt" },
 ];
 
 export const footerNav = [
   ...mainNav,
-  { href: "/apply", label: "Anmeldung" },
-  { href: "/legal", label: "Impressum" },
-  { href: "/privacy", label: "Datenschutz" },
+  { href: withBase("/apply"), label: "Anmeldung" },
+  { href: withBase("/legal"), label: "Impressum" },
+  { href: withBase("/privacy"), label: "Datenschutz" },
 ];
 
 export const benefits = [

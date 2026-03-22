@@ -1,3 +1,4 @@
+import { withBase } from "@/lib/paths";
 import { siteConfig } from "@/lib/site";
 
 export default function HeroMotion() {
@@ -21,7 +22,7 @@ export default function HeroMotion() {
           Anmelden / Probetraining
         </a>
         <a
-          href="/pricing"
+          href={withBase("/pricing")}
           className="inline-flex items-center justify-center rounded-full border border-[var(--color-line)] bg-white/60 px-5 py-3 text-sm font-semibold text-[var(--color-ink)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--color-moss)]"
         >
           Preise ansehen

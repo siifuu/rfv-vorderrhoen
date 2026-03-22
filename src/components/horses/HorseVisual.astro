@@ -1,5 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import rockyImage from "../../../assets/rocky.png";
+import crosbyImage from "../../../assets/crosby.png";
+import doofnaseImage from "../../../assets/doofnase.png";
 
 interface Props {
     entry: CollectionEntry<"horses">;
@@ -11,6 +14,13 @@ const { entry, compact = false, className = "" } = Astro.props;
 const imageAlt =
     entry.data.imageAlt ??
     `${entry.data.name} vom RFV Vorderrhoen im Pferdeprofil`;
+const horseImages = {
+    alva: rockyImage,
+    benno: crosbyImage,
+    sola: doofnaseImage,
+};
+const imageSrc =
+    horseImages[entry.slug as keyof typeof horseImages]?.src ?? entry.data.image;
 ---
 
 <div
@@ -23,7 +33,7 @@ const imageAlt =
     {
         entry.data.image ? (
             <img
-                src={entry.data.image}
+                src={imageSrc}
                 alt={imageAlt}
                 class="h-full w-full object-cover"
                 loading={compact ? "lazy" : "eager"}

@@ -1,6 +1,7 @@
 ---
 import Button from "@/components/ui/Button.astro";
 import MobileNav from "@/components/ui/MobileNav";
+import { withBase } from "@/lib/paths";
 import { mainNav, siteConfig } from "@/lib/site";
 import rfvImage from "../../../assets/logo.png";
 
@@ -11,7 +12,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
     class="sticky top-0 z-40 border-b border-[var(--color-line)] bg-[rgba(250,246,239,0.82)] backdrop-blur-xl"
 >
     <div class="container-shell flex items-center justify-between gap-3 py-4 lg:gap-5">
-        <a href="/" class="flex shrink-0 items-center gap-3">
+        <a href={withBase("/")} class="flex shrink-0 items-center gap-3">
             <span
                 class="block h-11 w-12 overflow-hidden rounded-full border border-[var(--color-line)] bg-[var(--color-forest)]"
             >
@@ -53,7 +54,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
         </nav>
 
         <div class="hidden shrink-0 lg:block">
-            <Button href="/apply">Anmelden / Probetraining</Button>
+            <Button href={siteConfig.applyUrl}>Anmelden / Probetraining</Button>
         </div>
 
         <div class="lg:hidden">

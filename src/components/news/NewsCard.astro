@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { withBase } from "@/lib/paths";
 import { formatDate } from "@/lib/utils";
 
 interface Props {
@@ -11,7 +12,7 @@ const { entry, compact = false } = Astro.props;
 ---
 
 <a
-  href={`/news/${entry.slug}`}
+  href={withBase(`/news/${entry.slug}`)}
   class="group block h-full rounded-[var(--radius-lg)] focus-visible:outline-none"
 >
   <article

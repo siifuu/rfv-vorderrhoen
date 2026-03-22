@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import HorseVisual from "@/components/horses/HorseVisual.astro";
+import { withBase } from "@/lib/paths";
 
 interface Props {
     entry: CollectionEntry<"horses">;
@@ -9,7 +10,7 @@ interface Props {
 const { entry } = Astro.props;
 ---
 
-<a href={`/pferde/${entry.slug}/`} class="group block h-full">
+<a href={withBase(`/pferde/${entry.slug}/`)} class="group block h-full">
     <article
         class="panel relative flex h-full flex-col overflow-hidden p-4 transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:shadow-[var(--shadow-strong)] group-focus-visible:-translate-y-1 group-focus-visible:shadow-[var(--shadow-strong)]"
     >
