@@ -5,7 +5,7 @@ date: 2026-04-26
 isEvent: true
 seoTitle: Neuer Holzpferd-Bereich eingerichtet | RFV Vorderrhön
 seoDescription: Ein neuer Holzpferd-Bereich verbessert Struktur und Ablauf im Training von RFV Vorderrhön.
-image: "../../../assets/rocky.png"
+# image: "../../../assets/rocky.png"
 imageAlt: test
 ---
 Nachdem das Turnier im letzten Jahr ein voller Erfolg war, haben wir uns dazu entschieden, auch dieses Jahr ein Turnpferd- und Movieturnier auszurichten. Dieses findet am Samstag, den 25. April 2026, in unserer Reithalle am Bauernhof Hahner statt. 
@@ -23,4 +23,4 @@ Weitere Informationen:
 - Unser Nennungsformular findet ihr [hier](http://www.volti-hessen.de/images/Termine/Turniertermine/Ausschreibung%202026/Nennungsformular%20Vorderrhoen%202026.xlsx).
 - Genauere Informationen zum Volti-Cup findet ihr auf der [Seite des Kreisreiterbundes](https://www.krb-rhoen-vb.de/unsere-aktivit%C3%A4ten-cups/voltigier-cup-2025/).
 
-[img](../../../assets/rocky.png)
+![[../../../assets/Werbung_Aktionstag_KRB.jpeg|testtext]]

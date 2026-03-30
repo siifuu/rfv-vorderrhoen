@@ -4,7 +4,7 @@ description: Ein verlaesslicher Wallach fuer waechselnde Gruppen, der Gelassenhe
 ageLabel: "15 Jahre"
 role: Vereinsallrounder
 race: Gelassen und tragfaehig
-focus: Gruppenarbeit, Stabilitaet und klare Linien
+clubSince: Gruppenarbeit, Stabilitaet und klare Linien
 featured: true
 image: "../assets/crosby.png"
 order: 2

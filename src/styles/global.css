@@ -148,6 +148,15 @@ img {
     color: var(--color-moss);
 }
 
+.rich-text img {
+    width: 100%;
+    margin-top: 1.5rem;
+    border: 1px solid var(--color-line);
+    border-radius: 1.35rem;
+    background: rgba(255, 252, 247, 0.72);
+    box-shadow: var(--shadow-soft);
+}
+
 .menu-link {
     position: relative;
     display: inline-flex;

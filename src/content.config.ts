@@ -70,7 +70,7 @@ const horses = defineCollection({
     ageLabel: z.string(),
     role: z.string(),
     race: z.string(),
-    focus: z.string(),
+    clubSince: z.string(),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     featured: z.boolean().optional(),

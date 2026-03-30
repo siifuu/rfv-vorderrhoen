@@ -4,7 +4,7 @@ description: Er ist einfach ein bisschen special.
 ageLabel: "11 Jahre"
 role: Pferd fuer fortgeschrittene Gruppen
 race: Wach und praezise
-focus: Ausdruck, Koerperspannung und feinere Abstimmung
+clubSince: "2018"
 featured: true
 image: "../assets/doofnase.png"
 order: 3
