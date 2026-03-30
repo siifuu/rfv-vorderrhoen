@@ -1,8 +1,8 @@
 ---
 title: Preise
-description: Vergleiche die Mitgliedschaftsoptionen, sieh dir die enthaltenen Leistungen an und waehle den passenden naechsten Schritt.
+description: Hier findest du eine Übersicht zu den Mitgliedschafts- und Trainingsoptionen.
 slug: pricing
 order: 4
 seoTitle: Preise | RFV Vorderrhön
-seoDescription: Klare Preise fuer Probetraining, woechentliches Training und leistungsorientiertes Voltigieren.
+seoDescription: Preisübersicht zum Training
 ---

@@ -1,8 +1,8 @@
 ---
 title: FAQ
-description: Praktische Antworten fuer Eltern, neue Voltigiererinnen und Voltigierer sowie Interessierte am Probetraining oder an einer Mitgliedschaft.
+description: Antworten für Eltern und am Probetraining Interessierte
 slug: faq
 order: 5
 seoTitle: FAQ | RFV Vorderrhön
-seoDescription: Antworten auf haeufige Fragen zu Einstieg, Training, Kleidung und Bezahlung.
+seoDescription: Antworten auf häufige Fragen zum Einstieg, Training und Bezahlung
 ---

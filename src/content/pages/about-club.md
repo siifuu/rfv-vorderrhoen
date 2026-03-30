@@ -1,5 +1,5 @@
 ---
-title: Ueber den Verein
+title: Über den Verein
 description: Lerne die Kultur, den Coaching-Ansatz und die Werte hinter RFV Vorderrhön kennen.
 slug: about-club
 order: 2

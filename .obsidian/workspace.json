@@ -11,14 +11,12 @@
             "id": "af205781603832c5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "src/content/pages/training.md",
-                "mode": "source",
-                "source": false
+                "file": "public/social-card.svg"
               },
-              "icon": "lucide-file",
-              "title": "training"
+              "icon": "lucide-image",
+              "title": "social-card"
             }
           }
         ]
@@ -185,16 +183,33 @@
   },
   "active": "af205781603832c5",
   "lastOpenFiles": [
+    "assets/Werbung_Aktionstag_KRB.jpeg",
+    "assets/Turnier-Lindenhof.jpeg",
+    "assets/Saisoneröffnung 2.jpeg",
+    "assets/Saisoneröffnung.jpeg",
+    "src/content/news/new-barrel-space.md",
     "src/content/pages/about-club.md",
-    "src/content/pages/contact.md",
-    "src/content/pages/apply.md",
     "src/content/pages/about-vaulting.md",
-    "public/social-card.svg",
+    "src/content/pages/apply.md",
+    "src/content/pages/contact.md",
+    "src/content/pages/faq.md",
+    "src/content/pages/legal.md",
+    "src/content/pages/pricing.md",
+    "src/content/pages/privacy.md",
     "src/content/pages/training.md",
     "src/content/pages/trial.md",
-    "src/content/pages/privacy.md",
-    "src/content/pages/legal.md",
-    "src/content/horses/benno.md",
-    "src/content/pages/faq.md"
+    "assets/doofnase.png",
+    "assets/Campino.jpeg",
+    "assets/crosby.png",
+    "assets/Hulapalu.jpg",
+    "assets/logo.png",
+    "assets/Prince.jpg",
+    "src/content/pricing/trial.md",
+    "src/content/pricing/squad.md",
+    "src/content/news/open-stable-day.md",
+    "src/content/pricing/recreational.md",
+    "src/content/horses/alva.md",
+    "src/content/news/spring-schedule.md",
+    "src/content/horses/benno.md"
   ]
 }

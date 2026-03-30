@@ -1,7 +1,7 @@
 ---
 name: Probetraining
 priceLabel: Kostenlos
-description: Ein erster Besuch fuer neue Athletinnen und Athleten, die Coaching-Stil, Umgebung und Gruppenrhythmus kennenlernen moechten.
+description: Beim Probetraining kannst du unseren Trainingsablauf und die Sportart Voltigieren kennenlernen.
 features:
   - Eine begleitete Probestunde
   - Gruppenvorschlag nach dem Termin

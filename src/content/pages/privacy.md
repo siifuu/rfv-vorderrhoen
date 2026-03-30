@@ -1,18 +1,18 @@
 ---
 title: Datenschutz
-description: Datenschutzhinweise fuer Besucherinnen und Besucher der Website von RFV Vorderrhön.
+description: Datenschutzhinweise für Besucherinnen und Besucher der Website von RFV Vorderrhön.
 slug: privacy
 order: 10
 seoTitle: Datenschutz | RFV Vorderrhön
-seoDescription: Datenschutzhinweise fuer Website-Besucher und Personen, die das Google-Formular nutzen.
+seoDescription: Datenschutzhinweise für Website-Besucher und Personen, die das Google-Formular nutzen.
 ---
 
-Dies ist eine Platzhalterseite fuer den Datenschutz. Ersetze sie vor der Veroeffentlichung durch die echte Datenschutzerklaerung des Vereins.
+Dies ist eine Platzhalterseite für den Datenschutz. Ersetze sie vor der Veröffentlichung durch die echte Datenschutzerklärung des Vereins.
 
 ## Nutzung der Website
 
-Diese Website ist statisch aufgebaut und verarbeitet keine Formulare ueber ein eigenes Backend. Anfragen laufen ueber externe Google Forms.
+Diese Website ist statisch aufgebaut und verarbeitet keine Formulare über ein eigenes Backend. Anfragen laufen über externe Google Forms.
 
 ## Externe Dienste
 
-Sobald jemand ein Google-Formular oeffnet, gelten die Datenschutzbedingungen und Datenverarbeitungsregeln von Google.
+Sobald jemand ein Google-Formular öffnet, gelten die Datenschutzbedingungen und Datenverarbeitungsregeln von Google.

@@ -1,5 +1,5 @@
 ---
-name: Vereinsgruppe
+name: Voltigierbeitrag
 priceLabel: 65 EUR / Monat
 description: Ideal fuer Einsteiger und Freizeitsportler, die regelmaessiges woechentliches Training und eine verlaessliche Entwicklung suchen.
 features:

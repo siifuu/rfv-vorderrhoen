@@ -1,13 +1,12 @@
 ---
 title: Impressum
-description: Rechtliche Angaben und Kontaktdaten fuer RFV Vorderrhön.
+description: Rechtliche Angaben und Kontaktdaten für RFV Vorderrhön.
 slug: legal
 order: 9
 seoTitle: Impressum | RFV Vorderrhön
-seoDescription: Rechtliche Informationen fuer die Website von RFV Vorderrhön.
+seoDescription: Rechtliche Informationen für die Website von RFV Vorderrhön.
 ---
 
-Dies ist eine Platzhalterseite fuer das Impressum. Ersetze den Inhalt unten vor der Veroeffentlichung durch die echten rechtlichen Angaben des Vereins.
 
 ## Anbieter
 

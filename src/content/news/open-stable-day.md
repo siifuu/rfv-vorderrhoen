@@ -1,14 +1,15 @@
 ---
-title: Offener Stalltag im April
-description: An einem Samstag oeffnen wir eine Einheit fuer Familien, die Training sehen, das Team kennenlernen und Fragen stellen moechten.
-date: 2026-04-12
+title: Bericht zum Turnier in Lindenhof
+description: Am Samstag startete für einige unserer Voltis die Turniersaison
+date: 2026-03-21
 featured: true
 seoTitle: Offener Stalltag im April | RFV Vorderrhön
 seoDescription: Besuche RFV Vorderrhön beim offenen Stalltag und erlebe, wie unser Training aufgebaut ist.
 ---
 
-Im April oeffnen wir an einem Samstag eine Einheit fuer interessierte Familien und neue Athletinnen und Athleten. Besucherinnen und Besucher koennen Aufwaermen, Holzpferdtechnik und Gruppenarbeit auf dem Pferd direkt nacheinander beobachten.
+Am Samstag, den 21. März 2026, begann offiziell die Turniersaison für einen Teil unserer Voltis. 
+Eine gemischte Gruppe mit Voltigiererinnen aus Vorderrhön 2 und 3 starteten in der Leistungsklasse A und erreichten den zweiten Platz. 
+Außerdem starteten Caroline und Hannah im Doppel. Sie erreichten den vierten Platz. 
+Auch Greta und Mia hatten ihr Doppel-Debüt. Die beiden wurden 10. 
 
-Das Ziel ist einfach: Der Sport soll greifbar werden. Viele Menschen verstehen Voltigieren deutlich schneller, wenn sie den Rhythmus einer echten Trainingseinheit gesehen haben.
-
-Die finalen Informationen zur Anmeldung teilen wir ueber die Kontakt- und Anmeldeseiten.
+Im Großen und Ganzen liefen die Küren wie geplant, sodass die Voltis sich nach einem ersten gelungenen Turnier auf die noch Folgenden freuen. 
