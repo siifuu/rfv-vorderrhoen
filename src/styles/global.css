@@ -118,12 +118,34 @@ img {
     margin-bottom: 0.75rem;
 }
 
+.rich-text a {
+    color: var(--color-forest);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.18em;
+    overflow-wrap: anywhere;
+    transition:
+        color 220ms ease,
+        text-decoration-color 220ms ease;
+}
+
+.rich-text a:is(:hover, :focus-visible) {
+    color: #243827;
+    text-decoration-color: currentColor;
+}
+
 .rich-text ul {
+    margin-top: 1rem;
     padding-left: 1.2rem;
 }
 
 .rich-text li + li {
     margin-top: 0.5rem;
+}
+
+.rich-text li::marker {
+    color: var(--color-moss);
 }
 
 .menu-link {

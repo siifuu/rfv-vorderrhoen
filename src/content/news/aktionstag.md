@@ -14,6 +14,8 @@ Und auch für das leibliche Wohl ist gesorgt. Sowohl herzhaftes als auch süßes
 
 Wir freuen uns auf Ihren Besuch!
 
-Unsere Ausschreibung findet ihr hier: http://www.volti-hessen.de/images/Termine/Turniertermine/Ausschreibung%202026/Ausschreibung%20RFV%20Vorderrhoehn%202026%20Cup.pdf 
-Unser Nennungsformular findet ihr hier: http://www.volti-hessen.de/images/Termine/Turniertermine/Ausschreibung%202026/Nennungsformular%20Vorderrhoen%202026.xlsx 
-Genauere Informationen zum Volti-Cup findet ihr auf der Seite des Kreisreiterbundes unter: https://www.krb-rhoen-vb.de/unsere-aktivit%C3%A4ten-cups/voltigier-cup-2025/
+Weitere Informationen:
+
+- Unsere Ausschreibung findet ihr [hier](http://www.volti-hessen.de/images/Termine/Turniertermine/Ausschreibung%202026/Ausschreibung%20RFV%20Vorderrhoehn%202026%20Cup.pdf).
+- Unser Nennungsformular findet ihr [hier](http://www.volti-hessen.de/images/Termine/Turniertermine/Ausschreibung%202026/Nennungsformular%20Vorderrhoen%202026.xlsx).
+- Genauere Informationen zum Volti-Cup findet ihr auf der [Seite des Kreisreiterbundes](https://www.krb-rhoen-vb.de/unsere-aktivit%C3%A4ten-cups/voltigier-cup-2025/).
