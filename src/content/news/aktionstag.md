@@ -4,6 +4,8 @@ description: Im April findet bei uns am Hof ein Turnpferd- und Movieturnier stat
 date: 2026-04-26
 seoTitle: Neuer Holzpferd-Bereich eingerichtet | RFV Vorderrhön
 seoDescription: Ein neuer Holzpferd-Bereich verbessert Struktur und Ablauf im Training von RFV Vorderrhön.
+image: "../../../assets/rocky.png"
+imageAlt: test
 ---
 Nachdem das Turnier im letzten Jahr ein voller Erfolg war, haben wir uns dazu entschieden, auch dieses Jahr ein Turnpferd- und Movieturnier auszurichten. Dieses findet am Samstag, den 25. April 2026, in unserer Reithalle am Bauernhof Hahner statt. 
 

@@ -15,15 +15,18 @@ const pages = defineCollection({
 
 const news = defineCollection({
   type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    draft: z.boolean().optional(),
-    featured: z.boolean().optional(),
-    seoTitle: z.string().optional(),
-    seoDescription: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.coerce.date(),
+      image: image().optional(),
+      imageAlt: z.string().optional(),
+      draft: z.boolean().optional(),
+      featured: z.boolean().optional(),
+      seoTitle: z.string().optional(),
+      seoDescription: z.string().optional(),
+    }),
 });
 
 const pricing = defineCollection({
