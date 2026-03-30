@@ -2,6 +2,7 @@
 title: "Ankündigung: Aktionstag Voltigieren des Kreisreiterbundes"
 description: Im April findet bei uns am Hof ein Turnpferd- und Movieturnier statt.
 date: 2026-04-26
+isEvent: true
 seoTitle: Neuer Holzpferd-Bereich eingerichtet | RFV Vorderrhön
 seoDescription: Ein neuer Holzpferd-Bereich verbessert Struktur und Ablauf im Training von RFV Vorderrhön.
 image: "../../../assets/rocky.png"
@@ -21,3 +22,5 @@ Weitere Informationen:
 - Unsere Ausschreibung findet ihr [hier](http://www.volti-hessen.de/images/Termine/Turniertermine/Ausschreibung%202026/Ausschreibung%20RFV%20Vorderrhoehn%202026%20Cup.pdf).
 - Unser Nennungsformular findet ihr [hier](http://www.volti-hessen.de/images/Termine/Turniertermine/Ausschreibung%202026/Nennungsformular%20Vorderrhoen%202026.xlsx).
 - Genauere Informationen zum Volti-Cup findet ihr auf der [Seite des Kreisreiterbundes](https://www.krb-rhoen-vb.de/unsere-aktivit%C3%A4ten-cups/voltigier-cup-2025/).
+
+[img](../../../assets/rocky.png)

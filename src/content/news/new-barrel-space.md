@@ -2,6 +2,7 @@
 title: "Ankündigung: Turnpferd- und Movieturnier"
 description: Im April findet bei uns am Hof ein Turnpferd- und Movieturnier statt.
 date: 2026-04-25
+isEvent: true
 seoTitle: Neuer Holzpferd-Bereich eingerichtet | RFV Vorderrhön
 seoDescription: Ein neuer Holzpferd-Bereich verbessert Struktur und Ablauf im Training von RFV Vorderrhön.
 ---

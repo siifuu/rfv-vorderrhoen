@@ -23,62 +23,60 @@ const { entry } = Astro.props;
     title={entry.data.seoTitle ?? `${entry.data.name} | RFV Vorderrhoen`}
     description={entry.data.seoDescription ?? entry.data.description}
 >
-    <Section spaced={false} className="pb-6 pt-10 md:pb-8 md:pt-16">
-        <div class="grid items-start gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-            <PageIntro
-                eyebrow={entry.data.role}
-                title={entry.data.name}
-            />
-            <HorseVisual entry={entry} />
-        </div>
-    </Section>
+    <Section spaced={false} className="pb-12 pt-10 md:pb-16 md:pt-16">
+        <PageIntro
+            eyebrow={entry.data.role}
+            title={entry.data.name}
+        />
 
-    <Section spaced={false} className="pb-12 pt-4 md:pb-16 md:pt-2">
-        <aside class="panel mx-auto max-w-3xl p-6 md:p-8">
-            <span class="eyebrow">Steckbrief</span>
-            <dl class="mt-6 grid gap-5">
-                <div>
-                    <dt
-                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
-                    >
-                        Alter
-                    </dt>
-                    <dd class="mt-2 text-xl font-semibold">
-                        {entry.data.ageLabel}
-                    </dd>
-                </div>
-                <div>
-                    <dt
-                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
-                    >
-                        Rolle im Verein
-                    </dt>
-                    <dd class="mt-2 text-xl font-semibold">
-                        {entry.data.role}
-                    </dd>
-                </div>
-                <div>
-                    <dt
-                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
-                    >
-                        Rasse
-                    </dt>
-                    <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
-                        {entry.data.race}
-                    </dd>
-                </div>
-                <div>
-                    <dt
-                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
-                    >
-                        Trainingsschwerpunkt
-                    </dt>
-                    <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
-                        {entry.data.focus}
-                    </dd>
-                </div>
-            </dl>
-        </aside>
+        <div class="mt-8 grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
+            <HorseVisual entry={entry} />
+            <aside class="panel h-full p-6 md:p-8">
+                <span class="eyebrow">Steckbrief</span>
+                <dl class="mt-6 grid gap-5">
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Alter
+                        </dt>
+                        <dd class="mt-2 text-xl font-semibold">
+                            {entry.data.ageLabel}
+                        </dd>
+                    </div>
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Rolle im Verein
+                        </dt>
+                        <dd class="mt-2 text-xl font-semibold">
+                            {entry.data.role}
+                        </dd>
+                    </div>
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Rasse
+                        </dt>
+                        <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
+                            {entry.data.race}
+                        </dd>
+                    </div>
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Trainingsschwerpunkt
+                        </dt>
+                        <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
+                            {entry.data.focus}
+                        </dd>
+                    </div>
+                </dl>
+            </aside>
+        </div>
     </Section>
 
     <Section className="pt-0">

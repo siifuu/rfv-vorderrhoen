@@ -1,7 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import EventCalendarActions from "@/components/news/EventCalendarActions.astro";
 import PageIntro from "@/components/ui/PageIntro.astro";
 import Section from "@/components/ui/Section.astro";
 import { formatDate } from "@/lib/utils";
@@ -29,16 +29,22 @@ const { Content } = await entry.render();
             title={entry.data.title}
             description={entry.data.description}
         />
+        {
+            entry.data.isEvent && (
+                <div class="mt-6">
+                    <EventCalendarActions entry={entry} />
+                </div>
+            )
+        }
     </Section>
     {
         entry.data.image && (
             <Section spaced={false} className="pb-8 pt-0 md:pb-10">
                 <figure class="panel overflow-hidden">
-                    <Image
-                        src={entry.data.image}
+                    <img
+                        src={entry.data.image.src}
                         alt={entry.data.imageAlt ?? entry.data.title}
                         class="h-auto max-h-[38rem] w-full object-cover"
-                        sizes="(min-width: 80rem) 74rem, calc(100vw - 2rem)"
                     />
                 </figure>
             </Section>

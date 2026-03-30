@@ -2,6 +2,7 @@
 title: vereinsinterne Saisoneröffnung
 description: Am Freitag haben wir vereinsintern die Saison eröffnet
 date: 2026-03-13
+isEvent: false
 featured: true
 seoTitle: Fruehlings-Trainingsplan veroeffentlicht | RFV Vorderrhön
 seoDescription: RFV Vorderrhön hat den neuen Fruehlings-Trainingsplan veroeffentlicht.

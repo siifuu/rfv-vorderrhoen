@@ -1,0 +1,365 @@
+---
+import type { CollectionEntry } from "astro:content";
+import EventCalendarActions from "@/components/news/EventCalendarActions.astro";
+
+interface Props {
+    entries: CollectionEntry<"news">[];
+}
+
+const { entries } = Astro.props;
+
+const weekdays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
+const monthLabelFormatter = new Intl.DateTimeFormat("de-DE", {
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+});
+const monthChipFormatter = new Intl.DateTimeFormat("de-DE", {
+    month: "short",
+    timeZone: "UTC",
+});
+
+const calendarEntries = entries.filter((entry) => entry.data.isEvent);
+const sortedEntries = [...calendarEntries].sort(
+    (a, b) => a.data.date.getTime() - b.data.date.getTime(),
+);
+const yearBuckets = sortedEntries.reduce((groups, entry) => {
+    const year = entry.data.date.getUTCFullYear();
+    const existing = groups.get(year) ?? [];
+    existing.push(entry);
+    groups.set(year, existing);
+    return groups;
+}, new Map<number, CollectionEntry<"news">[]>());
+
+const monthViews = Array.from(yearBuckets.entries())
+    .sort(([yearA], [yearB]) => yearA - yearB)
+    .flatMap(([year, yearEntries]) =>
+        Array.from({ length: 12 }, (_, month) => {
+            const monthEntries = yearEntries.filter(
+                (entry) => entry.data.date.getUTCMonth() === month,
+            );
+            const monthStart = new Date(Date.UTC(year, month, 1));
+            const leadingEmptyDays = (monthStart.getUTCDay() + 6) % 7;
+            const daysInMonth = new Date(
+                Date.UTC(year, month + 1, 0),
+            ).getUTCDate();
+            const entriesByDay = monthEntries.reduce((days, entry) => {
+                const day = entry.data.date.getUTCDate();
+                const existing = days.get(day) ?? [];
+                existing.push(entry);
+                days.set(day, existing);
+                return days;
+            }, new Map<number, CollectionEntry<"news">[]>());
+
+            return {
+                key: `${year}-${String(month + 1).padStart(2, "0")}`,
+                label: monthLabelFormatter.format(monthStart),
+                monthChip: monthChipFormatter.format(monthStart).replace(".", ""),
+                leadingEmptyDays,
+                daysInMonth,
+                entriesByDay,
+                entries: monthEntries,
+            };
+        }),
+    );
+
+const fallbackMonth =
+    [...monthViews].reverse().find((month) => month.entries.length > 0) ??
+    monthViews[monthViews.length - 1];
+---
+
+<aside class="grid gap-5 lg:sticky lg:top-28">
+    <div class="panel overflow-hidden p-6 md:p-8">
+        <span class="eyebrow">Kalender</span>
+        <h2 class="mt-4 text-3xl md:text-4xl">Vereinsplaner</h2>
+        <p class="mt-4 text-[var(--color-soft-ink)]">
+            Immer ein Monat im Fokus. Standardmaessig springt der Kalender auf
+            den aktuellen Monat und zeigt sofort, an welchen Tagen im Verein
+            markierte Veranstaltungen anstehen.
+        </p>
+    </div>
+
+    <section
+        class="panel overflow-hidden p-5 md:p-6"
+        data-news-planner
+        data-planner-fallback={fallbackMonth?.key}
+    >
+        {
+            fallbackMonth ? (
+                <>
+                    <div class="flex items-center justify-between gap-3">
+                        <button
+                            type="button"
+                            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-line)] bg-white/62 text-xl text-[var(--color-forest)] transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.22)] disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
+                            data-planner-prev
+                            aria-label="Vorherigen Monat anzeigen"
+                        >
+                            &lt;
+                        </button>
+                        <div class="text-center">
+                            <p class="text-xs uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                                Monat
+                            </p>
+                            <h3 class="mt-2 text-3xl md:text-4xl" data-planner-label>
+                                {fallbackMonth.label}
+                            </h3>
+                        </div>
+                        <button
+                            type="button"
+                            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-line)] bg-white/62 text-xl text-[var(--color-forest)] transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.22)] disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
+                            data-planner-next
+                            aria-label="Naechsten Monat anzeigen"
+                        >
+                            &gt;
+                        </button>
+                    </div>
+
+                    {
+                        monthViews.map((month) => (
+                            <div
+                                class="mt-6 space-y-5"
+                                data-planner-month={month.key}
+                                data-planner-label-value={month.label}
+                                hidden={month.key !== fallbackMonth.key}
+                            >
+                                <div class="flex items-start justify-between gap-4">
+                                    <div>
+                                        <p class="text-xs uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                                            Uebersicht
+                                        </p>
+                                        <h4 class="mt-2 text-2xl">{month.label}</h4>
+                                    </div>
+                                    <span class="rounded-full border border-[var(--color-line)] bg-white/65 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-forest)]">
+                                        {month.entries.length} Termin{month.entries.length === 1 ? "" : "e"}
+                                    </span>
+                                </div>
+
+                                <div class="grid grid-cols-7 gap-2 text-center text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-moss)]">
+                                    {weekdays.map((day) => <span>{day}</span>)}
+                                </div>
+
+                                <div class="grid grid-cols-7 gap-2">
+                                    {
+                                        Array.from({
+                                            length: month.leadingEmptyDays,
+                                        }).map(() => (
+                                            <span
+                                                class="h-12 rounded-[0.95rem] border border-transparent bg-white/18"
+                                                aria-hidden="true"
+                                            ></span>
+                                        ))
+                                    }
+                                    {
+                                        Array.from(
+                                            { length: month.daysInMonth },
+                                            (_, index) => {
+                                                const day = index + 1;
+                                                const dayEntries =
+                                                    month.entriesByDay.get(day) ??
+                                                    [];
+                                                const firstEntry = dayEntries[0];
+                                                const hasEvents =
+                                                    dayEntries.length > 0;
+                                                const dots = Math.min(
+                                                    dayEntries.length,
+                                                    3,
+                                                );
+                                                const dayCell = (
+                                                    <span
+                                                        class:list={[
+                                                            "flex h-12 flex-col justify-between rounded-[0.95rem] border px-2 py-1 transition duration-300",
+                                                            hasEvents
+                                                                ? "border-[rgba(47,71,50,0.18)] bg-[linear-gradient(155deg,rgba(247,240,226,0.96),rgba(231,241,229,0.86))] text-[var(--color-forest)] shadow-[0_10px_22px_rgba(28,35,29,0.08)] hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.26)]"
+                                                                : "border-transparent bg-white/45 text-[var(--color-soft-ink)]",
+                                                        ]}
+                                                    >
+                                                        <span class="text-sm font-semibold leading-none">
+                                                            {day}
+                                                        </span>
+                                                        <span class="flex items-center gap-1">
+                                                            {
+                                                                hasEvents
+                                                                    ? Array.from(
+                                                                          {
+                                                                              length: dots,
+                                                                          },
+                                                                      ).map(
+                                                                          () => (
+                                                                              <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-forest)]"></span>
+                                                                          ),
+                                                                      )
+                                                                    : <span class="h-1.5"></span>
+                                                            }
+                                                        </span>
+                                                    </span>
+                                                );
+
+                                                return hasEvents &&
+                                                    firstEntry ? (
+                                                    <a
+                                                        href={`#news-${firstEntry.slug}`}
+                                                        class="group/day focus-visible:outline-none"
+                                                        aria-label={`Zum Termin am ${day}. ${month.label}`}
+                                                    >
+                                                        {dayCell}
+                                                    </a>
+                                                ) : (
+                                                    dayCell
+                                                );
+                                            },
+                                        )
+                                    }
+                                </div>
+
+                                {
+                                    month.entries.length > 0 ? (
+                                        <div class="grid gap-2">
+                                            {
+                                                month.entries.map((entry) => (
+                                                    <article class="rounded-[1.1rem] border border-[var(--color-line)] bg-white/58 px-3 py-3 transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.22)] hover:bg-white/72">
+                                                        <a
+                                                            href={`#news-${entry.slug}`}
+                                                            class="group flex items-start gap-3 focus-visible:outline-none"
+                                                        >
+                                                            <div class="min-w-0 shrink-0 rounded-[0.95rem] bg-[linear-gradient(145deg,rgba(47,71,50,0.96),rgba(91,114,86,0.8))] px-2 py-2 text-center text-[var(--color-cream-strong)] shadow-[0_10px_24px_rgba(24,31,25,0.16)]">
+                                                                <span class="block text-[0.62rem] font-semibold uppercase tracking-[0.14em]">
+                                                                    {month.monthChip}
+                                                                </span>
+                                                                <span class="mt-1 block text-xl font-semibold leading-none">
+                                                                    {entry.data.date.getUTCDate()}
+                                                                </span>
+                                                            </div>
+                                                            <div class="min-w-0">
+                                                                <p class="text-sm font-semibold text-[var(--color-ink)] transition duration-300 group-hover:text-[var(--color-forest)]">
+                                                                    {entry.data.title}
+                                                                </p>
+                                                                <p class="mt-1 text-sm text-[var(--color-soft-ink)]">
+                                                                    {entry.data.description}
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                        <div class="mt-3 border-t border-[rgba(47,71,50,0.1)] pt-3">
+                                                            <EventCalendarActions entry={entry} compact />
+                                                        </div>
+                                                    </article>
+                                                ))
+                                            }
+                                        </div>
+                                    ) : (
+                                        <div class="rounded-[1.1rem] border border-dashed border-[var(--color-line)] bg-white/42 px-4 py-4 text-sm text-[var(--color-soft-ink)]">
+                                            Fuer diesen Monat sind aktuell keine markierten Veranstaltungstermine hinterlegt.
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        ))
+                    }
+                </>
+            ) : (
+                <div class="rounded-[1.1rem] border border-dashed border-[var(--color-line)] bg-white/42 px-4 py-4 text-sm text-[var(--color-soft-ink)]">
+                    Aktuell ist kein News-Beitrag als Termin fuer den Kalender markiert. Setze <code>isEvent: true</code> im Frontmatter, damit er hier erscheint.
+                </div>
+            )
+        }
+    </section>
+</aside>
+
+<script is:inline>
+    (() => {
+        const initNewsPlanners = () => {
+            const planners = Array.from(
+                document.querySelectorAll("[data-news-planner]"),
+            );
+
+            planners.forEach((planner) => {
+                if (planner.dataset.bound === "true") {
+                    return;
+                }
+
+                const months = Array.from(
+                    planner.querySelectorAll("[data-planner-month]"),
+                );
+                const previousButton = planner.querySelector(
+                    "[data-planner-prev]",
+                );
+                const nextButton = planner.querySelector("[data-planner-next]");
+                const label = planner.querySelector("[data-planner-label]");
+
+                if (!months.length) {
+                    return;
+                }
+
+                planner.dataset.bound = "true";
+
+                const browserDate = new Date();
+                const currentKey = `${browserDate.getFullYear()}-${String(browserDate.getMonth() + 1).padStart(2, "0")}`;
+                const fallbackKey = planner.dataset.plannerFallback;
+
+                let activeIndex = months.findIndex(
+                    (month) => month.dataset.plannerMonth === currentKey,
+                );
+
+                if (activeIndex < 0 && fallbackKey) {
+                    activeIndex = months.findIndex(
+                        (month) => month.dataset.plannerMonth === fallbackKey,
+                    );
+                }
+
+                if (activeIndex < 0) {
+                    activeIndex = months.length - 1;
+                }
+
+                const update = () => {
+                    months.forEach((month, index) => {
+                        month.toggleAttribute("hidden", index !== activeIndex);
+                    });
+
+                    const activeMonth = months[activeIndex];
+
+                    if (label && activeMonth?.dataset.plannerLabelValue) {
+                        label.textContent = activeMonth.dataset.plannerLabelValue;
+                    }
+
+                    if (previousButton) {
+                        previousButton.disabled = activeIndex === 0;
+                    }
+
+                    if (nextButton) {
+                        nextButton.disabled =
+                            activeIndex === months.length - 1;
+                    }
+                };
+
+                previousButton?.addEventListener("click", () => {
+                    if (activeIndex === 0) {
+                        return;
+                    }
+
+                    activeIndex -= 1;
+                    update();
+                });
+
+                nextButton?.addEventListener("click", () => {
+                    if (activeIndex >= months.length - 1) {
+                        return;
+                    }
+
+                    activeIndex += 1;
+                    update();
+                });
+
+                update();
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initNewsPlanners, {
+                once: true,
+            });
+        } else {
+            initNewsPlanners();
+        }
+
+        document.addEventListener("astro:page-load", initNewsPlanners);
+    })();
+</script>

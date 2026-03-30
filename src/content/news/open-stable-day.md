@@ -2,6 +2,7 @@
 title: Bericht zum Turnier in Lindenhof
 description: Am Samstag startete für einige unserer Voltis die Turniersaison
 date: 2026-03-21
+isEvent: false
 featured: true
 seoTitle: Offener Stalltag im April | RFV Vorderrhön
 seoDescription: Besuche RFV Vorderrhön beim offenen Stalltag und erlebe, wie unser Training aufgebaut ist.

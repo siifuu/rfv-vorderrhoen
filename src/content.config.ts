@@ -20,13 +20,32 @@ const news = defineCollection({
       title: z.string(),
       description: z.string(),
       date: z.coerce.date(),
+      isEvent: z.boolean().default(false),
+      eventStart: z.coerce.date().optional(),
+      eventEnd: z.coerce.date().optional(),
       image: image().optional(),
       imageAlt: z.string().optional(),
       draft: z.boolean().optional(),
       featured: z.boolean().optional(),
       seoTitle: z.string().optional(),
       seoDescription: z.string().optional(),
-    }),
+    })
+    .refine(
+      ({ eventStart, eventEnd }) =>
+        (!eventStart && !eventEnd) || (!!eventStart && !!eventEnd),
+      {
+        message: "eventStart and eventEnd must be provided together.",
+        path: ["eventEnd"],
+      },
+    )
+    .refine(
+      ({ eventStart, eventEnd }) =>
+        !eventStart || !eventEnd || eventEnd.getTime() > eventStart.getTime(),
+      {
+        message: "eventEnd must be after eventStart.",
+        path: ["eventEnd"],
+      },
+    ),
 });
 
 const pricing = defineCollection({

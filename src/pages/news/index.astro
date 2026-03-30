@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageIntro from "@/components/ui/PageIntro.astro";
 import Section from "@/components/ui/Section.astro";
+import NewsPlanner from "@/components/news/NewsPlanner.astro";
 import NewsCard from "@/components/news/NewsCard.astro";
 
 const entries = (await getCollection("news", ({ data }) => !data.draft)).sort(
@@ -22,8 +23,15 @@ const entries = (await getCollection("news", ({ data }) => !data.draft)).sort(
         />
     </Section>
     <Section className="pt-8">
-        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {entries.map((entry) => <NewsCard entry={entry} />)}
+        <div class="grid gap-6 xl:grid-cols-[0.86fr_1.14fr] xl:items-start">
+            <NewsPlanner entries={entries} />
+            <div class="grid gap-5 md:grid-cols-2">
+                {entries.map((entry) => (
+                    <div id={`news-${entry.slug}`} class="scroll-mt-28">
+                        <NewsCard entry={entry} />
+                    </div>
+                ))}
+            </div>
         </div>
     </Section>
 </BaseLayout>
