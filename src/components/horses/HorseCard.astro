@@ -26,15 +26,17 @@ const { entry } = Astro.props;
             <p class="mt-4 text-[var(--color-soft-ink)]">
                 {entry.data.description}
             </p>
-            <dl class="mt-6 grid gap-4 border-t border-[var(--color-line)] pt-5">
+            <dl
+                class="mt-6 grid gap-4 border-t border-[var(--color-line)] pt-5"
+            >
                 <div>
                     <dt
                         class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
                     >
-                        Temperament
+                        Rasse
                     </dt>
                     <dd class="mt-2 text-base text-[var(--color-ink)]">
-                        {entry.data.temperament}
+                        {entry.data.race}
                     </dd>
                 </div>
                 <div>

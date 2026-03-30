@@ -90,7 +90,7 @@ export const faqItems = [
   {
     question: "Was soll man zur Probestunde mitbringen?",
     answer:
-      "Am besten enganliegende Sportkleidung, weiche Schuhe oder Voltigierschuhe, zusammengebundene Haare und etwas zu trinken. Alles Weitere teilen wir bei der Terminbestaetigung mit.",
+      "Am besten enganliegende Sportkleidung, idealerweise Schläppchen, zusammengebundene Haare und etwas zu trinken. Alles Weitere teilen wir bei der Terminbestätigung mit.",
   },
   {
     question: "Wie funktioniert die Bezahlung?",

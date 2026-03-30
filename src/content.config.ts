@@ -9,8 +9,8 @@ const pages = defineCollection({
     order: z.number().optional(),
     draft: z.boolean().optional(),
     seoTitle: z.string().optional(),
-    seoDescription: z.string().optional()
-  })
+    seoDescription: z.string().optional(),
+  }),
 });
 
 const news = defineCollection({
@@ -22,8 +22,8 @@ const news = defineCollection({
     draft: z.boolean().optional(),
     featured: z.boolean().optional(),
     seoTitle: z.string().optional(),
-    seoDescription: z.string().optional()
-  })
+    seoDescription: z.string().optional(),
+  }),
 });
 
 const pricing = defineCollection({
@@ -36,8 +36,8 @@ const pricing = defineCollection({
     highlighted: z.boolean().optional(),
     order: z.number().optional(),
     ctaLabel: z.string().optional(),
-    ctaUrl: z.string().optional()
-  })
+    ctaUrl: z.string().optional(),
+  }),
 });
 
 const horses = defineCollection({
@@ -47,15 +47,15 @@ const horses = defineCollection({
     description: z.string(),
     ageLabel: z.string(),
     role: z.string(),
-    temperament: z.string(),
+    race: z.string(),
     focus: z.string(),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     featured: z.boolean().optional(),
     order: z.number().optional(),
     seoTitle: z.string().optional(),
-    seoDescription: z.string().optional()
-  })
+    seoDescription: z.string().optional(),
+  }),
 });
 
 export const collections = { pages, news, pricing, horses };

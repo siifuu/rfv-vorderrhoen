@@ -94,32 +94,60 @@ const homepageHorses = (
         </div>
     </Section>
 
-    <Section>
+    <Section className="pt-0">
         <SectionReveal>
-            <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-                <div class="prose-flow">
-                    <span class="eyebrow">Was Voltigieren ist</span>
-                    <h2 class="text-3xl md:text-5xl">
-                        Ein Teamsport aus Bewegung, Mut und Partnerschaft.
-                    </h2>
-                    <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
-                        Voltigieren verbindet Gymnastik und Tanz auf einem sich
-                        bewegenden Pferd. Es foerdert Balance, Disziplin und
-                        Koerpergefuehl und lehrt zugleich Praezision und
-                        Ruecksicht.
-                    </p>
+            <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+                <div
+                    class="panel relative min-h-[24rem] overflow-hidden p-8 md:p-10"
+                >
+                    <div
+                        class="absolute inset-0 bg-[linear-gradient(135deg,rgba(47,71,50,0.94),rgba(91,114,86,0.78))]"
+                    >
+                    </div>
+                    <div
+                        class="absolute -right-10 top-6 h-48 w-48 rounded-full border border-white/15"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.18))]"
+                    >
+                    </div>
+                    <div class="relative max-w-xl text-white">
+                        <span
+                            class="eyebrow !text-[rgba(255,255,255,0.7)] before:!bg-current"
+                            >Was Voltigieren ist</span
+                        >
+                        <h2 class="mt-4 text-3xl md:text-5xl">
+                            Ein Teamsport aus Bewegung, Mut und Partnerschaft
+                        </h2>
+                        <p class="mt-4 text-lg leading-8 text-white/80">
+                            Voltigieren ist turnerisch-gymnastischer Sport auf
+                            dem Pferd. Dabei turnen Kinder, Jugendliche und
+                            Erwachsene auf einem an der Longe laufenden Pferd.
+                            Voltigieren fördert Kraft, Balance, Koordination,
+                            Teamgeist, Verantwortungsbewusstsein und Vertrauen
+                            sowohl zum Pferd als auch untereinander. Geritten
+                            wird im Schritt, Trab oder Galopp— je nach Können
+                            und Altersstufe. Voltigieren verbindet Sport und
+                            Pferdeliebe auf einmalige Weise – und ist häufig der
+                            Einstieg in den Pferdesport.
+                        </p>
+                    </div>
                 </div>
-                <div class="grid gap-4 md:grid-cols-3">
-                    {
-                        benefits.map((benefit) => (
-                            <article class="panel p-6">
-                                <h3 class="text-2xl">{benefit.title}</h3>
-                                <p class="mt-3 text-[var(--color-soft-ink)]">
-                                    {benefit.text}
-                                </p>
-                            </article>
-                        ))
-                    }
+                <div class="panel flex flex-col justify-between p-8 md:p-10">
+                    <div>
+                        <span class="eyebrow">Neuigkeiten</span>
+                        <h2 class="mt-4 text-3xl md:text-4xl">
+                            Aktuelles aus dem Verein
+                        </h2>
+                    </div>
+                    <div class="mt-6 grid gap-4">
+                        {
+                            featuredNews.map((entry) => (
+                                <NewsCard entry={entry} compact />
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
         </SectionReveal>
@@ -191,16 +219,20 @@ const homepageHorses = (
                     >
                     </div>
                     <div class="relative">
-                        <span class="eyebrow">Atmosphaere</span>
+                        <span class="eyebrow">Unsere Ziele</span>
                         <h2 class="mt-4 max-w-sm text-3xl md:text-4xl">
-                            Elegant, sportlich und naturnah.
+                            Was uns bewegt
                         </h2>
                         <p
                             class="mt-4 max-w-md text-lg leading-8 text-[var(--color-soft-ink)]"
                         >
-                            Die Gestaltung bleibt bewusst zurueckhaltend: warme
-                            Sandtoene, Waldgruen, weiche Formen und genug
-                            Bewegung, um lebendig zu wirken ohne laut zu werden.
+                            Wir möchten Kindern, Jugendlichen und Erwachsenen
+                            den sicheren, fairen und pferdegerechten Umgang mit
+                            dem Pferd vermitteln. Der Spaß am Sport, die
+                            Gemeinschaft und das Wohl unserer Pferde stehen
+                            dabei im Mittelpunkt. Ob Freizeit- oder
+                            Turniergruppe – bei uns sind alle willkommen, die
+                            Freude an Pferden, Bewegung und Teamarbeit haben.
                         </p>
                     </div>
                     <div
@@ -280,60 +312,6 @@ const homepageHorses = (
             </div>
         </SectionReveal>
     </Section> -->
-
-    <Section className="pt-0">
-        <SectionReveal>
-            <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-                <div
-                    class="panel relative min-h-[24rem] overflow-hidden p-8 md:p-10"
-                >
-                    <div
-                        class="absolute inset-0 bg-[linear-gradient(135deg,rgba(47,71,50,0.94),rgba(91,114,86,0.78))]"
-                    >
-                    </div>
-                    <div
-                        class="absolute -right-10 top-6 h-48 w-48 rounded-full border border-white/15"
-                    >
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.18))]"
-                    >
-                    </div>
-                    <div class="relative max-w-xl text-white">
-                        <span
-                            class="eyebrow !text-[rgba(255,255,255,0.7)] before:!bg-current"
-                            >Ein Blick in die Stimmung</span
-                        >
-                        <h2 class="mt-4 text-3xl md:text-5xl">
-                            Trainingsorte, gepraegt von Routine, Geduld und
-                            Wiederholung.
-                        </h2>
-                        <p class="mt-4 text-lg leading-8 text-white/80">
-                            Dieser Bereich setzt bewusst auf Atmosphaere statt
-                            auf schwere Bildmengen. So bleibt der erste
-                            Seitenaufbau schnell und die Website wirkt trotzdem
-                            hochwertig.
-                        </p>
-                    </div>
-                </div>
-                <div class="panel flex flex-col justify-between p-8 md:p-10">
-                    <div>
-                        <span class="eyebrow">Neuigkeiten</span>
-                        <h2 class="mt-4 text-3xl md:text-4xl">
-                            Aktuelles aus dem Verein
-                        </h2>
-                    </div>
-                    <div class="mt-6 grid gap-4">
-                        {
-                            featuredNews.map((entry) => (
-                                <NewsCard entry={entry} compact />
-                            ))
-                        }
-                    </div>
-                </div>
-            </div>
-        </SectionReveal>
-    </Section>
 
     <!-- <Section className="pt-0">
     <SectionReveal>

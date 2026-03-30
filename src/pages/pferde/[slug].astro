@@ -17,7 +17,6 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
 ---
 
 <BaseLayout
@@ -29,66 +28,57 @@ const { Content } = await entry.render();
             <PageIntro
                 eyebrow={entry.data.role}
                 title={entry.data.name}
-                description={entry.data.description}
             />
             <HorseVisual entry={entry} />
         </div>
     </Section>
 
     <Section spaced={false} className="pb-12 pt-4 md:pb-16 md:pt-2">
-        <div class="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
-            <aside class="panel p-6 md:p-8">
-                <span class="eyebrow">Steckbrief</span>
-                <dl class="mt-6 grid gap-5">
-                    <div>
-                        <dt
-                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
-                        >
-                            Alter
-                        </dt>
-                        <dd class="mt-2 text-xl font-semibold">
-                            {entry.data.ageLabel}
-                        </dd>
-                    </div>
-                    <div>
-                        <dt
-                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
-                        >
-                            Rolle im Verein
-                        </dt>
-                        <dd class="mt-2 text-xl font-semibold">
-                            {entry.data.role}
-                        </dd>
-                    </div>
-                    <div>
-                        <dt
-                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
-                        >
-                            Temperament
-                        </dt>
-                        <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
-                            {entry.data.temperament}
-                        </dd>
-                    </div>
-                    <div>
-                        <dt
-                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
-                        >
-                            Trainingsschwerpunkt
-                        </dt>
-                        <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
-                            {entry.data.focus}
-                        </dd>
-                    </div>
-                </dl>
-            </aside>
-
-            <article
-                class="panel rich-text px-6 pb-8 pt-5 md:px-10 md:pb-12 md:pt-8"
-            >
-                <Content />
-            </article>
-        </div>
+        <aside class="panel mx-auto max-w-3xl p-6 md:p-8">
+            <span class="eyebrow">Steckbrief</span>
+            <dl class="mt-6 grid gap-5">
+                <div>
+                    <dt
+                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                    >
+                        Alter
+                    </dt>
+                    <dd class="mt-2 text-xl font-semibold">
+                        {entry.data.ageLabel}
+                    </dd>
+                </div>
+                <div>
+                    <dt
+                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                    >
+                        Rolle im Verein
+                    </dt>
+                    <dd class="mt-2 text-xl font-semibold">
+                        {entry.data.role}
+                    </dd>
+                </div>
+                <div>
+                    <dt
+                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                    >
+                        Rasse
+                    </dt>
+                    <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
+                        {entry.data.race}
+                    </dd>
+                </div>
+                <div>
+                    <dt
+                        class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                    >
+                        Trainingsschwerpunkt
+                    </dt>
+                    <dd class="mt-2 text-lg text-[var(--color-soft-ink)]">
+                        {entry.data.focus}
+                    </dd>
+                </div>
+            </dl>
+        </aside>
     </Section>
 
     <Section className="pt-0">
