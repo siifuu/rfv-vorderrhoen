@@ -3,7 +3,7 @@ name: Prince
 description: Prince ist unser verlässliches Pferd für den Einstieg ins Voltigieren.
 ageLabel: 15 Jahre
 role: unser Pferd für zwei Schrittgruppen
-race:
+race: "Unbekannt"
 clubSince: "2015"
 featured: true
 image: ../assets/crosby.png
