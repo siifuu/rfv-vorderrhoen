@@ -3,6 +3,10 @@ import type { CollectionEntry } from "astro:content";
 import rockyImage from "../../../assets/rocky.png";
 import crosbyImage from "../../../assets/crosby.png";
 import doofnaseImage from "../../../assets/doofnase.png";
+import hulapaluImage from "../../../assets/Hulapalu.jpg";
+import princeImage from "../../../assets/Prince.jpg";
+import boltyImage from "../../../assets/Bolty.jpeg";
+import campinoImage from "../../../assets/Campino.jpeg";
 
 interface Props {
     entry: CollectionEntry<"horses">;
@@ -17,13 +21,19 @@ const imageAlt =
 const horseImages = {
     rocky: rockyImage,
     crosby: crosbyImage,
-    hulapalu: doofnaseImage,
+    hulapalu: hulapaluImage,
+    prince: princeImage,
+    bolty: boltyImage,
+    campino: campinoImage,
     alva: rockyImage,
     benno: crosbyImage,
     sola: doofnaseImage,
 };
+const mappedImage = horseImages[entry.slug as keyof typeof horseImages];
 const imageSrc =
-    horseImages[entry.slug as keyof typeof horseImages]?.src ?? entry.data.image;
+    typeof mappedImage === "string"
+        ? mappedImage
+        : (mappedImage?.src ?? entry.data.image);
 ---
 
 <div
