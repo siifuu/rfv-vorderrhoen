@@ -1,22 +1,20 @@
 ---
 title: Training
-description: Hier findest du Informationen zu unserem Trainingsaufbau.
+description: Wir möchten Kindern, Jugendlichen und Erwachsenen den sicheren, fairen und pferdegerechten Umgang mit dem Pferd vermitteln. Der Spaß am Sport, die Gemeinschaft und das Wohl unserer Pferde stehen dabei im Mittelpunkt. Ob Freizeit- oder Turniergruppe – bei uns sind alle willkommen, die Freude an Pferden, Bewegung und Teamarbeit haben.
 slug: training
 order: 3
 seoTitle: Training | RFV Vorderrhön
 seoDescription: Verstehe den Trainingsablauf, Gruppeneinteilung und Entwicklung bei RFV Vorderrhön.
 ---
 
-Wir möchten Kindern, Jugendlichen und Erwachsenen den sicheren, fairen und pferdegerechten Umgang mit dem Pferd vermitteln. Der Spaß am Sport, die Gemeinschaft und das Wohl unserer Pferde stehen dabei im Mittelpunkt. Ob Freizeit- oder Turniergruppe – bei uns sind alle willkommen, die Freude an Pferden, Bewegung und Teamarbeit haben.
-
 ## Aufbau einer Einheit
 
-1. - Ankommen, Pferd putzen, Stallroutine
-2. - Aufwärmtraining: Aufwärmen, Mobilitäts- und Kraftübungen, meist am Boden oder auch mit Hilfsmitteln wie Kästen, Gymnastikbällen, etc.
-3. - Training auf dem Holzpferd: Techniktraining (Bewegungsabläufe der Pflichtübungen) und Üben der Kür
-4. - Training auf dem Pferd: Übungen auf dem an der Longe laufenden Pferd
-5. - gemeinsames Dehnen
-6. - anschließend Versorgen des Pferdes
+1. Ankommen, Pferd putzen, Stallroutine
+2. Aufwärmtraining: Aufwärmen, Mobilitäts- und Kraftübungen, meist am Boden oder auch mit Hilfsmitteln wie Kästen, Gymnastikbällen, etc.
+3. Training auf dem Holzpferd: Techniktraining (Bewegungsabläufe der Pflichtübungen) und Üben der Kür
+4. Training auf dem Pferd: Übungen auf dem an der Longe laufenden Pferd
+5. gemeinsames Dehnen
+6. anschließend Versorgen des Pferdes
 
 ## Für neue Voltigiererinnen und Voltigierer
 

@@ -1,0 +1,279 @@
+---
+import type { CollectionEntry } from "astro:content";
+import HorseCard from "@/components/horses/HorseCard.astro";
+
+interface Props {
+    entries: CollectionEntry<"horses">[];
+}
+
+const { entries } = Astro.props;
+const shouldScroll = entries.length > 3;
+---
+
+{
+    shouldScroll ? (
+        <div class="grid w-full gap-4" data-horse-rail-wrap>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <p class="text-sm text-[var(--color-soft-ink)]">
+                    Wischen oder Pfeile nutzen
+                </p>
+                <div class="inline-flex items-center gap-2">
+                    <button
+                        type="button"
+                        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-line)] bg-white/72 text-xl text-[var(--color-forest)] transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.22)] disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
+                        data-horse-rail-prev
+                        aria-label="Vorherige Pferde anzeigen"
+                    >
+                        &lt;
+                    </button>
+                    <button
+                        type="button"
+                        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-line)] bg-white/72 text-xl text-[var(--color-forest)] transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.22)] disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
+                        data-horse-rail-next
+                        aria-label="Weitere Pferde anzeigen"
+                    >
+                        &gt;
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <div
+                    class="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-[linear-gradient(270deg,rgba(250,246,239,0.95),rgba(250,246,239,0))]"
+                ></div>
+                <div
+                    class="w-full touch-pan-x overflow-x-auto snap-x snap-proximity pb-2 md:snap-mandatory"
+                    data-horse-rail
+                >
+                    <div class="flex min-w-full gap-5 pr-2">
+                    {
+                        entries.map((entry) => (
+                            <div
+                                class="shrink-0 basis-[84%] snap-start sm:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)]"
+                                data-horse-rail-item
+                            >
+                                <HorseCard entry={entry} />
+                            </div>
+                        ))
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    ) : (
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {entries.map((entry) => <HorseCard entry={entry} />)}
+        </div>
+    )
+}
+
+<script is:inline>
+    (() => {
+        const initHorseRails = () => {
+            const railWrappers = Array.from(
+                document.querySelectorAll("[data-horse-rail-wrap]"),
+            );
+
+            railWrappers.forEach((wrapper) => {
+                if (!(wrapper instanceof HTMLElement) || wrapper.dataset.bound === "true") {
+                    return;
+                }
+
+                const rail = wrapper.querySelector("[data-horse-rail]");
+                const previousButton = wrapper.querySelector(
+                    "[data-horse-rail-prev]",
+                );
+                const nextButton = wrapper.querySelector("[data-horse-rail-next]");
+                const railTrack = rail?.firstElementChild;
+                const railItems = Array.from(
+                    wrapper.querySelectorAll("[data-horse-rail-item]"),
+                );
+
+                if (
+                    !(rail instanceof HTMLElement) ||
+                    !(previousButton instanceof HTMLButtonElement) ||
+                    !(nextButton instanceof HTMLButtonElement)
+                ) {
+                    return;
+                }
+
+                const updateMaxScroll = () =>
+                    Math.max(rail.scrollWidth - rail.clientWidth, 0);
+                const prefersReducedMotion = window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                ).matches;
+                const isCoarsePointer = window.matchMedia(
+                    "(pointer: coarse)",
+                ).matches;
+                const getScrollStep = () => {
+                    const firstItem = railItems[0];
+
+                    if (!(firstItem instanceof HTMLElement)) {
+                        return rail.clientWidth * 0.88;
+                    }
+
+                    const trackStyles = railTrack
+                        ? window.getComputedStyle(railTrack)
+                        : undefined;
+                    const gap = Number.parseFloat(
+                        trackStyles?.columnGap ?? trackStyles?.gap ?? "0",
+                    );
+
+                    return firstItem.getBoundingClientRect().width + gap;
+                };
+                let maxScroll = updateMaxScroll();
+
+                if (maxScroll <= 0) {
+                    return;
+                }
+
+                wrapper.dataset.bound = "true";
+
+                let animationFrame = 0;
+                let lastTimestamp = 0;
+                let lastProgrammaticScroll = 0;
+                let direction = 1;
+                let paused = false;
+                let pauseUntil = 0;
+
+                const updateControls = () => {
+                    maxScroll = updateMaxScroll();
+                    previousButton.disabled = rail.scrollLeft <= 4;
+                    nextButton.disabled = rail.scrollLeft >= maxScroll - 4;
+                };
+
+                const holdAutoScroll = (duration = 2200) => {
+                    pauseUntil = performance.now() + duration;
+                    lastTimestamp = 0;
+                };
+
+                const pause = () => {
+                    paused = true;
+                };
+
+                const resume = () => {
+                    paused = false;
+                    lastTimestamp = 0;
+                };
+
+                const step = (timestamp) => {
+                    if (!rail.isConnected) {
+                        window.cancelAnimationFrame(animationFrame);
+                        return;
+                    }
+
+                    if (!lastTimestamp) {
+                        lastTimestamp = timestamp;
+                    }
+
+                    updateControls();
+
+                    if (!paused && maxScroll > 0) {
+                        if (timestamp >= pauseUntil) {
+                            const delta = timestamp - lastTimestamp;
+                            lastProgrammaticScroll = performance.now();
+                            rail.scrollLeft += delta * 0.03 * direction;
+
+                            if (rail.scrollLeft >= maxScroll) {
+                                rail.scrollLeft = maxScroll;
+                                direction = -1;
+                                pauseUntil = timestamp + 900;
+                            } else if (rail.scrollLeft <= 0) {
+                                rail.scrollLeft = 0;
+                                direction = 1;
+                                pauseUntil = timestamp + 900;
+                            }
+                        }
+                    }
+
+                    lastTimestamp = timestamp;
+                    animationFrame = window.requestAnimationFrame(step);
+                };
+
+                const scrollByStep = (nextDirection) => {
+                    direction = nextDirection;
+                    holdAutoScroll(isCoarsePointer ? 3600 : 2200);
+                    lastProgrammaticScroll = performance.now();
+                    rail.scrollBy({
+                        left: getScrollStep() * nextDirection,
+                        behavior: "smooth",
+                    });
+                    window.setTimeout(updateControls, 260);
+                };
+
+                const handleUserScroll = () => {
+                    updateControls();
+
+                    if (performance.now() - lastProgrammaticScroll < 140) {
+                        return;
+                    }
+
+                    holdAutoScroll(isCoarsePointer ? 3600 : 2200);
+                };
+
+                rail.addEventListener("pointerenter", pause);
+                rail.addEventListener("pointerleave", resume);
+                rail.addEventListener("focusin", pause);
+                rail.addEventListener("focusout", resume);
+                rail.addEventListener("pointerdown", pause);
+                rail.addEventListener("pointerup", () => {
+                    holdAutoScroll(isCoarsePointer ? 3600 : 2200);
+                    resume();
+                });
+                rail.addEventListener("touchstart", pause, { passive: true });
+                rail.addEventListener("touchend", () => {
+                    holdAutoScroll(4200);
+                    resume();
+                });
+                rail.addEventListener("scroll", handleUserScroll, {
+                    passive: true,
+                });
+
+                previousButton.addEventListener("pointerenter", pause);
+                previousButton.addEventListener("pointerleave", resume);
+                nextButton.addEventListener("pointerenter", pause);
+                nextButton.addEventListener("pointerleave", resume);
+                previousButton.addEventListener("focus", pause);
+                previousButton.addEventListener("blur", resume);
+                nextButton.addEventListener("focus", pause);
+                nextButton.addEventListener("blur", resume);
+                previousButton.addEventListener("click", () => {
+                    scrollByStep(-1);
+                });
+                nextButton.addEventListener("click", () => {
+                    scrollByStep(1);
+                });
+
+                window.addEventListener("resize", () => {
+                    updateControls();
+                });
+
+                updateControls();
+
+                if (!prefersReducedMotion && !isCoarsePointer) {
+                    animationFrame = window.requestAnimationFrame(step);
+                }
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initHorseRails, {
+                once: true,
+            });
+        } else {
+            initHorseRails();
+        }
+
+        document.addEventListener("astro:page-load", initHorseRails);
+    })();
+</script>
+
+<style is:inline>
+    [data-horse-rail] {
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    [data-horse-rail]::-webkit-scrollbar {
+        display: none;
+    }
+</style>

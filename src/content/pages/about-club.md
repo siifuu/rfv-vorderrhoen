@@ -1,17 +1,12 @@
 ---
 title: Über uns
-description: Lerne den Aufbau unseres Vereins und die Vorstandsarbeit kennen
+description: Unser Verein lebt von Teamgeist – auf und neben dem Pferd
 slug: about-club
 order: 2
 seoTitle: Über den Verein | RFV Vorderrhön
 seoDescription: Entdecke pferdegerechte Vereinskultur und ehrenamtliche Vereinsmitglieder.
 ---
-
-Unser Verein lebt von Teamgeist – auf und neben dem Pferd.
-
-
 ## Aufbau unseres Vereins und Mitgestaltungsmöglichkeiten
-
 Die Trainerinnen-Teams:  
 Jedes Team wird von einer Longenführerin und ein bis zwei Trainerinnen trainiert. Bei der Planung und Umsetzung des Trainings orientiert sich das Trainerinnen-Team an den Fähigkeiten der Voltigiererinnen und an den Bedürfnisses des Pferdes. Gemeinsam arbeiten sie an der Weiterentwicklung aller Teammitglieder.
 
@@ -37,30 +32,23 @@ Im Folgenden stellen sich unsere Vorstandsmitglieder mit ihren Aufgaben vor. Ein
 
 ## Die Ämter im Vorstand 
 
-Die Vorsitzende 
-Sofia  
+**Die Vorsitzende** - Sofia  
 Aufgaben: geschäftsführender Vorstand, Repräsentation, Organisation
 
-Die stellvertretende Vorsitzende  
-Annika  
+**Die stellvertretende Vorsitzende** - Annika  
 Aufgaben: geschäftsführender Vorstand, Repräsentation, Social Media, Organisation
 
-Die Kassenwartin  
-Vanessa  
+**Die Kassenwartin** - Vanessa  
 Aufgaben: Kasse verwalten, Rechnungen zahlen und schreiben, Geschäftsvorgänge aufzeichnen, Betriebsmittel und Vereinsartikel beschaffen
 
-Die Schriftführerinnen  
-Caroline und Hannah  
+**Die Schriftführerinnen** - Caroline und Hannah  
 Aufgaben: Sitzungen protokollieren, Förderanträge für neue Anschaffungen stellen
 
-Die Breitensportbeauftragten  
-Heidi und Ina – unsere Pferdebeauftragten  
+**Die Breitensportbeauftragten** - Heidi und Ina – unsere Pferdebeauftragten  
 Aufgaben: Tierarzt- und Schmiedbesuche organisieren, Anschaffungen rund um die Pferde (Futter, etc.), Bewegung und Einsatz der Vereinspferde planen
 
-Die Jugendwartinnen  
-Franziska und Carolin  
+**Die Jugendwartinnen** - Franziska und Carolin  
 Aufgaben: Gruppeneinteilungen, Anmeldungen und Kündigungen verwalten, Bestandserhebung
 
-Die Sportwartin  
-Anna  
+**Die Sportwartin** - Anna  
 Aufgaben: Erfolge des Vereins dokumentieren, Lehrgänge organisieren

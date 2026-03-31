@@ -32,7 +32,7 @@ export const socialLinks = [
 
 export const mainNav = [
   { href: withBase("/"), label: "Start" },
-  { href: withBase("/about-vaulting"), label: "Ueber Voltigieren" },
+  { href: withBase("/about-club"), label: "Über Uns" },
   { href: withBase("/training"), label: "Training" },
   { href: withBase("/pricing"), label: "Preise" },
   { href: withBase("/faq"), label: "FAQ" },

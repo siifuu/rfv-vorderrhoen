@@ -1,5 +1,5 @@
 ---
-title: "Ankündigung: Aktionstag Voltigieren des Kreisreiterbundes"
+title: "Aktionstag Voltigieren des Kreisreiterbundes"
 description: Im April findet bei uns am Hof ein Turnpferd- und Movieturnier statt.
 date: 2026-04-26
 isEvent: true

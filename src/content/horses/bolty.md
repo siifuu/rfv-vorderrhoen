@@ -6,7 +6,7 @@ role: Hahners Pferd für Einzelvoltigierer
 race: "Unbekannt"
 clubSince: "2021"
 featured: true
-image: ../assets/doofnase.png
+image: ../assets/Bolty.jpeg
 order: 3
 seoTitle: Bolty | Unsere Pferde
 seoDescription: Entdecke Bolty, der auch schon auf der Deutschen Jugendmeisterschaft im Einzel lief.

@@ -1,7 +1,7 @@
 ---
 title: Über Voltigieren
 description: Erfahre, was Voltigieren ist, wie das Training aufgebaut ist und warum dieser Sport Selbstvertrauen, Koerperkontrolle und Teamgeist foerdert.
-slug: about-vaulting
+slug: about-club
 navLabel: Über Voltigieren
 order: 1
 seoTitle: Über Voltigieren | RFV Vorderrhön

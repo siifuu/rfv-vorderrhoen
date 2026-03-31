@@ -6,7 +6,7 @@ role: Herzstück der Gruppe Vorderrhön 1 in der Leistungsklasse M
 race: Westfale
 clubSince: "2023"
 featured: true
-image: ../assets/doofnase.png
+image: ../assets/Campino.jpeg
 order: 3
 seoTitle: Campino | Unsere Pferde
 seoDescription: Entdecke Campino, der Voltigieren auf hohem Niveau ermöglicht.

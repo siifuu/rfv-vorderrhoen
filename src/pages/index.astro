@@ -6,7 +6,7 @@ import Section from "@/components/ui/Section.astro";
 import HeroMotion from "@/components/home/HeroMotion";
 import SectionReveal from "@/components/home/SectionReveal";
 import NewsCard from "@/components/news/NewsCard.astro";
-import HorseCard from "@/components/horses/HorseCard.astro";
+import HorseRail from "@/components/horses/HorseRail.astro";
 import {
     benefits,
     siteConfig,
@@ -22,9 +22,7 @@ const allHorses = (await getCollection("horses")).sort(
     (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
 );
 const featuredHorses = allHorses.filter(({ data }) => data.featured);
-const homepageHorses = (
-    featuredHorses.length ? featuredHorses : allHorses
-).slice(0, 3);
+const homepageHorses = featuredHorses.length ? featuredHorses : allHorses;
 ---
 
 <BaseLayout
@@ -52,7 +50,7 @@ const homepageHorses = (
                     <Button href={siteConfig.trialUrl}
                         >Probetraining buchen</Button
                     >
-                    <Button href="/about-vaulting" variant="secondary"
+                    <Button href="/about-club" variant="secondary"
                         >So funktioniert Voltigieren</Button
                     >
                 </div>
@@ -167,8 +165,8 @@ const homepageHorses = (
                     <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
                         Unsere Vereinspferde tragen Einsteigerarbeit,
                         Gruppenroutine und fortgeschrittene Entwicklung auf sehr
-                        unterschiedliche Weise. Die Profile zeigen, wofuer sie
-                        im Training besonders wertvoll sind.
+                        unterschiedliche Weise. Die Profile zeigen, wofür sie im
+                        Training besonders wertvoll sind.
                     </p>
                 </div>
                 <div class="flex flex-wrap gap-3">
@@ -180,8 +178,8 @@ const homepageHorses = (
                     >
                 </div>
             </div>
-            <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                {homepageHorses.map((entry) => <HorseCard entry={entry} />)}
+            <div class="mt-8">
+                <HorseRail entries={homepageHorses} />
             </div>
         </SectionReveal>
     </Section>
@@ -377,7 +375,7 @@ const homepageHorses = (
                     <span class="eyebrow">Mitmachen</span>
                     <h2 class="text-3xl md:text-5xl">
                         Buche ein Probetraining und erlebe, wie sich dein Kind
-                        oder du selbst in der Gruppe fuehlt.
+                        oder du selbst in der Gruppe fühlt.
                     </h2>
                     <p
                         class="max-w-2xl text-lg leading-8 text-[var(--color-soft-ink)]"

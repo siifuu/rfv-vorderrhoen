@@ -6,7 +6,7 @@ role: unser Pferd für zwei Schrittgruppen
 race: "Unbekannt"
 clubSince: "2015"
 featured: true
-image: ../assets/crosby.png
+image: ../assets/Prince.jpg
 order: 2
 seoTitle: Prince | Unsere Pferde
 seoDescription: Lerne Prince kennen, unser Verlasspferd für den Voltigiereinstieg
