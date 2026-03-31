@@ -1,13 +1,13 @@
 ---
 name: Hulapalu
-description: Er ist einfach ein bisschen special.
-ageLabel: "11 Jahre"
-role: Pferd fuer fortgeschrittene Gruppen
-race: Wach und praezise
-clubSince: "2018"
+description: Hulapalu ermöglicht den Übergang vom Voltigiereinstieg zur Leistungsklasse.
+ageLabel: 12 Jahre
+role: unser Pferd für eine Schritt- und eine A-Gruppe
+race: Holsteiner
+clubSince: "2024"
 featured: true
-image: "../assets/doofnase.png"
+image: ../assets/doofnase.png
 order: 3
-seoTitle: Sola | Unsere Pferde
-seoDescription: Lerne Sola kennen, eine sportliche Vereinsstute fuer fortgeschrittene Gruppen und praezise Kuerarbeit.
+seoTitle: Hulapalu | Unsere Pferde
+seoDescription: Lerne Hulapalu kennen, der den Übergang vom Voltigiereinstieg zur Leistungsklasse ermöglicht.
 ---

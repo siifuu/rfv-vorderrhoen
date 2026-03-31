@@ -11,12 +11,14 @@
             "id": "af205781603832c5",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "public/social-card.svg"
+                "file": "src/content/horses/campino.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "social-card"
+              "icon": "lucide-file",
+              "title": "campino"
             }
           }
         ]
@@ -183,12 +185,21 @@
   },
   "active": "af205781603832c5",
   "lastOpenFiles": [
+    "assets/Bolty (1).jpeg",
+    "assets/Bolty.jpeg",
+    "src/content/horses/bolty.md",
+    "src/content/horses/campino.md",
+    "src/content/horses/hulapalu.md",
+    "src/content/horses/rocky.md",
+    "src/content/horses/prince.md",
+    "src/content/news/aktionstag.md",
+    "src/content/pages/about-club.md",
+    "public/social-card.svg",
     "assets/Werbung_Aktionstag_KRB.jpeg",
     "assets/Turnier-Lindenhof.jpeg",
     "assets/Saisoneröffnung 2.jpeg",
     "assets/Saisoneröffnung.jpeg",
     "src/content/news/new-barrel-space.md",
-    "src/content/pages/about-club.md",
     "src/content/pages/about-vaulting.md",
     "src/content/pages/apply.md",
     "src/content/pages/contact.md",
@@ -202,8 +213,6 @@
     "assets/Campino.jpeg",
     "assets/crosby.png",
     "assets/Hulapalu.jpg",
-    "assets/logo.png",
-    "assets/Prince.jpg",
     "src/content/pricing/trial.md",
     "src/content/pricing/squad.md",
     "src/content/news/open-stable-day.md",

@@ -1,13 +1,13 @@
 ---
 name: Rocky Mountain
-description: Eine ruhige, taktsichere Stute fuer Einsteigergruppen, die Vertrauen, Balance und klare Ablaufe braucht.
-ageLabel: "7 Jahre"
+description: Unser Pferd für fortgeschrittene Voltigiererinnen in der A-Gruppe.
+ageLabel: 7 Jahre
 role: A-Gruppenpferd
 race: Oldenburger
-clubSince: "2018"
+clubSince: "2024"
 featured: true
-image: "../assets/rocky.png"
+image: ../assets/rocky.png
 order: 1
 seoTitle: Rocky Mountain | Unsere Pferde
-seoDescription: Rocky Mountain | Unsere Pferde
+seoDescription: Lerne Rocky Mountain kennen, der etwas erfahreneren Voltigiererinnen das Training in der Leistungsklasse A ermöglicht.
 ---
