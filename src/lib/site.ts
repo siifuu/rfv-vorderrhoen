@@ -10,8 +10,8 @@ export const siteConfig = {
   phone: "+49 30 1234 5678",
   applyUrl: withBase("/apply"),
   trialUrl: withBase("/trial"),
-  applyFormUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
-  trialFormUrl: "https://forms.gle/Xop3ahWVMz9Rz2Lh8",
+  applyFormUrl: "https://forms.gle/125tRq4vGQekTKjr5",
+  trialFormUrl: "https://forms.gle/125tRq4vGQekTKjr5",
   siteUrl: "https://example.github.io/rfv-vorderrhoen",
 };
 
