@@ -35,7 +35,7 @@ export default function MobileNav({ currentPath }: Props) {
             initial={reduceMotion ? false : { opacity: 0, y: -8 }}
             animate={reduceMotion ? {} : { opacity: 1, y: 0 }}
             exit={reduceMotion ? {} : { opacity: 0, y: -8 }}
-            className="panel absolute right-0 top-14 w-[min(22rem,calc(100vw-1rem))] overflow-hidden p-2"
+            className="panel absolute right-0 top-14 w-[min(22rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] overflow-hidden p-2"
           >
             {mainNav.map((item) => (
               <a
