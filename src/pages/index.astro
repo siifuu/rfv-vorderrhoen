@@ -58,32 +58,38 @@ const homepageHorses = featuredHorses.length ? featuredHorses : allHorses;
                 >
                     <div>
                         <dt
-                            class="text-sm uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
                         >
                             Gruppen
                         </dt>
-                        <dd class="mt-2 text-xl font-semibold">
-                            Einsteiger bis fortgeschritten
+                        <dd class="mt-2 text-lg font-semibold leading-7">
+                            Schrittgruppe bis M
                         </dd>
                     </div>
                     <div>
                         <dt
-                            class="text-sm uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
                         >
                             Fokus
                         </dt>
-                        <dd class="mt-2 text-xl font-semibold">
-                            Sportlich + pferdegerecht
+                        <dd class="mt-2 text-lg font-semibold leading-7">
+                            Sportlich & pferdegerecht
                         </dd>
                     </div>
                     <div>
                         <dt
-                            class="text-sm uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
                         >
                             Ort
                         </dt>
-                        <dd class="mt-2 text-xl font-semibold">
-                            {siteConfig.location}
+                        <dd
+                            class="mt-2 text-base font-semibold leading-7 md:text-lg"
+                        >
+                            {
+                                siteConfig.location
+                                    .split(", ")[1]
+                                    .replace(/^(\d+)\s*/, "")
+                            }
                         </dd>
                     </div>
                 </dl>

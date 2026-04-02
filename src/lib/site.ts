@@ -7,10 +7,10 @@ export const siteConfig = {
   name: "RFV Vorderrhön e.V.",
   shortName: "RFV",
   description:
-    "Ein Voltigierverein mit strukturiertem Training für Kinder, Jugendliche undErwachsene in familiärer Atmosphäre.",
+    "Ein Voltigierverein mit strukturiertem Training für Kinder, Jugendliche und Erwachsene in familiärer Atmosphäre.",
   location: "Fuldaer Str. 14, 36093 Künzell, Deutschland",
   email: "rfv-vorderrhoen@web.de",
-  phone: "+49 30 1234 5678",
+  phone: "+49 1522 4490665",
   signupUrl,
   signupFormUrl,
   applyUrl: signupUrl,
