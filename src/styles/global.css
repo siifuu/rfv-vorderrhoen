@@ -115,6 +115,10 @@ img {
     margin-top: 0;
 }
 
+.rich-text p + p {
+    margin-top: 1rem;
+}
+
 .rich-text h2,
 .rich-text h3,
 .rich-text h4 {

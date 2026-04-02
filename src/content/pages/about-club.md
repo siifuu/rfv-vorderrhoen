@@ -7,13 +7,13 @@ seoTitle: Über den Verein | RFV Vorderrhön
 seoDescription: Entdecke pferdegerechte Vereinskultur und ehrenamtliche Vereinsmitglieder.
 ---
 ## Aufbau unseres Vereins und Mitgestaltungsmöglichkeiten
-Die Trainerinnen-Teams:  
+**Die Trainerinnen-Teams:**
 Jedes Team wird von einer Longenführerin und ein bis zwei Trainerinnen trainiert. Bei der Planung und Umsetzung des Trainings orientiert sich das Trainerinnen-Team an den Fähigkeiten der Voltigiererinnen und an den Bedürfnisses des Pferdes. Gemeinsam arbeiten sie an der Weiterentwicklung aller Teammitglieder.
 
-Eltern als Fördermitglieder:  
+**Eltern als Fördermitglieder:**
 Eltern können das Vereinsleben aktiv mitgestalten – z. B. bei Turnieren, Festen oder Projekten. Jede helfende Hand, Feedback und Anregungen sind willkommen!
 
-Vereinsleitung:  
+**Vereinsleitung:**
 Der RFV Vorderrhön e.V. wird durch den Vorstand geführt. Der Vorstand besteht aus sieben Ämtern.
 
 ## Unsere Gruppen 

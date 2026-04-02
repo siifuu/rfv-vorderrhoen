@@ -7,7 +7,7 @@ race: Westfale
 clubSince: "2023"
 featured: true
 image: ../assets/Campino.jpeg
-order: 3
+order: 4
 seoTitle: Campino | Unsere Pferde
 seoDescription: Entdecke Campino, der Voltigieren auf hohem Niveau ermöglicht.
 ---

@@ -18,6 +18,7 @@ type PricingGroup = {
     label: string;
     items: PricingEntry[];
 };
+const fallbackPricingGroupLabel = "Weitere Preise";
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
@@ -33,7 +34,7 @@ if (entry.slug === "pricing") {
     const groups = new Map<string, PricingEntry[]>();
 
     for (const item of pricingEntries) {
-        const label = item.data.groupLabel ?? "Weitere Preise";
+        const label = item.data.groupLabel ?? fallbackPricingGroupLabel;
         const items = groups.get(label);
 
         if (items) {
@@ -44,7 +45,19 @@ if (entry.slug === "pricing") {
     }
 
     pricingGroups.push(
-        ...Array.from(groups, ([label, items]) => ({ label, items })),
+        ...Array.from(groups, ([label, items]) => ({ label, items })).sort(
+            (a, b) => {
+                if (a.label === fallbackPricingGroupLabel) {
+                    return 1;
+                }
+
+                if (b.label === fallbackPricingGroupLabel) {
+                    return -1;
+                }
+
+                return 0;
+            },
+        ),
     );
 }
 ---
@@ -106,7 +119,7 @@ if (entry.slug === "pricing") {
                             </h2>
                             <p class="mt-4 text-[var(--color-soft-ink)]">
                                 Die Mitgliedschaft im Verein wird jährlich
-                                berechnet. Fuer aktive Voltigiergruppen kommt
+                                berechnet. Für aktive Voltigiergruppen kommt
                                 zusätzlich ein monatlicher Trainingsbeitrag
                                 hinzu, der sich nach der Anzahl der
                                 wöchentlichen Einheiten richtet.
@@ -123,7 +136,7 @@ if (entry.slug === "pricing") {
                                 <li class="flex gap-3">
                                     <span class="mt-1.5 h-2 w-2 rounded-full bg-[var(--color-moss)]" />
                                     <span>
-                                        Die Fördermitgliedschaft gilt fuer
+                                        Die Fördermitgliedschaft gilt für
                                         erwachsene Personen mit Stimmrecht, die
                                         nicht regelmässig an Sportangeboten des
                                         RFV Vorderrhön teilnehmen.
@@ -203,7 +216,7 @@ if (entry.slug === "pricing") {
                     <div class="panel p-6 md:p-8">
                         <span class="eyebrow">Socials</span>
                         <h2 class="mt-4 text-3xl md:text-4xl">
-                            Instagram-Accounts fuer Verein und Teams
+                            Instagram-Accounts für Verein und Teams
                         </h2>
                         <div class="mt-6 grid gap-4">
                             {socialLinks.map((item) => (

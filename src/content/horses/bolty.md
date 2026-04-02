@@ -7,7 +7,7 @@ race: "Unbekannt"
 clubSince: "2021"
 featured: true
 image: ../assets/Bolty.jpeg
-order: 3
+order: 5
 seoTitle: Bolty | Unsere Pferde
 seoDescription: Entdecke Bolty, der auch schon auf der Deutschen Jugendmeisterschaft im Einzel lief.
 ---
