@@ -4,7 +4,7 @@
   <circle cx="980" cy="146" r="112" fill="#EFE3CF" fill-opacity="0.75"/>
   <circle cx="245" cy="520" r="188" fill="#5B7256" fill-opacity="0.12"/>
   <path d="M190 418C279 324 393 277 532 277C643 277 756 314 871 388" stroke="#EFE3CF" stroke-width="22" stroke-linecap="round"/>
-  <text x="108" y="224" fill="#F8F4EC" font-family="Fraunces, serif" font-size="72" font-weight="600">RFV Vorderrhoen</text>
+  <text x="108" y="224" fill="#F8F4EC" font-family="Fraunces, serif" font-size="72" font-weight="600">RFV Vorderrhön</text>
   <text x="112" y="298" fill="#EDE6D8" font-family="Manrope, sans-serif" font-size="30">Elegant, athletic, horse-first vaulting training.</text>
   <text x="112" y="360" fill="#EDE6D8" font-family="Manrope, sans-serif" font-size="30">Static Astro site ready for GitHub Pages.</text>
   <defs>

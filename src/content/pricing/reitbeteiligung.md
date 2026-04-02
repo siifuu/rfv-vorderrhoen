@@ -1,11 +1,11 @@
 ---
 name: Reitbeteiligung
-priceLabel: 99 EUR / Monat
-description: Hoehere Trainingsfrequenz fuer Athletinnen und Athleten, die an saubereren Kueren, Auftrittsqualitaet und Wettkampfbereitschaft arbeiten.
+priceLabel: 50 EUR / Monat
+description: Höhere Trainingsfrequenz für Athletinnen und Athleten, die an saubereren Küren, Auftrittsqualität und Wettkampfbereitschaft arbeiten.
 features:
   - Mehrere Einheiten pro Woche
   - Gezielter Technik- und Entwicklungsplan
-  - Vorrang fuer Kuer- und Auftrittsarbeit
+  - Vorrang für Kuer- und Auftrittsarbeit
 highlighted: true
 order: 3
 ctaLabel: Platz anfragen
@@ -13,4 +13,4 @@ ctaUrl: /apply
 
 ---
 
-Am besten fuer engagierte Athletinnen und Athleten.
+Am besten für engagierte Athletinnen und Athleten.

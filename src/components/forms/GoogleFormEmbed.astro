@@ -16,12 +16,14 @@ const embedUrl = getGoogleFormEmbedUrl(formUrl);
     <div class="border-b border-[var(--color-line)] px-6 py-6 md:px-8 md:py-8">
         <span class="eyebrow">Google Form</span>
         <h2 class="mt-4 text-3xl md:text-4xl">{title}</h2>
-        <p class="mt-4 max-w-3xl text-lg leading-8 text-[var(--color-soft-ink)]">
+        <p
+            class="mt-4 max-w-3xl text-lg leading-8 text-[var(--color-soft-ink)]"
+        >
             {description}
         </p>
         <div class="mt-6">
             <Button href={formUrl} variant="secondary" external>
-                Formular direkt bei Google oeffnen
+                Formular direkt bei Google öffnen
             </Button>
         </div>
     </div>

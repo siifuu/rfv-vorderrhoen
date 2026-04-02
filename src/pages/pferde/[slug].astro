@@ -20,16 +20,15 @@ const { entry } = Astro.props;
 ---
 
 <BaseLayout
-    title={entry.data.seoTitle ?? `${entry.data.name} | RFV Vorderrhoen`}
+    title={entry.data.seoTitle ?? `${entry.data.name} | RFV Vorderrhön`}
     description={entry.data.seoDescription ?? entry.data.description}
 >
     <Section spaced={false} className="pb-12 pt-10 md:pb-16 md:pt-16">
-        <PageIntro
-            eyebrow={entry.data.role}
-            title={entry.data.name}
-        />
+        <PageIntro eyebrow={entry.data.role} title={entry.data.name} />
 
-        <div class="mt-8 grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
+        <div
+            class="mt-8 grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch"
+        >
             <HorseVisual entry={entry} />
             <aside class="panel h-full p-6 md:p-8">
                 <span class="eyebrow">Steckbrief</span>
@@ -80,11 +79,13 @@ const { entry } = Astro.props;
     </Section>
 
     <Section className="pt-0">
-        <div class="panel flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between md:p-10">
+        <div
+            class="panel flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between md:p-10"
+        >
             <div class="max-w-2xl">
-                <span class="eyebrow">Naechster Schritt</span>
+                <span class="eyebrow">Nächster Schritt</span>
                 <h2 class="mt-4 text-3xl md:text-4xl">
-                    Mehr ueber Training, Gruppen und Probetraining erfahren.
+                    Mehr über Training, Gruppen und Probetraining erfahren.
                 </h2>
             </div>
             <div class="flex flex-wrap gap-3">

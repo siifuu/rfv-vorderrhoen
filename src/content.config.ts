@@ -5,11 +5,18 @@ const pages = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    eyebrow: z.string().optional(),
     navLabel: z.string().optional(),
     order: z.number().optional(),
     draft: z.boolean().optional(),
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
+    ctaEyebrow: z.string().optional(),
+    ctaTitle: z.string().optional(),
+    ctaPrimaryLabel: z.string().optional(),
+    ctaPrimaryUrl: z.string().optional(),
+    ctaSecondaryLabel: z.string().optional(),
+    ctaSecondaryUrl: z.string().optional(),
   }),
 });
 
@@ -52,6 +59,7 @@ const pricing = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
+    groupLabel: z.string().optional(),
     priceLabel: z.string(),
     description: z.string(),
     features: z.array(z.string()),

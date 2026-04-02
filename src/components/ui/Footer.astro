@@ -3,84 +3,109 @@ import { footerNav, siteConfig, socialLinks } from "@/lib/site";
 ---
 
 <footer class="border-t border-[var(--color-line)] bg-[rgba(255,250,242,0.84)]">
-  <div class="container-shell grid gap-10 py-12 md:grid-cols-[1.25fr_0.9fr_0.9fr_1.05fr]">
-    <div class="prose-flow">
-      <h2 class="text-2xl">{siteConfig.name}</h2>
-      <p class="max-w-md text-[var(--color-soft-ink)]">
-        {siteConfig.description}
-      </p>
-    </div>
+    <div
+        class="container-shell grid gap-10 py-12 md:grid-cols-[1.25fr_0.9fr_0.9fr_1.05fr]"
+    >
+        <div class="prose-flow">
+            <h2 class="text-2xl">{siteConfig.name}</h2>
+            <p class="max-w-md text-[var(--color-soft-ink)]">
+                {siteConfig.description}
+            </p>
+        </div>
 
-    <div>
-      <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]">Navigation</h3>
-      <ul class="space-y-3 text-sm text-[var(--color-soft-ink)]">
-        {footerNav.map((item) => (
-          <li><a class="transition hover:text-[var(--color-forest)]" href={item.href}>{item.label}</a></li>
-        ))}
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]">Kontakt</h3>
-      <ul class="space-y-3 text-sm text-[var(--color-soft-ink)]">
-        <li>{siteConfig.location}</li>
-        <li><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
-        <li><a href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}>{siteConfig.phone}</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]">Socials</h3>
-      <ul class="space-y-3 text-sm text-[var(--color-soft-ink)]">
-        {socialLinks.map((item) => (
-          <li>
-            <a
-              class="relative block overflow-hidden rounded-[1.1rem] border border-[var(--color-line)] bg-white/50 px-4 py-3 pr-16 transition hover:border-[var(--color-moss)] hover:text-[var(--color-forest)]"
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
+        <div>
+            <h3
+                class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]"
             >
-              <span class="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--color-moss)] opacity-18">
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  class="h-10 w-10"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect
-                    x="3.5"
-                    y="3.5"
-                    width="17"
-                    height="17"
-                    rx="5"
-                  ></rect>
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="4"
-                  ></circle>
-                  <circle
-                    cx="17.35"
-                    cy="6.65"
-                    r="0.8"
-                    fill="currentColor"
-                    stroke="none"
-                  ></circle>
-                </svg>
-              </span>
-              <span class="block text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]">
-                {item.platform}
-              </span>
-              <span class="mt-1 block font-semibold text-[var(--color-ink)]">{item.label}</span>
-              <span class="mt-1 block">{item.handle}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+                Navigation
+            </h3>
+            <ul class="space-y-3 text-sm text-[var(--color-soft-ink)]">
+                {
+                    footerNav.map((item) => (
+                        <li>
+                            <a
+                                class="transition hover:text-[var(--color-forest)]"
+                                href={item.href}
+                            >
+                                {item.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <div>
+            <h3
+                class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]"
+            >
+                Kontakt
+            </h3>
+            <ul class="space-y-3 text-sm text-[var(--color-soft-ink)]">
+                <li>{siteConfig.location}</li>
+                <li>
+                    <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a
+                    >
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h3
+                class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)]"
+            >
+                Socials
+            </h3>
+            <ul class="space-y-3 text-sm text-[var(--color-soft-ink)]">
+                {
+                    socialLinks.map((item) => (
+                        <li>
+                            <a
+                                class="relative block overflow-hidden rounded-[1.1rem] border border-[var(--color-line)] bg-white/50 px-4 py-3 pr-16 transition hover:border-[var(--color-moss)] hover:text-[var(--color-forest)]"
+                                href={item.href}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <span class="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--color-moss)] opacity-18">
+                                    <svg
+                                        aria-hidden="true"
+                                        viewBox="0 0 24 24"
+                                        class="h-10 w-10"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <rect
+                                            x="3.5"
+                                            y="3.5"
+                                            width="17"
+                                            height="17"
+                                            rx="5"
+                                        />
+                                        <circle cx="12" cy="12" r="4" />
+                                        <circle
+                                            cx="17.35"
+                                            cy="6.65"
+                                            r="0.8"
+                                            fill="currentColor"
+                                            stroke="none"
+                                        />
+                                    </svg>
+                                </span>
+                                <span class="block text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]">
+                                    {item.platform}
+                                </span>
+                                <span class="mt-1 block font-semibold text-[var(--color-ink)]">
+                                    {item.label}
+                                </span>
+                                <span class="mt-1 block">{item.handle}</span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
     </div>
-  </div>
 </footer>

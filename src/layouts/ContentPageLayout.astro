@@ -13,6 +13,12 @@ interface Props {
     entry: CollectionEntry<"pages">;
 }
 
+type PricingEntry = CollectionEntry<"pricing">;
+type PricingGroup = {
+    label: string;
+    items: PricingEntry[];
+};
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const pricingEntries =
@@ -21,6 +27,26 @@ const pricingEntries =
               (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
           )
         : [];
+const pricingGroups: PricingGroup[] = [];
+
+if (entry.slug === "pricing") {
+    const groups = new Map<string, PricingEntry[]>();
+
+    for (const item of pricingEntries) {
+        const label = item.data.groupLabel ?? "Weitere Preise";
+        const items = groups.get(label);
+
+        if (items) {
+            items.push(item);
+        } else {
+            groups.set(label, [item]);
+        }
+    }
+
+    pricingGroups.push(
+        ...Array.from(groups, ([label, items]) => ({ label, items })),
+    );
+}
 ---
 
 <BaseLayout
@@ -46,36 +72,64 @@ const pricingEntries =
     {
         entry.slug === "pricing" && (
             <>
-                <Section className="pt-0">
-                    <PricingCards
-                        client:visible
-                        items={pricingEntries.map((item) => ({
-                            id: item.id,
-                            data: {
-                                name: item.data.name,
-                                priceLabel: item.data.priceLabel,
-                                description: item.data.description,
-                                features: item.data.features,
-                                highlighted: item.data.highlighted,
-                                ctaLabel: item.data.ctaLabel,
-                                ctaUrl: item.data.ctaUrl,
-                            },
-                        }))}
-                    />
-                </Section>
+                {pricingGroups.map((group) => (
+                    <Section className="pt-0">
+                        <div class="mb-6 md:mb-8">
+                            <span class="eyebrow">{group.label}</span>
+                        </div>
+                        <PricingCards
+                            client:visible
+                            items={group.items.map((item) => ({
+                                id: item.id,
+                                data: {
+                                    name: item.data.name,
+                                    priceLabel: item.data.priceLabel,
+                                    description: item.data.description,
+                                    features: item.data.features,
+                                    highlighted: item.data.highlighted,
+                                    ctaLabel: item.data.ctaLabel,
+                                    ctaUrl: item.data.ctaUrl,
+                                },
+                            }))}
+                        />
+                    </Section>
+                ))}
                 <Section className="pt-0">
                     <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
                         <div class="panel p-8 md:p-10">
-                            <span class="eyebrow">Hinweise zu den Preisen</span>
+                            <span class="eyebrow">
+                                Hinweise zu den Beiträgen
+                            </span>
                             <h2 class="mt-4 text-3xl md:text-4xl">
-                                Noch Fragen vor der Auswahl?
+                                Jahresbeitrag und Voltigierbeitrag werden
+                                getrennt berechnet.
                             </h2>
                             <p class="mt-4 text-[var(--color-soft-ink)]">
-                                Wenn du unsicher bist, starte mit einer
-                                Probestunde. Beim ersten Termin schauen wir auf
-                                Sicherheit, Bewegungsqualitaet und die passende
-                                Gruppe.
+                                Die Mitgliedschaft im Verein wird jährlich
+                                berechnet. Fuer aktive Voltigiergruppen kommt
+                                zusätzlich ein monatlicher Trainingsbeitrag
+                                hinzu, der sich nach der Anzahl der
+                                wöchentlichen Einheiten richtet.
                             </p>
+                            <ul class="mt-6 space-y-3 text-sm text-[var(--color-soft-ink)]">
+                                <li class="flex gap-3">
+                                    <span class="mt-1.5 h-2 w-2 rounded-full bg-[var(--color-moss)]" />
+                                    <span>
+                                        Geschwisterkinder erhalten 5 EUR
+                                        Ermässigung auf den monatlichen
+                                        Voltigierbeitrag.
+                                    </span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="mt-1.5 h-2 w-2 rounded-full bg-[var(--color-moss)]" />
+                                    <span>
+                                        Die Fördermitgliedschaft gilt fuer
+                                        erwachsene Personen mit Stimmrecht, die
+                                        nicht regelmässig an Sportangeboten des
+                                        RFV Vorderrhön teilnehmen.
+                                    </span>
+                                </li>
+                            </ul>
                         </div>
                         <FaqAccordion
                             client:visible
@@ -86,14 +140,14 @@ const pricingEntries =
                 <Section className="pt-0">
                     <div class="panel flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between md:p-10">
                         <div>
-                            <span class="eyebrow">Naechster Schritt</span>
+                            <span class="eyebrow">Nächster Schritt</span>
                             <h2 class="mt-4 text-3xl md:text-4xl">
                                 Probetraining buchen oder Gruppeneinteilung
                                 anfragen.
                             </h2>
                         </div>
                         <Button href={siteConfig.applyUrl}>
-                            Google-Formular oeffnen
+                            Google-Formular öffnen
                         </Button>
                     </div>
                 </Section>
@@ -141,7 +195,7 @@ const pricingEntries =
                                 Anmeldung
                             </p>
                             <Button href={siteConfig.applyUrl} className="mt-3">
-                                Formular oeffnen
+                                Formular öffnen
                             </Button>
                         </div>
                     </div>

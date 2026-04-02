@@ -4,7 +4,7 @@ description: Der schnellste Weg zum Einstieg ist das Anmelde- oder Probetraining
 slug: contact
 order: 7
 seoTitle: Kontakt | RFV Vorderrhön
-seoDescription: Nimm Kontakt zu RFV Vorderrhön auf fuer Buchungen und Vereinsinformationen.
+seoDescription: Nimm Kontakt zu RFV Vorderrhön auf für Buchungen und Vereinsinformationen.
 ---
 
 

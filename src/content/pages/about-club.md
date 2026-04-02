@@ -2,7 +2,7 @@
 title: Über uns
 description: Unser Verein lebt von Teamgeist – auf und neben dem Pferd
 slug: about-club
-order: 2
+order: 6
 seoTitle: Über den Verein | RFV Vorderrhön
 seoDescription: Entdecke pferdegerechte Vereinskultur und ehrenamtliche Vereinsmitglieder.
 ---

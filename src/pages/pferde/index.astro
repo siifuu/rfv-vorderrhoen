@@ -1,0 +1,78 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageIntro from "@/components/ui/PageIntro.astro";
+import Section from "@/components/ui/Section.astro";
+import Button from "@/components/ui/Button.astro";
+import HorseCard from "@/components/horses/HorseCard.astro";
+
+const entries = (await getCollection("horses")).sort(
+    (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
+);
+const pageEntry = await getEntry("pages", "pferde");
+
+if (!pageEntry) {
+    throw new Error("Missing content entry: src/content/pages/pferde.md");
+}
+
+const { Content } = await pageEntry.render();
+const primaryCtaLabel =
+    pageEntry.data.ctaPrimaryLabel ?? "Probetraining anfragen";
+const primaryCtaUrl = pageEntry.data.ctaPrimaryUrl ?? "/trial";
+const secondaryCtaLabel =
+    pageEntry.data.ctaSecondaryLabel ?? "Training ansehen";
+const secondaryCtaUrl = pageEntry.data.ctaSecondaryUrl ?? "/training";
+---
+
+<BaseLayout
+    title={pageEntry.data.seoTitle ?? `${pageEntry.data.title} | RFV Vorderrhoen`}
+    description={pageEntry.data.seoDescription ?? pageEntry.data.description}
+>
+    <Section spaced={false} className="pb-4 pt-10 md:pb-6 md:pt-16">
+        <PageIntro
+            eyebrow={pageEntry.data.eyebrow ?? "Unsere Pferde"}
+            title={pageEntry.data.title}
+            description={pageEntry.data.description}
+        />
+    </Section>
+
+    {
+        pageEntry.body && (
+            <Section spaced={false} className="pb-12 pt-8 md:pb-16">
+                <article class="panel rich-text px-6 pb-8 pt-4 md:px-10 md:pb-12 md:pt-8">
+                    <Content />
+                </article>
+            </Section>
+        )
+    }
+
+    <Section className={pageEntry.body ? "pt-0" : "pt-8"}>
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {entries.map((entry) => <HorseCard entry={entry} />)}
+        </div>
+    </Section>
+
+    <Section className="pt-0">
+        <div
+            class="panel flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between md:p-10"
+        >
+            <div class="max-w-2xl">
+                <span class="eyebrow">
+                    {pageEntry.data.ctaEyebrow ?? "Naechster Schritt"}
+                </span>
+                <h2 class="mt-4 text-3xl md:text-4xl">
+                    {
+                        pageEntry.data.ctaTitle ??
+                            "Mehr ueber Training, Gruppen und Probetraining erfahren."
+                    }
+                </h2>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <Button href={secondaryCtaUrl} variant="secondary">
+                    {secondaryCtaLabel}
+                </Button>
+                <Button href={primaryCtaUrl}>{primaryCtaLabel}</Button>
+            </div>
+        </div>
+    </Section>
+</BaseLayout>

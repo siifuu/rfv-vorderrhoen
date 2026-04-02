@@ -1,14 +1,15 @@
 ---
 name: Kinder bis 18 Jahren
-priceLabel: 50 EUR / Monat
-description: Ideal fuer Einsteiger und Freizeitsportler, die regelmaessiges woechentliches Training und eine verlaessliche Entwicklung suchen.
+groupLabel: Jahresbeitrag
+priceLabel: 50 EUR / Jahr
+description: Jährlicher Vereinsbeitrag fuer Kinder und Jugendliche bis 18 Jahre.
 features:
-  - Ein Trainingsblock pro Woche
-  - Holzpferd und Training auf dem Pferd
-  - Stallroutine und Pferdepflege inklusive
+  - Mitgliedschaft fuer Kinder und Jugendliche
+  - Gueltig bis zum 18. Lebensjahr
+  - Grundlage fuer die aktive Teilnahme im Verein
 order: 2
-ctaLabel: Jetzt anfragen
+ctaLabel: Mitgliedschaft anfragen
 ctaUrl: /apply
 ---
 
-Gedacht fuer regelmaessige Teilnahme.
+Der Beitrag gilt fuer Mitglieder bis einschliesslich 18 Jahre.

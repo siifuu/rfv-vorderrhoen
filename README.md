@@ -1,4 +1,4 @@
-# RFV Vorderrhoen Website
+# RFV Vorderrhön Website
 
 Static Astro marketing site for an equestrian vaulting club, built for GitHub Pages deployment.
 

@@ -1,10 +1,10 @@
 import { withBase } from "@/lib/paths";
 
 export const siteConfig = {
-  name: "RFV Vorderrhoen e.V.",
+  name: "RFV Vorderrhön e.V.",
   shortName: "RFV",
   description:
-    "Ein Voltigierverein mit strukturiertem Training fuer Kinder, Jugendliche und Erwachsene in einer ruhigen, sportlichen und naturnahen Umgebung.",
+    "Ein Voltigierverein mit strukturiertem Training für Kinder, Jugendliche undErwachsene in familiärer Atmosphäre.",
   location: "Fuldaer Str. 14, 36093 Künzell, Deutschland",
   email: "rfv-vorderrhoen@web.de",
   phone: "+49 30 1234 5678",
@@ -33,11 +33,11 @@ export const socialLinks = [
 export const mainNav = [
   { href: withBase("/"), label: "Start" },
   { href: withBase("/about-club"), label: "Über Uns" },
+  { href: withBase("/pferde"), label: "Pferde" },
   { href: withBase("/training"), label: "Training" },
   { href: withBase("/pricing"), label: "Preise" },
   { href: withBase("/faq"), label: "FAQ" },
   { href: withBase("/news"), label: "Aktuelles" },
-  { href: withBase("/contact"), label: "Kontakt" },
 ];
 
 export const footerNav = [
@@ -50,7 +50,7 @@ export const footerNav = [
 export const benefits = [
   {
     title: "Sportliche Basis",
-    text: "Balance, Koerperspannung, Timing und Selbstvertrauen wachsen Schritt fuer Schritt auf und neben dem Pferd.",
+    text: "Balance, Körperspannung, Timing und Selbstvertrauen wachsen Schritt für Schritt auf und neben dem Pferd.",
   },
   {
     title: "Training als Team",
@@ -58,22 +58,22 @@ export const benefits = [
   },
   {
     title: "Pferd zuerst",
-    text: "Respekt fuer das Pferd ist Teil jeder Einheit, von den Stallablaeufen bis zur Arbeit auf dem Pferd.",
+    text: "Respekt für das Pferd ist Teil jeder Einheit, von den Stallabläufen bis zur Arbeit auf dem Pferd.",
   },
 ];
 
 export const trustPoints = [
-  "Strukturierte Gruppen fuer Einsteiger, Fortgeschrittene und ambitionierte Athletinnen und Athleten",
-  "Sicherheitsorientiertes Coaching mit klaren Erwartungen fuer Voltigierer und Familien",
+  "Strukturierte Gruppen für Einsteiger, Fortgeschrittene und ambitionierte Athletinnen und Athleten",
+  "Sicherheitsorientiertes Coaching mit klaren Erwartungen für Voltigierer und Familien",
   "Eine ruhige Trainingsumgebung, die Vertrauen vor Tempo setzt",
-  "Eine statische Website-Architektur fuer schnelle Ladezeiten und einfache Pflege",
+  "Eine statische Website-Architektur für schnelle Ladezeiten und einfache Pflege",
 ];
 
 export const trainingHighlights = [
-  "Aufwaermen, Mobilitaet und Kraftvorbereitung",
-  "Techniktraining auf dem Holzpferd",
-  "Voltigieren auf dem Pferd in passenden Gruppen",
-  "Stallroutine, Pferdepflege und Verantwortung im Team",
+  "Aufwärmen, Mobilität und Kraftvorbereitung",
+  "Techniktraining auf dem Holzpferd oder Movie",
+  "Voltigieren auf dem Pferd",
+  "Pferdepflege und Verantwortung im Team",
 ];
 
 export const faqItems = [
@@ -85,7 +85,7 @@ export const faqItems = [
   {
     question: "Welche Altersgruppen trainieren bei euch?",
     answer:
-      "Aktuell trainieren bei uns Kinder, Jugendliche und Erwachsene. Die Einteilung richtet sich nicht nur nach dem Alter, sondern auch nach Bewegungsniveau, Sicherheit und Trainingsziel.",
+      "Aktuell trainieren bei uns Kinder, Jugendliche und Erwachsene. Die Einteilung richtet sich nicht nur nach dem Alter, sondern auch nach Fähigkeitsniveau und Trainingsziel.",
   },
   {
     question: "Was soll man zur Probestunde mitbringen?",
@@ -95,6 +95,6 @@ export const faqItems = [
   {
     question: "Wie funktioniert die Bezahlung?",
     answer:
-      "Die Preise findest du klar auf der Preisseite. Anfragen fuer Probetraining und Anmeldung laufen ueber Google Forms, danach bestaetigen wir Gruppe und Startdetails.",
+      "Die Preise findest du klar auf der Preisseite. Anfragen für Probetraining und Anmeldung laufen über Google Forms, danach bestätigen wir Gruppe und Startdetails.",
   },
 ];
