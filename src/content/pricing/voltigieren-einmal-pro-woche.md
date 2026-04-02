@@ -6,7 +6,7 @@ description: Monatlicher Voltigierbeitrag für ein Training pro Woche.
 features:
   - Eine feste Trainingseinheit pro Woche
   - Zusätzlich zum Jahresbeitrag
-  - Für regelmässige aktive Teilnahme
+  - Für regelmäßige aktive Teilnahme
 order: 5
 ctaLabel: Platz anfragen
 ctaUrl: /probetraining-anfragen

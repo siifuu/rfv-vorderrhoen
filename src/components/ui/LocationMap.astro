@@ -12,7 +12,7 @@ interface Props {
 const {
     eyebrow = "Trainingsort",
     title = "Hier findest du uns",
-    description = "Unser Training findet in Kuenzell statt. Du kannst den Standort direkt in Google Maps oeffnen oder die Karte hier auf der Seite nutzen.",
+    description = "Unser Training findet in Künzell statt. Du kannst den Standort direkt in Google Maps öffnen oder die Karte hier auf der Seite nutzen.",
     iframeClassName = "h-full min-h-[20rem] md:min-h-[24rem]",
 } = Astro.props;
 
@@ -55,7 +55,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${locationQuery
 
             <div class="mt-6 flex flex-wrap gap-3">
                 <Button href={mapsUrl} variant="secondary" external>
-                    In Google Maps oeffnen
+                    In Google Maps öffnen
                 </Button>
                 <Button href={siteConfig.signupUrl}>
                     Probetraining anfragen

@@ -5,7 +5,7 @@ date: 2026-03-13
 isEvent: false
 featured: true
 seoTitle: Vereinsinterne Saisoneröffnung | RFV Vorderrhön
-seoDescription: RFV Vorderrhön hat den neuen Fruehlings-Trainingsplan veröffentlicht.
+seoDescription: RFV Vorderrhön hat den neuen Frühlings-Trainingsplan veröffentlicht.
 image: "../../../assets/Saisoneröffnung.jpeg"
 ---
 

@@ -5,7 +5,7 @@ description: Höhere Trainingsfrequenz für Athletinnen und Athleten, die an sau
 features:
   - Mehrere Einheiten pro Woche
   - Gezielter Technik- und Entwicklungsplan
-  - Vorrang für Kuer- und Auftrittsarbeit
+  - Vorrang für Kür- und Auftrittsarbeit
 highlighted: true
 order: 3
 ctaLabel: Platz anfragen

@@ -101,6 +101,6 @@ export const faqItems = [
   {
     question: "Wie funktioniert die Bezahlung?",
     answer:
-      "Die Preise findest du klar auf der Preisseite. Anfragen laufen ueber die Seite fuer Probetraining und das Google-Formular, danach bestaetigen wir Gruppe und Startdetails.",
+      "Die Preise findest du klar auf der Preisseite. Anfragen laufen über die Seite für Probetraining und das Google-Formular, danach bestätigen wir Gruppe und Startdetails.",
   },
 ];

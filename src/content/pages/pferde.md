@@ -3,8 +3,8 @@ title: Pferde
 description: Jedes Pferd bringt seinen eigenen Rhythmus in unser Training ein.
 eyebrow: Unsere Pferde
 draft: true
-seoTitle: Pferde | RFV Vorderrhoen
-seoDescription: Lerne die Pferde des RFV Vorderrhoen kennen und entdecke ihre Rollen im Training.
+seoTitle: Pferde | RFV Vorderrhön
+seoDescription: Lerne die Pferde des RFV Vorderrhön kennen und entdecke ihre Rollen im Training.
 ctaEyebrow: Nächster Schritt
 ctaTitle: Mehr über Training, Gruppen und Probetraining erfahren.
 ctaPrimaryLabel: Probetraining anfragen
