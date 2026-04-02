@@ -37,12 +37,12 @@ export const socialLinks = [
 
 export const mainNav = [
   { href: withBase("/"), label: "Start" },
-  { href: withBase("/about-club"), label: "Über Uns" },
+  { href: withBase("/news"), label: "Aktuelles" },
   { href: withBase("/pferde"), label: "Pferde" },
   { href: withBase("/training"), label: "Training" },
   { href: withBase("/pricing"), label: "Preise" },
+  { href: withBase("/about-club"), label: "Über Uns" },
   { href: withBase("/faq"), label: "FAQ" },
-  { href: withBase("/news"), label: "Aktuelles" },
 ];
 
 export const footerNav = [
@@ -50,6 +50,7 @@ export const footerNav = [
   { href: signupUrl, label: "Probetraining anfragen" },
   { href: withBase("/legal"), label: "Impressum" },
   { href: withBase("/privacy"), label: "Datenschutz" },
+  { href: withBase("/contact"), label: "Kontakt" },
 ];
 
 export const benefits = [

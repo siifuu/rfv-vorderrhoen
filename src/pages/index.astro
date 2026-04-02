@@ -7,6 +7,7 @@ import HeroMotion from "@/components/home/HeroMotion";
 import SectionReveal from "@/components/home/SectionReveal";
 import NewsCard from "@/components/news/NewsCard.astro";
 import HorseRail from "@/components/horses/HorseRail.astro";
+import LocationMap from "@/components/ui/LocationMap.astro";
 import {
     benefits,
     siteConfig,
@@ -399,5 +400,13 @@ const homepageHorses = featuredHorses.length ? featuredHorses : allHorses;
                 </div>
             </div>
         </div>
+    </Section>
+
+    <Section className="pt-0">
+        <LocationMap
+            eyebrow="Standort"
+            title="Unser Trainingsort"
+            description="Hier findest du den RFV Vorderrhoen. Wenn du uns besuchen oder ein Probetraining planen moechtest, kannst du den Standort direkt in Google Maps aufrufen."
+        />
     </Section>
 </BaseLayout>

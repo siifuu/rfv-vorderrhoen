@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button.astro";
 import PricingCards from "@/components/ui/PricingCards";
 import FaqAccordion from "@/components/ui/FaqAccordion";
 import GoogleFormEmbed from "@/components/forms/GoogleFormEmbed.astro";
+import LocationMap from "@/components/ui/LocationMap.astro";
 import { faqItems, siteConfig, socialLinks } from "@/lib/site";
 
 interface Props {
@@ -179,7 +180,8 @@ if (entry.slug === "pricing") {
     {
         entry.slug === "contact" && (
             <Section className="pt-0">
-                <div class="grid gap-5 xl:grid-cols-[1.05fr_0.95fr] xl:items-start">
+                <div class="grid gap-5">
+                    <div class="grid gap-5 xl:grid-cols-[1.05fr_0.95fr] xl:items-start">
                     <div class="grid gap-5">
                         <div class="panel p-6">
                             <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
@@ -270,6 +272,13 @@ if (entry.slug === "pricing") {
                             ))}
                         </div>
                     </div>
+                    </div>
+
+                    <LocationMap
+                        eyebrow="Anfahrt"
+                        title="So findest du den Verein"
+                        description="Nutze die eingebettete Karte fuer die Orientierung vor Ort oder oeffne den Standort direkt in Google Maps fuer deine Anfahrt."
+                    />
                 </div>
             </Section>
         )
@@ -279,7 +288,7 @@ if (entry.slug === "pricing") {
         entry.slug === "probetraining-anfragen" && (
             <Section className="pt-0">
                 <GoogleFormEmbed
-                    title=""
+                    title="Probetraining anfragen"
                     description="Wenn die Einbettung in deinem Browser nicht korrekt geladen wird, kannst du das Formular jederzeit über den Direktlink bei Google öffnen."
                     formUrl={siteConfig.signupFormUrl}
                 />
