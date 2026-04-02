@@ -9,7 +9,7 @@ features:
   - Mit Stimmrecht in der Mitgliederversammlung
 order: 1
 ctaLabel: Mitgliedschaft anfragen
-ctaUrl: /apply
+ctaUrl: /probetraining-anfragen
 ---
 
 Der Jahresbeitrag gilt pro erwachsene Person.

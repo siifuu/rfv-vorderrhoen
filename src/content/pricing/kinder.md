@@ -9,7 +9,7 @@ features:
   - Grundlage fuer die aktive Teilnahme im Verein
 order: 2
 ctaLabel: Mitgliedschaft anfragen
-ctaUrl: /apply
+ctaUrl: /probetraining-anfragen
 ---
 
 Der Beitrag gilt fuer Mitglieder bis einschliesslich 18 Jahre.

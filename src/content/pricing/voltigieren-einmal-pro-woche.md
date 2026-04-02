@@ -9,7 +9,7 @@ features:
   - Für regelmässige aktive Teilnahme
 order: 5
 ctaLabel: Platz anfragen
-ctaUrl: /apply
+ctaUrl: /probetraining-anfragen
 ---
 
 Der Beitrag richtet sich nach der Trainingshäufigkeit.

@@ -18,7 +18,8 @@ if (!pageEntry) {
 const { Content } = await pageEntry.render();
 const primaryCtaLabel =
     pageEntry.data.ctaPrimaryLabel ?? "Probetraining anfragen";
-const primaryCtaUrl = pageEntry.data.ctaPrimaryUrl ?? "/trial";
+const primaryCtaUrl =
+    pageEntry.data.ctaPrimaryUrl ?? "/probetraining-anfragen";
 const secondaryCtaLabel =
     pageEntry.data.ctaSecondaryLabel ?? "Training ansehen";
 const secondaryCtaUrl = pageEntry.data.ctaSecondaryUrl ?? "/training";

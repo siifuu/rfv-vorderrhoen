@@ -1,6 +1,6 @@
 ---
 title: "Aktionstag Voltigieren des Kreisreiterbundes"
-description: Im April findet bei uns am Hof ein Turnpferd- und Movieturnier statt.
+description: Der Kreisreiterbund richtet bei uns einen Aktionstag aus.
 date: 2026-04-26
 isEvent: true
 seoTitle: Neuer Holzpferd-Bereich eingerichtet | RFV Vorderrhön

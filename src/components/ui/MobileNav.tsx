@@ -50,11 +50,11 @@ export default function MobileNav({ currentPath }: Props) {
               </a>
             ))}
             <a
-              href={siteConfig.applyUrl}
+              href={siteConfig.signupUrl}
               className="mt-2 block rounded-2xl bg-[var(--color-sand)] px-4 py-3 text-sm font-semibold text-[var(--color-ink)]"
               onClick={() => setOpen(false)}
             >
-              Anmeldung / Probetraining
+              Probetraining anfragen
             </a>
           </motion.nav>
         )}

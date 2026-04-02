@@ -86,10 +86,7 @@ if (entry.slug === "pricing") {
         entry.slug === "pricing" && (
             <>
                 {pricingGroups.map((group) => (
-                    <Section
-                        spaced={false}
-                        className="pb-8 pt-0 md:pb-10"
-                    >
+                    <Section spaced={false} className="pb-8 pt-0 md:pb-10">
                         <div class="mb-6 md:mb-8">
                             <span class="eyebrow">{group.label}</span>
                         </div>
@@ -162,7 +159,7 @@ if (entry.slug === "pricing") {
                                 anfragen.
                             </h2>
                         </div>
-                        <Button href={siteConfig.applyUrl}>
+                        <Button href={siteConfig.signupUrl}>
                             Google-Formular öffnen
                         </Button>
                     </div>
@@ -208,10 +205,13 @@ if (entry.slug === "pricing") {
                         </div>
                         <div class="panel p-6">
                             <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
-                                Anmeldung
+                                Probetraining
                             </p>
-                            <Button href={siteConfig.applyUrl} className="mt-3">
-                                Formular öffnen
+                            <Button
+                                href={siteConfig.signupUrl}
+                                className="mt-3"
+                            >
+                                Probetraining anfragen
                             </Button>
                         </div>
                     </div>
@@ -276,24 +276,24 @@ if (entry.slug === "pricing") {
     }
 
     {
-        entry.slug === "trial" && (
+        entry.slug === "probetraining-anfragen" && (
             <Section className="pt-0">
                 <GoogleFormEmbed
-                    title="Probetraining direkt anfragen"
+                    title=""
                     description="Wenn die Einbettung in deinem Browser nicht korrekt geladen wird, kannst du das Formular jederzeit über den Direktlink bei Google öffnen."
-                    formUrl={siteConfig.trialFormUrl}
+                    formUrl={siteConfig.signupFormUrl}
                 />
             </Section>
         )
     }
 
     {
-        entry.slug === "apply" && (
+        false && (
             <Section className="pt-0">
                 <GoogleFormEmbed
                     title="Anmeldung direkt ausfuellen"
                     description="Wenn die Einbettung in deinem Browser nicht korrekt geladen wird, kannst du das Formular jederzeit über den Direktlink bei Google öffnen."
-                    formUrl={siteConfig.applyFormUrl}
+                    formUrl={siteConfig.signupFormUrl}
                 />
             </Section>
         )

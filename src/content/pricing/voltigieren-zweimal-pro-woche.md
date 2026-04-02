@@ -10,7 +10,7 @@ features:
 highlighted: false
 order: 6
 ctaLabel: Platz anfragen
-ctaUrl: /apply
+ctaUrl: /probetraining-anfragen
 ---
 
 Der Beitrag richtet sich nach der Trainingshäufigkeit.

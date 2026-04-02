@@ -68,7 +68,7 @@ export default function PricingCards({ items }: Props) {
           </ul>
 
           <a
-            href={item.data.ctaUrl ?? "/apply"}
+            href={item.data.ctaUrl ?? "/probetraining-anfragen"}
             className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--color-forest)] px-5 py-3 text-sm font-semibold text-[var(--color-cream-strong)] transition hover:bg-[#243827]"
             style={{ color: "var(--color-cream-strong)" }}
             target={

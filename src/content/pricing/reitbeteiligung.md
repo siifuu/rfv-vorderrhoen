@@ -9,7 +9,7 @@ features:
 highlighted: true
 order: 3
 ctaLabel: Platz anfragen
-ctaUrl: /apply
+ctaUrl: /probetraining-anfragen
 
 ---
 

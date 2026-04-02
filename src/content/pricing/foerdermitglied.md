@@ -9,7 +9,7 @@ features:
   - Unterstuetzt den Verein als Mitglied
 order: 4
 ctaLabel: Mitgliedschaft anfragen
-ctaUrl: /apply
+ctaUrl: /probetraining-anfragen
 ---
 
 Gedacht für erwachsene Personen, die den Verein fördern möchten.

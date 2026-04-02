@@ -8,7 +8,7 @@ seoDescription: Lerne die Pferde des RFV Vorderrhoen kennen und entdecke ihre Ro
 ctaEyebrow: Nächster Schritt
 ctaTitle: Mehr über Training, Gruppen und Probetraining erfahren.
 ctaPrimaryLabel: Probetraining anfragen
-ctaPrimaryUrl: /trial
+ctaPrimaryUrl: /probetraining-anfragen
 ctaSecondaryLabel: Training ansehen
 ctaSecondaryUrl: /training
 ---

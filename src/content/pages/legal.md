@@ -7,40 +7,34 @@ seoTitle: Impressum | RFV Vorderrhön
 seoDescription: Rechtliche Informationen für die Website von RFV Vorderrhön.
 ---
 
-Schützenverein zum Hirsch e.V.
-Schützenstraße 1
-12345 Schießstadt
+RFV Vorderrhön e.V.
 
-Telefon: 01234/56789
-Fax: 0123/4567890
-E-Mail: zum.hirsch.e.v@schuetzenverein.de
+Fuldaer Straße 14
 
-Gemeinschaftlich vertretungsberechtigt:
+36093 Künzell
 
-# 1. Vorsitzender
-Heiko Schütze
-c/o Schützenstraße 1
-12345 Schießstadt
+E-Mail: rfv-vorderrhoen@web.de
 
-Telefon: 01234/56789-1
-E-Mail: heiko.schuetze@schuetzenverein.de
 
+# Gemeinschaftlich vertretungsberechtigt:
+
+**1. Vorsitzende**
+Sofia Brigitte Hahner, Künzell, 20.10.1997
  
 
-# 2. Vorsitzender
-Bettina König
-c/o Schützenstraße 1
-12345 Schießstadt
+**2. Vorsitzende**
+Annika Birgit Felzmann, Fulda, 22.02.1998
 
-Telefon: 01234/56789-2
-E-Mail: bettina.koenig@schuetzenverein.de
+**Kassenwartin**
+Vanessa Reith, Fulda, 18.02.1998
 
-Registergericht: Amtsgericht Schießstadt
-Registernummer: HR A 12345
+**Registergericht:** Amtsgericht Fulda
 
-Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE 123456
+**Registernummer:** VR 632
 
-Inhaltlicher Verantwortlicher im Sinne des § 18 Abs. 2 MStV:
-Guido Schulze
-c/o Schützenstraße 1
-12345 Schießstadt
+
+# Inhaltlicher Verantwortlicher im Sinne des § 19 Abs. 2 MStV:
+
+Sofia Brigitte Hahner
+Künzell
++4915224490665

@@ -1,6 +1,6 @@
 ---
 title: Kontakt
-description: Der schnellste Weg zum Einstieg ist das Anmelde- oder Probetrainingsformular. Für alles andere kannst du uns schreiben oder anrufen, und wir zeigen dir den passenden nächsten Schritt. 
+description: Der schnellste Weg zum Einstieg ist die Seite fuer Probetraining und das eingebettete Formular. Fuer alles andere kannst du uns schreiben oder anrufen, und wir zeigen dir den passenden naechsten Schritt. 
 slug: contact
 order: 7
 seoTitle: Kontakt | RFV Vorderrhön

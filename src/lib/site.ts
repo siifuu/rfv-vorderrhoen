@@ -1,5 +1,8 @@
 import { withBase } from "@/lib/paths";
 
+const signupUrl = withBase("/probetraining-anfragen");
+const signupFormUrl = "https://forms.gle/125tRq4vGQekTKjr5";
+
 export const siteConfig = {
   name: "RFV Vorderrhön e.V.",
   shortName: "RFV",
@@ -8,10 +11,12 @@ export const siteConfig = {
   location: "Fuldaer Str. 14, 36093 Künzell, Deutschland",
   email: "rfv-vorderrhoen@web.de",
   phone: "+49 30 1234 5678",
-  applyUrl: withBase("/apply"),
-  trialUrl: withBase("/trial"),
-  applyFormUrl: "https://forms.gle/125tRq4vGQekTKjr5",
-  trialFormUrl: "https://forms.gle/125tRq4vGQekTKjr5",
+  signupUrl,
+  signupFormUrl,
+  applyUrl: signupUrl,
+  trialUrl: signupUrl,
+  applyFormUrl: signupFormUrl,
+  trialFormUrl: signupFormUrl,
   siteUrl: "https://example.github.io/rfv-vorderrhoen",
 };
 
@@ -42,7 +47,7 @@ export const mainNav = [
 
 export const footerNav = [
   ...mainNav,
-  { href: withBase("/apply"), label: "Anmeldung" },
+  { href: signupUrl, label: "Probetraining anfragen" },
   { href: withBase("/legal"), label: "Impressum" },
   { href: withBase("/privacy"), label: "Datenschutz" },
 ];
@@ -95,6 +100,6 @@ export const faqItems = [
   {
     question: "Wie funktioniert die Bezahlung?",
     answer:
-      "Die Preise findest du klar auf der Preisseite. Anfragen für Probetraining und Anmeldung laufen über Google Forms, danach bestätigen wir Gruppe und Startdetails.",
+      "Die Preise findest du klar auf der Preisseite. Anfragen laufen ueber die Seite fuer Probetraining und das Google-Formular, danach bestaetigen wir Gruppe und Startdetails.",
   },
 ];
