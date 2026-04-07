@@ -60,8 +60,8 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
             <Button href={siteConfig.signupUrl}>Probetraining anfragen</Button>
         </div>
 
-        <div class="lg:hidden">
-            <MobileNav client:idle currentPath={currentPath} />
+        <div class="relative z-10 shrink-0 lg:hidden">
+            <MobileNav client:load currentPath={currentPath} />
         </div>
     </div>
 </header>

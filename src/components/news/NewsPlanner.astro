@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import EventCalendarActions from "@/components/news/EventCalendarActions.astro";
 import { withBase } from "@/lib/paths";
 
 interface Props {
@@ -13,10 +12,6 @@ const weekdays = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
 const monthLabelFormatter = new Intl.DateTimeFormat("de-DE", {
     month: "long",
     year: "numeric",
-    timeZone: "UTC",
-});
-const monthChipFormatter = new Intl.DateTimeFormat("de-DE", {
-    month: "short",
     timeZone: "UTC",
 });
 
@@ -55,9 +50,6 @@ const monthViews = Array.from(yearBuckets.entries())
             return {
                 key: `${year}-${String(month + 1).padStart(2, "0")}`,
                 label: monthLabelFormatter.format(monthStart),
-                monthChip: monthChipFormatter
-                    .format(monthStart)
-                    .replace(".", ""),
                 leadingEmptyDays,
                 daysInMonth,
                 entriesByDay,
@@ -72,16 +64,6 @@ const fallbackMonth =
 ---
 
 <aside class="grid gap-5 lg:sticky lg:top-28">
-    <!-- <div class="panel overflow-hidden p-6 md:p-8">
-        <span class="eyebrow">Kalender</span>
-        <h2 class="mt-4 text-3xl md:text-4xl">Vereinsplaner</h2>
-        <p class="mt-4 text-[var(--color-soft-ink)]">
-            Immer ein Monat im Fokus. Standardmaessig springt der Kalender auf
-            den aktuellen Monat und zeigt sofort, an welchen Tagen im Verein
-            markierte Veranstaltungen anstehen.
-        </p>
-    </div>
- -->
     <section
         class="panel overflow-hidden p-5 md:p-6"
         data-news-planner
@@ -216,62 +198,6 @@ const fallbackMonth =
                                     },
                                 )}
                             </div>
-
-                            {month.entries.length > 0 ? (
-                                <div class="grid gap-2">
-                                    {month.entries.map((entry) => (
-                                        <article
-                                            class="cursor-pointer rounded-[1.1rem] border border-[var(--color-line)] bg-[linear-gradient(145deg,rgba(255,252,247,0.88),rgba(245,249,244,0.72))] px-3 py-3 transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.26)] hover:bg-[linear-gradient(145deg,rgba(247,240,226,0.96),rgba(231,241,229,0.86))]"
-                                            data-planner-event-card
-                                            data-planner-slugs={entry.slug}
-                                            data-planner-article-url={withBase(
-                                                `/news/${entry.slug}`,
-                                            )}
-                                        >
-                                            <a
-                                                href={withBase(
-                                                    `/news/${entry.slug}`,
-                                                )}
-                                                class="group flex items-start gap-3 focus-visible:outline-none"
-                                            >
-                                                <div
-                                                    class="min-w-0 shrink-0 rounded-[0.95rem] bg-[linear-gradient(145deg,rgba(47,71,50,0.96),rgba(91,114,86,0.8))] px-2 py-2 text-center text-[var(--color-cream-strong)] shadow-[0_10px_24px_rgba(24,31,25,0.16)]"
-                                                    data-planner-event-chip
-                                                >
-                                                    <span class="block text-[0.62rem] font-semibold uppercase tracking-[0.14em]">
-                                                        {month.monthChip}
-                                                    </span>
-                                                    <span class="mt-1 block text-xl font-semibold leading-none">
-                                                        {entry.data.date.getUTCDate()}
-                                                    </span>
-                                                </div>
-                                                <div class="min-w-0">
-                                                    <p
-                                                        class="text-sm font-semibold text-[var(--color-ink)] transition duration-300 group-hover:text-[var(--color-forest)]"
-                                                        data-planner-event-title
-                                                    >
-                                                        {entry.data.title}
-                                                    </p>
-                                                    <p class="mt-1 text-sm text-[var(--color-soft-ink)]">
-                                                        {entry.data.description}
-                                                    </p>
-                                                </div>
-                                            </a>
-                                            <div class="mt-3 border-t border-[rgba(47,71,50,0.1)] pt-3">
-                                                <EventCalendarActions
-                                                    entry={entry}
-                                                    compact
-                                                />
-                                            </div>
-                                        </article>
-                                    ))}
-                                </div>
-                            ) : (
-                                <div class="rounded-[1.1rem] border border-dashed border-[var(--color-line)] bg-white/42 px-4 py-4 text-sm text-[var(--color-soft-ink)]">
-                                    Für diesen Monat sind aktuell keine
-                                    markierten Veranstaltungstermine hinterlegt.
-                                </div>
-                            )}
                         </div>
                     ))}
                 </>
@@ -286,26 +212,11 @@ const fallbackMonth =
     </section>
 </aside>
 
-<style>
+<style is:global>
     [data-planner-day-link][data-planner-highlighted] > span {
         transform: translateY(-2px);
         border-color: rgba(247, 240, 226, 0.78);
         box-shadow: 0 18px 32px rgba(24, 31, 25, 0.24);
-    }
-
-    [data-planner-event-card][data-planner-highlighted] {
-        transform: translateY(-0.125rem);
-        border-color: rgba(47, 71, 50, 0.26);
-        background: linear-gradient(
-            145deg,
-            rgba(247, 240, 226, 0.96),
-            rgba(231, 241, 229, 0.86)
-        );
-    }
-
-    [data-planner-event-card][data-planner-highlighted]
-        [data-planner-event-title] {
-        color: var(--color-forest);
     }
 </style>
 
@@ -329,11 +240,10 @@ const fallbackMonth =
                 );
                 const nextButton = planner.querySelector("[data-planner-next]");
                 const label = planner.querySelector("[data-planner-label]");
+                const plannerScope =
+                    planner.closest("[data-news-planner-scope]") ?? planner;
                 const linkedItems = Array.from(
-                    planner.querySelectorAll("[data-planner-slugs]"),
-                ).filter((item) => item instanceof HTMLElement);
-                const eventCards = Array.from(
-                    planner.querySelectorAll("[data-planner-event-card]"),
+                    plannerScope.querySelectorAll("[data-planner-slugs]"),
                 ).filter((item) => item instanceof HTMLElement);
 
                 if (!months.length) {
@@ -414,28 +324,6 @@ const fallbackMonth =
                         }
 
                         clearHighlight();
-                    });
-                });
-
-                const isInteractiveTarget = (target) =>
-                    target instanceof Element &&
-                    !!target.closest(
-                        "a, button, input, select, textarea, summary, [role='button']",
-                    );
-
-                eventCards.forEach((card) => {
-                    const articleUrl = card.dataset.plannerArticleUrl;
-
-                    if (!articleUrl) {
-                        return;
-                    }
-
-                    card.addEventListener("click", (event) => {
-                        if (isInteractiveTarget(event.target)) {
-                            return;
-                        }
-
-                        window.location.href = articleUrl;
                     });
                 });
 

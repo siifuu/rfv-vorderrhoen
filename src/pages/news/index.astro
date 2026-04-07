@@ -9,6 +9,8 @@ import NewsCard from "@/components/news/NewsCard.astro";
 const entries = (await getCollection("news", ({ data }) => !data.draft)).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
+const eventEntries = entries.filter((entry) => entry.data.isEvent);
+const articleEntries = entries.filter((entry) => !entry.data.isEvent);
 ---
 
 <BaseLayout
@@ -23,15 +25,85 @@ const entries = (await getCollection("news", ({ data }) => !data.draft)).sort(
         />
     </Section>
     <Section className="pt-8">
-        <div class="grid gap-6 xl:grid-cols-[0.86fr_1.14fr] xl:items-start">
-            <NewsPlanner entries={entries} />
+        <div
+            class="grid gap-6 xl:grid-cols-[0.86fr_1.14fr] xl:items-start"
+            data-news-planner-scope
+        >
+            <NewsPlanner entries={eventEntries} />
             <div class="grid gap-5">
-                {entries.map((entry) => (
-                    <div id={`news-${entry.slug}`} class="scroll-mt-28">
-                        <NewsCard entry={entry} />
-                    </div>
-                ))}
+                <div class="max-w-2xl">
+                    <p class="eyebrow">Termine</p>
+                    <h2 class="mt-3 text-3xl md:text-4xl">
+                        Veranstaltungen
+                    </h2>
+                    <p class="mt-4 text-[var(--color-soft-ink)]">
+                        Hier stehen alle Termine mit Datum auf einen Blick. Die
+                        passenden Artikel findest du weiter unten gesammelt.
+                    </p>
+                </div>
+                {
+                    eventEntries.length > 0 ? (
+                        <div class="grid gap-5">
+                            {eventEntries.map((entry) => (
+                                <div
+                                    id={`news-${entry.slug}`}
+                                    class="scroll-mt-28"
+                                >
+                                    <NewsCard
+                                        entry={entry}
+                                        plannerSlugs={entry.slug}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div class="panel p-6 md:p-7">
+                            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                                Termine
+                            </p>
+                            <p class="mt-3 text-[var(--color-soft-ink)]">
+                                Aktuell sind keine Veranstaltungen eingetragen.
+                            </p>
+                        </div>
+                    )
+                }
             </div>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:mt-12">
+            <div class="max-w-3xl">
+                <p class="eyebrow">Artikel</p>
+                <h2 class="mt-3 text-3xl md:text-4xl">
+                    Neuigkeiten aus dem Verein
+                </h2>
+                <p class="mt-4 text-[var(--color-soft-ink)]">
+                    Berichte, Hinweise und Rückblicke aus dem Vereinsalltag
+                    stehen hier getrennt von den Veranstaltungen.
+                </p>
+            </div>
+            {
+                articleEntries.length > 0 ? (
+                    <div class="grid gap-5 lg:grid-cols-2">
+                        {articleEntries.map((entry) => (
+                            <div
+                                id={`news-${entry.slug}`}
+                                class="scroll-mt-28"
+                            >
+                                <NewsCard entry={entry} />
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div class="panel p-6 md:p-7">
+                        <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                            Artikel
+                        </p>
+                        <p class="mt-3 text-[var(--color-soft-ink)]">
+                            Aktuell gibt es noch keine zusätzlichen Beiträge.
+                        </p>
+                    </div>
+                )
+            }
         </div>
     </Section>
 </BaseLayout>
