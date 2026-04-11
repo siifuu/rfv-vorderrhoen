@@ -16,12 +16,15 @@ Unsere Vereinspferde ermöglichen Schrittgruppen, aber auch Leistungsgruppen das
 kompetenzorientierte Training. Die Profile zeigen, welches Pferd seine Stärke in
 welchem Bereich hat.
 
-Da die Pferde das Herz unseres Teams bilden, hat ihr Wohlbefinden für uns
-oberste Priorität.
+Wir bilden unsere Pferde selbst im Voltigieren aus. Aus diesem Grund sind wir
+besonders stolz auf die gemeinsamen Fortschritte und Erfolge. Wir lernen ihre
+Fähigkeiten gut kennen, aber können auch ihre „kleinen Macken“ einschätzen.
 
-Wir legen großen Wert darauf, dass jedes Pferd entsprechend seiner individuellen
-Fähigkeit und seines Ausbildungsstandes eingesetzt wird. Wir achten bewusst
-darauf, unsere Pferde nicht zu überfordern und ihnen ausreichend Pausen und
-Erholungsphasen zu geben.
+Da die Pferde das Herz unseres Teams bilden, hat ihr Wohlbefinden für uns oberste
+Priorität. Wir setzen die Pferde entsprechend ihres Ausbildungsstandes ein und
+achten bewusst darauf, sie nicht zu überfordern. Ausreichend Pausen und
+Erholungsphasen, aber auch abwechslungsreiche Arbeit mit unseren Reiterinnen ist
+uns wichtig.
 
-Nur ein zufriedenes und ausgeglichenes Pferd kann Freude an der Arbeit haben und genau das ist unser Ziel.
+Nur ein zufriedenes und ausgeglichenes Pferd kann Freude an der Arbeit haben und
+genau das ist unser Ziel.

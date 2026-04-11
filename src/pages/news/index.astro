@@ -6,10 +6,20 @@ import Section from "@/components/ui/Section.astro";
 import NewsPlanner from "@/components/news/NewsPlanner.astro";
 import NewsCard from "@/components/news/NewsCard.astro";
 
+const toUtcDayTimestamp = (date: Date) =>
+    Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
+
 const entries = (await getCollection("news", ({ data }) => !data.draft)).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
-const eventEntries = entries.filter((entry) => entry.data.isEvent);
+const eventEntries = entries
+    .filter((entry) => entry.data.isEvent)
+    .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+const todayUtcDay = toUtcDayTimestamp(new Date());
+const upcomingEventEntries = eventEntries.filter((entry) => {
+    const visibilityDate = entry.data.eventEnd ?? entry.data.date;
+    return toUtcDayTimestamp(visibilityDate) >= todayUtcDay;
+});
 const articleEntries = entries.filter((entry) => !entry.data.isEvent);
 ---
 
@@ -21,7 +31,7 @@ const articleEntries = entries.filter((entry) => !entry.data.isEvent);
         <PageIntro
             eyebrow="Vereinsmeldungen"
             title="Aktuelles"
-            description="Neue Informationen aus Training, Terminen und dem Rhythmus des Vereinsalltags."
+            description="Neue Informationen aus Training, Terminen und dem Rhythmus des Vereinsalltags"
         />
     </Section>
     <Section className="pt-8">
@@ -30,43 +40,43 @@ const articleEntries = entries.filter((entry) => !entry.data.isEvent);
             data-news-planner-scope
         >
             <NewsPlanner entries={eventEntries} />
-            <div class="grid gap-5">
+            <div class="grid gap-5" data-news-upcoming-events>
                 <div class="max-w-2xl">
                     <p class="eyebrow">Termine</p>
-                    <h2 class="mt-3 text-3xl md:text-4xl">
-                        Veranstaltungen
-                    </h2>
+                    <h2 class="mt-3 text-3xl md:text-4xl">Veranstaltungen</h2>
                     <p class="mt-4 text-[var(--color-soft-ink)]">
-                        Hier stehen alle Termine mit Datum auf einen Blick. Die
-                        passenden Artikel findest du weiter unten gesammelt.
+                        Kommende Termine mit Datum auf einen Blick
                     </p>
                 </div>
-                {
-                    eventEntries.length > 0 ? (
-                        <div class="grid gap-5">
-                            {eventEntries.map((entry) => (
-                                <div
-                                    id={`news-${entry.slug}`}
-                                    class="scroll-mt-28"
-                                >
-                                    <NewsCard
-                                        entry={entry}
-                                        plannerSlugs={entry.slug}
-                                    />
-                                </div>
-                            ))}
+                <div class="grid gap-5">
+                    {upcomingEventEntries.map((entry) => (
+                        <div
+                            id={`news-${entry.slug}`}
+                            class="scroll-mt-28"
+                            data-upcoming-event
+                            data-event-until={(
+                                entry.data.eventEnd ?? entry.data.date
+                            ).toISOString()}
+                        >
+                            <NewsCard
+                                entry={entry}
+                                plannerSlugs={entry.slug}
+                            />
                         </div>
-                    ) : (
-                        <div class="panel p-6 md:p-7">
-                            <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
-                                Termine
-                            </p>
-                            <p class="mt-3 text-[var(--color-soft-ink)]">
-                                Aktuell sind keine Veranstaltungen eingetragen.
-                            </p>
-                        </div>
-                    )
-                }
+                    ))}
+                </div>
+                <div
+                    class="panel p-6 md:p-7"
+                    data-upcoming-empty
+                    hidden={upcomingEventEntries.length > 0}
+                >
+                    <p class="text-sm uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                        Termine
+                    </p>
+                    <p class="mt-3 text-[var(--color-soft-ink)]">
+                        Aktuell sind keine kommenden Veranstaltungen eingetragen.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -78,17 +88,13 @@ const articleEntries = entries.filter((entry) => !entry.data.isEvent);
                 </h2>
                 <p class="mt-4 text-[var(--color-soft-ink)]">
                     Berichte, Hinweise und Rückblicke aus dem Vereinsalltag
-                    stehen hier getrennt von den Veranstaltungen.
                 </p>
             </div>
             {
                 articleEntries.length > 0 ? (
                     <div class="grid gap-5 lg:grid-cols-2">
                         {articleEntries.map((entry) => (
-                            <div
-                                id={`news-${entry.slug}`}
-                                class="scroll-mt-28"
-                            >
+                            <div id={`news-${entry.slug}`} class="scroll-mt-28">
                                 <NewsCard entry={entry} />
                             </div>
                         ))}
@@ -107,3 +113,55 @@ const articleEntries = entries.filter((entry) => !entry.data.isEvent);
         </div>
     </Section>
 </BaseLayout>
+
+<script is:inline>
+    (() => {
+        const toUtcDayTimestamp = (date) =>
+            Date.UTC(
+                date.getUTCFullYear(),
+                date.getUTCMonth(),
+                date.getUTCDate(),
+            );
+
+        const filterUpcomingEvents = () => {
+            const scopes = Array.from(
+                document.querySelectorAll("[data-news-upcoming-events]"),
+            );
+
+            scopes.forEach((scope) => {
+                if (!(scope instanceof HTMLElement)) {
+                    return;
+                }
+
+                const eventCards = Array.from(
+                    scope.querySelectorAll("[data-upcoming-event]"),
+                ).filter((card) => card instanceof HTMLElement);
+                const emptyState = scope.querySelector("[data-upcoming-empty]");
+                const todayUtcDay = toUtcDayTimestamp(new Date());
+                let visibleCount = 0;
+
+                eventCards.forEach((card) => {
+                    const untilValue = card.dataset.eventUntil;
+                    const untilDate = untilValue ? new Date(untilValue) : null;
+                    const isUpcoming =
+                        untilDate instanceof Date &&
+                        !Number.isNaN(untilDate.getTime()) &&
+                        toUtcDayTimestamp(untilDate) >= todayUtcDay;
+
+                    card.hidden = !isUpcoming;
+
+                    if (isUpcoming) {
+                        visibleCount += 1;
+                    }
+                });
+
+                if (emptyState instanceof HTMLElement) {
+                    emptyState.hidden = visibleCount > 0;
+                }
+            });
+        };
+
+        filterUpcomingEvents();
+        document.addEventListener("astro:page-load", filterUpcomingEvents);
+    })();
+</script>

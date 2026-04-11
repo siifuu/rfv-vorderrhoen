@@ -4,7 +4,7 @@ description: Am Samstag startete für einige unserer Voltis die Turniersaison
 date: 2026-03-21
 isEvent: false
 featured: true
-seoTitle: Offener Stalltag im April | RFV Vorderrhön
+seoTitle: Turnier Lindenhof | Bericht
 seoDescription: Besuche RFV Vorderrhön beim offenen Stalltag und erlebe, wie unser Training aufgebaut ist.
 ---
 
@@ -13,4 +13,4 @@ Eine gemischte Gruppe mit Voltigiererinnen aus Vorderrhön 2 und 3 starteten in 
 Außerdem starteten Caroline und Hannah im Doppel. Sie erreichten den vierten Platz. 
 Auch Greta und Mia hatten ihr Doppel-Debüt. Die beiden wurden 10. 
 
-Im Großen und Ganzen liefen die Küren wie geplant, sodass die Voltis sich nach einem ersten gelungenen Turnier auf die noch Folgenden freuen. 
+Im Großen und Ganzen liefen die Küren wie geplant, sodass die Voltis sich nach einem ersten gelungenen Turnier auf die noch Folgenden freuen.
