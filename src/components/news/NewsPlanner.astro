@@ -286,21 +286,16 @@ const multiEventDays = monthViews.flatMap((month) =>
                                             class="group block rounded-[1.25rem] border border-[rgba(47,71,50,0.12)] bg-white/72 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.24)] hover:shadow-[0_18px_34px_rgba(24,31,25,0.12)] focus-visible:-translate-y-0.5 focus-visible:border-[rgba(47,71,50,0.24)] focus-visible:shadow-[0_18px_34px_rgba(24,31,25,0.12)] focus-visible:outline-none"
                                             data-planner-slugs={entry.slug}
                                         >
-                                            <div class="flex items-start justify-between gap-3">
-                                                <div class="min-w-0">
-                                                    <p class="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)] transition duration-300 group-hover:text-[var(--color-forest)] group-focus-visible:text-[var(--color-forest)]">
-                                                        Veranstaltung
-                                                    </p>
-                                                    <h4 class="mt-2 text-lg leading-tight transition duration-300 group-hover:text-[var(--color-forest)] group-focus-visible:text-[var(--color-forest)]">
-                                                        {entry.data.title}
-                                                    </h4>
-                                                    <p class="mt-2 text-sm text-[var(--color-soft-ink)] transition duration-300 group-hover:text-[var(--color-ink)] group-focus-visible:text-[var(--color-ink)]">
-                                                        {entry.data.description}
-                                                    </p>
-                                                </div>
-                                                <span class="shrink-0 rounded-full border border-[rgba(47,71,50,0.12)] bg-[rgba(247,240,226,0.78)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-forest)]">
-                                                    Oeffnen
-                                                </span>
+                                            <div class="min-w-0">
+                                                <p class="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)] transition duration-300 group-hover:text-[var(--color-forest)] group-focus-visible:text-[var(--color-forest)]">
+                                                    Veranstaltung
+                                                </p>
+                                                <h4 class="mt-2 text-lg leading-tight transition duration-300 group-hover:text-[var(--color-forest)] group-focus-visible:text-[var(--color-forest)]">
+                                                    {entry.data.title}
+                                                </h4>
+                                                <p class="mt-2 text-sm text-[var(--color-soft-ink)] transition duration-300 group-hover:text-[var(--color-ink)] group-focus-visible:text-[var(--color-ink)]">
+                                                    {entry.data.description}
+                                                </p>
                                             </div>
                                         </a>
                                     ))}

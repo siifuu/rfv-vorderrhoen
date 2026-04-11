@@ -1,10 +1,10 @@
 ---
 title: "Turnier in Lauterbach"
 description: Im August findet in Lauterbach ein WBO-Turnier statt.
-date: 2026-22-08
+date: 2026-08-22
 isEvent: true
-seoTitle: Voltigierturnier Lauterbach | RFV Vorderrhön
-seoDescription: Voltigierturnier Lauterbach | RFV Vorderrhön
+seoTitle: Voltigierturnier Lauterbach | RFV Vorderrhoen
+seoDescription: Voltigierturnier Lauterbach | RFV Vorderrhoen
 ---
 
-Die Voltigiererinnen von Vorderrhön 2-5 treten im Mai auf dem Lauterbacher Turnier an.
+Die Voltigiererinnen von Vorderrhoen 2-5 treten im August auf dem Lauterbacher Turnier an.
