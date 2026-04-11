@@ -14,6 +14,12 @@ const monthLabelFormatter = new Intl.DateTimeFormat("de-DE", {
     year: "numeric",
     timeZone: "UTC",
 });
+const fullDateFormatter = new Intl.DateTimeFormat("de-DE", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+});
 
 const calendarEntries = entries.filter((entry) => entry.data.isEvent);
 const sortedEntries = [...calendarEntries].sort(
@@ -61,9 +67,19 @@ const monthViews = Array.from(yearBuckets.entries())
 const fallbackMonth =
     [...monthViews].reverse().find((month) => month.entries.length > 0) ??
     monthViews[monthViews.length - 1];
+const multiEventDays = monthViews.flatMap((month) =>
+    Array.from(month.entriesByDay.entries())
+        .filter(([, dayEntries]) => dayEntries.length > 1)
+        .map(([day, dayEntries]) => ({
+            key: `${month.key}-${String(day).padStart(2, "0")}`,
+            label: fullDateFormatter.format(dayEntries[0].data.date),
+            count: dayEntries.length,
+            entries: dayEntries,
+        })),
+);
 ---
 
-<aside class="grid gap-5 lg:sticky lg:top-28">
+<aside class="grid gap-5 lg:sticky lg:top-28 lg:z-20" data-news-planner-root>
     <section
         class="panel overflow-hidden p-5 md:p-6"
         data-news-planner
@@ -147,6 +163,7 @@ const fallbackMonth =
                                         const dayEntrySlugs = dayEntries
                                             .map((entry) => entry.slug)
                                             .join(" ");
+                                        const modalDayKey = `${month.key}-${String(day).padStart(2, "0")}`;
                                         const dots = Math.min(
                                             dayEntries.length,
                                             3,
@@ -187,7 +204,31 @@ const fallbackMonth =
                                                 data-planner-slugs={
                                                     dayEntrySlugs
                                                 }
-                                                aria-label={`Zum Termin am ${day}. ${month.label}`}
+                                                data-planner-day-popover-trigger={
+                                                    dayEntries.length > 1
+                                                        ? modalDayKey
+                                                        : undefined
+                                                }
+                                                data-planner-day-label={
+                                                    dayEntries.length > 1
+                                                        ? fullDateFormatter.format(
+                                                              firstEntry.data
+                                                                  .date,
+                                                          )
+                                                        : undefined
+                                                }
+                                                data-planner-day-count={
+                                                    dayEntries.length > 1
+                                                        ? String(
+                                                              dayEntries.length,
+                                                          )
+                                                        : undefined
+                                                }
+                                                aria-label={
+                                                    dayEntries.length > 1
+                                                        ? `${dayEntries.length} Termine am ${fullDateFormatter.format(firstEntry.data.date)} anzeigen`
+                                                        : `Zum Termin am ${fullDateFormatter.format(firstEntry.data.date)}`
+                                                }
                                             >
                                                 {dayCell}
                                             </a>
@@ -209,6 +250,68 @@ const fallbackMonth =
             )
         }
     </section>
+    {
+        multiEventDays.length > 0 && (
+            <div class="news-planner-popover" data-planner-popover hidden>
+                <div class="news-planner-popover__surface">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="min-w-0">
+                            <p class="text-xs uppercase tracking-[0.16em] text-[var(--color-moss)]">
+                                Tagesauswahl
+                            </p>
+                            <h3
+                                class="mt-2 text-xl md:text-2xl"
+                                data-planner-popover-title
+                            >
+                                Termine
+                            </h3>
+                            <p
+                                class="mt-2 text-sm text-[var(--color-soft-ink)]"
+                                data-planner-popover-count
+                            >
+                                Waehle den passenden Termin aus.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 max-h-[min(60vh,28rem)] overflow-y-auto pr-1">
+                        {multiEventDays.map((day) => (
+                            <div data-planner-popover-panel={day.key} hidden>
+                                <div class="grid gap-3">
+                                    {day.entries.map((entry) => (
+                                        <a
+                                            href={withBase(
+                                                `/news/${entry.slug}`,
+                                            )}
+                                            class="group block rounded-[1.25rem] border border-[rgba(47,71,50,0.12)] bg-white/72 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-[rgba(47,71,50,0.24)] hover:shadow-[0_18px_34px_rgba(24,31,25,0.12)] focus-visible:-translate-y-0.5 focus-visible:border-[rgba(47,71,50,0.24)] focus-visible:shadow-[0_18px_34px_rgba(24,31,25,0.12)] focus-visible:outline-none"
+                                            data-planner-slugs={entry.slug}
+                                        >
+                                            <div class="flex items-start justify-between gap-3">
+                                                <div class="min-w-0">
+                                                    <p class="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[var(--color-moss)] transition duration-300 group-hover:text-[var(--color-forest)] group-focus-visible:text-[var(--color-forest)]">
+                                                        Veranstaltung
+                                                    </p>
+                                                    <h4 class="mt-2 text-lg leading-tight transition duration-300 group-hover:text-[var(--color-forest)] group-focus-visible:text-[var(--color-forest)]">
+                                                        {entry.data.title}
+                                                    </h4>
+                                                    <p class="mt-2 text-sm text-[var(--color-soft-ink)] transition duration-300 group-hover:text-[var(--color-ink)] group-focus-visible:text-[var(--color-ink)]">
+                                                        {entry.data.description}
+                                                    </p>
+                                                </div>
+                                                <span class="shrink-0 rounded-full border border-[rgba(47,71,50,0.12)] bg-[rgba(247,240,226,0.78)] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--color-forest)]">
+                                                    Oeffnen
+                                                </span>
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        )
+    }
 </aside>
 
 <style is:global>
@@ -216,6 +319,25 @@ const fallbackMonth =
         transform: translateY(-2px);
         border-color: rgba(247, 240, 226, 0.78);
         box-shadow: 0 18px 32px rgba(24, 31, 25, 0.24);
+    }
+
+    .news-planner-popover {
+        position: fixed;
+        z-index: 80;
+        width: min(calc(100vw - 1.5rem), 26rem);
+    }
+
+    .news-planner-popover__surface {
+        border: 1px solid rgba(47, 71, 50, 0.14);
+        border-radius: 1.6rem;
+        padding: 1.1rem;
+        background: linear-gradient(
+            145deg,
+            rgba(255, 252, 247, 0.98),
+            rgba(243, 248, 241, 0.94)
+        );
+        color: var(--color-ink);
+        box-shadow: 0 26px 60px rgba(24, 31, 25, 0.24);
     }
 </style>
 
@@ -239,11 +361,34 @@ const fallbackMonth =
                 );
                 const nextButton = planner.querySelector("[data-planner-next]");
                 const label = planner.querySelector("[data-planner-label]");
+                const plannerRoot =
+                    planner.closest("[data-news-planner-root]") ??
+                    planner.parentElement ??
+                    planner;
                 const plannerScope =
                     planner.closest("[data-news-planner-scope]") ?? planner;
                 const linkedItems = Array.from(
                     plannerScope.querySelectorAll("[data-planner-slugs]"),
                 ).filter((item) => item instanceof HTMLElement);
+                const popover = plannerRoot.querySelector(
+                    "[data-planner-popover]",
+                );
+                const popoverPanels = Array.from(
+                    plannerRoot.querySelectorAll(
+                        "[data-planner-popover-panel]",
+                    ),
+                ).filter((panel) => panel instanceof HTMLElement);
+                const popoverTitle = plannerRoot.querySelector(
+                    "[data-planner-popover-title]",
+                );
+                const popoverCount = plannerRoot.querySelector(
+                    "[data-planner-popover-count]",
+                );
+                const popoverTriggers = Array.from(
+                    planner.querySelectorAll(
+                        "[data-planner-day-popover-trigger]",
+                    ),
+                ).filter((trigger) => trigger instanceof HTMLElement);
 
                 if (!months.length) {
                     return;
@@ -292,6 +437,143 @@ const fallbackMonth =
                         );
                     });
                 };
+                let activePopoverTrigger = null;
+                let popoverCloseTimer = null;
+                const clearPopoverCloseTimer = () => {
+                    if (popoverCloseTimer !== null) {
+                        window.clearTimeout(popoverCloseTimer);
+                        popoverCloseTimer = null;
+                    }
+                };
+                const setExpandedTrigger = () => {
+                    popoverTriggers.forEach((trigger) => {
+                        trigger.setAttribute(
+                            "aria-expanded",
+                            trigger === activePopoverTrigger ? "true" : "false",
+                        );
+                    });
+                };
+                const showPopoverPanel = (key) => {
+                    popoverPanels.forEach((panel) => {
+                        panel.toggleAttribute(
+                            "hidden",
+                            panel.dataset.plannerPopoverPanel !== key,
+                        );
+                    });
+                };
+                const positionPopover = (trigger) => {
+                    if (!(popover instanceof HTMLElement)) {
+                        return;
+                    }
+
+                    const triggerRect = trigger.getBoundingClientRect();
+                    const viewportPadding = 12;
+                    const popoverRect = popover.getBoundingClientRect();
+                    const popoverWidth = popoverRect.width || popover.offsetWidth;
+                    const popoverHeight =
+                        popoverRect.height || popover.offsetHeight;
+                    const spaceBelow =
+                        window.innerHeight - triggerRect.bottom - viewportPadding;
+                    const spaceAbove = triggerRect.top - viewportPadding;
+                    const shouldPlaceAbove =
+                        spaceBelow < popoverHeight + 12 &&
+                        spaceAbove > spaceBelow;
+                    const top = shouldPlaceAbove
+                        ? Math.max(
+                              viewportPadding,
+                              triggerRect.top - popoverHeight - 12,
+                          )
+                        : Math.min(
+                              window.innerHeight -
+                                  popoverHeight -
+                                  viewportPadding,
+                              triggerRect.bottom + 12,
+                          );
+                    const left = Math.min(
+                        Math.max(
+                            viewportPadding,
+                            triggerRect.left + triggerRect.width / 2 -
+                                popoverWidth / 2,
+                        ),
+                        window.innerWidth - popoverWidth - viewportPadding,
+                    );
+
+                    popover.style.top = `${top}px`;
+                    popover.style.left = `${left}px`;
+                    popover.dataset.side = shouldPlaceAbove ? "top" : "bottom";
+                };
+                const finishPopoverClose = (restoreFocus = false) => {
+                    if (popover instanceof HTMLElement) {
+                        popover.hidden = true;
+                        popover.style.top = "";
+                        popover.style.left = "";
+                        popover.removeAttribute("data-side");
+                    }
+
+                    showPopoverPanel("");
+                    clearHighlight();
+
+                    if (
+                        restoreFocus &&
+                        activePopoverTrigger instanceof HTMLElement
+                    ) {
+                        activePopoverTrigger.focus();
+                    }
+
+                    activePopoverTrigger = null;
+                    setExpandedTrigger();
+                };
+                const closePopover = ({ restoreFocus = false } = {}) => {
+                    clearPopoverCloseTimer();
+                    finishPopoverClose(restoreFocus);
+                };
+                const scheduleClosePopover = (delay = 120) => {
+                    clearPopoverCloseTimer();
+                    popoverCloseTimer = window.setTimeout(() => {
+                        closePopover();
+                    }, delay);
+                };
+                const openPopover = (trigger) => {
+                    if (!(popover instanceof HTMLElement)) {
+                        return;
+                    }
+
+                    const panelKey = trigger.dataset.plannerDayPopoverTrigger;
+
+                    if (!panelKey) {
+                        return;
+                    }
+
+                    clearPopoverCloseTimer();
+                    showPopoverPanel(panelKey);
+
+                    if (popoverTitle instanceof HTMLElement) {
+                        popoverTitle.textContent =
+                            trigger.dataset.plannerDayLabel ?? "Termine";
+                    }
+
+                    if (popoverCount instanceof HTMLElement) {
+                        const count = Number(
+                            trigger.dataset.plannerDayCount ?? "0",
+                        );
+                        popoverCount.textContent = `${count} ${count === 1 ? "Termin" : "Termine"} an diesem Tag. Waehle den passenden Beitrag aus.`;
+                    }
+
+                    activePopoverTrigger = trigger;
+                    setExpandedTrigger();
+                    popover.hidden = false;
+                    positionPopover(trigger);
+                    setHighlight(readSlugs(trigger));
+                };
+                const syncPopoverPosition = () => {
+                    if (
+                        activePopoverTrigger instanceof HTMLElement &&
+                        popover instanceof HTMLElement &&
+                        !popover.hidden
+                    ) {
+                        positionPopover(activePopoverTrigger);
+                    }
+                };
 
                 linkedItems.forEach((item) => {
                     const slugs = readSlugs(item);
@@ -326,8 +608,115 @@ const fallbackMonth =
                     });
                 });
 
+                popoverTriggers.forEach((trigger) => {
+                    trigger.addEventListener("mouseenter", () => {
+                        openPopover(trigger);
+                    });
+
+                    trigger.addEventListener("mouseleave", () => {
+                        scheduleClosePopover();
+                    });
+
+                    trigger.addEventListener("focusin", () => {
+                        openPopover(trigger);
+                    });
+
+                    trigger.addEventListener("focusout", (event) => {
+                        const nextTarget = event.relatedTarget;
+
+                        if (
+                            nextTarget instanceof Element &&
+                            (nextTarget.closest("[data-planner-popover]") ||
+                                nextTarget.closest(
+                                    "[data-planner-day-popover-trigger]",
+                                ))
+                        ) {
+                            return;
+                        }
+
+                        scheduleClosePopover();
+                    });
+
+                    trigger.addEventListener("click", (event) => {
+                        if (
+                            event.defaultPrevented ||
+                            event.button !== 0 ||
+                            event.metaKey ||
+                            event.ctrlKey ||
+                            event.shiftKey ||
+                            event.altKey
+                        ) {
+                            return;
+                        }
+
+                        event.preventDefault();
+                        openPopover(trigger);
+                    });
+                });
+
+                if (popover instanceof HTMLElement) {
+                    popover.addEventListener("mouseenter", () => {
+                        clearPopoverCloseTimer();
+
+                        if (activePopoverTrigger instanceof HTMLElement) {
+                            setHighlight(readSlugs(activePopoverTrigger));
+                        }
+                    });
+
+                    popover.addEventListener("mouseleave", () => {
+                        scheduleClosePopover();
+                    });
+
+                    popover.addEventListener("focusin", () => {
+                        clearPopoverCloseTimer();
+                    });
+
+                    popover.addEventListener("focusout", (event) => {
+                        const nextTarget = event.relatedTarget;
+
+                        if (
+                            nextTarget instanceof Element &&
+                            (nextTarget.closest("[data-planner-popover]") ||
+                                nextTarget.closest(
+                                    "[data-planner-day-popover-trigger]",
+                                ))
+                        ) {
+                            return;
+                        }
+
+                        scheduleClosePopover();
+                    });
+
+                    document.addEventListener("click", (event) => {
+                        const target = event.target;
+
+                        if (
+                            !(target instanceof Element) ||
+                            popover.hidden ||
+                            target.closest("[data-planner-popover]") ||
+                            target.closest(
+                                "[data-planner-day-popover-trigger]",
+                            )
+                        ) {
+                            return;
+                        }
+
+                        closePopover();
+                    });
+
+                    document.addEventListener("keydown", (event) => {
+                        if (event.key === "Escape" && !popover.hidden) {
+                            closePopover({ restoreFocus: true });
+                        }
+                    });
+                }
+
+                window.addEventListener("resize", syncPopoverPosition);
+                window.addEventListener("scroll", syncPopoverPosition, true);
+
                 const update = () => {
                     clearHighlight();
+                    closePopover();
 
                     months.forEach((month, index) => {
                         month.toggleAttribute("hidden", index !== activeIndex);
