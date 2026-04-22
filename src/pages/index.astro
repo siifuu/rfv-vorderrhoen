@@ -1,0 +1,413 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Button from "@/components/ui/Button.astro";
+import Section from "@/components/ui/Section.astro";
+import HeroMotion from "@/components/home/HeroMotion";
+import SectionReveal from "@/components/home/SectionReveal";
+import NewsCard from "@/components/news/NewsCard.astro";
+import HorseRail from "@/components/horses/HorseRail.astro";
+import LocationMap from "@/components/ui/LocationMap.astro";
+import {
+    benefits,
+    siteConfig,
+    trainingHighlights,
+    trustPoints,
+} from "@/lib/site";
+
+const allNews = await getCollection("news", ({ data }) => !data.draft);
+const featuredNews = allNews
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .slice(0, 3);
+const allHorses = (await getCollection("horses")).sort(
+    (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
+);
+const featuredHorses = allHorses.filter(({ data }) => data.featured);
+const homepageHorses = featuredHorses.length ? featuredHorses : allHorses;
+---
+
+<BaseLayout
+    title="RFV Vorderrhön e.V. | Voltigierverein"
+    description="Entdecke elegantes und sportliches Voltigiertraining für Kinder, Jugendliche und Erwachsene. Buche ein Probetraining und lerne unsere ruhige, pferdegerechte Vereinskultur kennen."
+>
+    <Section className="pb-0 pt-10 md:pt-16">
+        <div class="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+            <HeroMotion />
+            <div class="panel relative overflow-hidden p-8 md:p-10">
+                <div
+                    class="absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(47,71,50,0.38),transparent)]"
+                >
+                </div>
+                <p class="eyebrow">Probetrainings offen</p>
+                <h2 class="mt-5 text-3xl leading-tight md:text-4xl">
+                    Balance und Rhythmus erleben. Mut entwickeln und wachsen.
+                </h2>
+                <p class="mt-4 text-lg leading-8 text-[var(--color-soft-ink)]">
+                    Wir bieten Schnuppertrainings an, in denen du oder dein Kind
+                    das Voltigieren als Teamsport erleben kannst.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <Button href={siteConfig.signupUrl}
+                        >Probetraining anfragen</Button
+                    >
+                    <Button href="/training" variant="secondary"
+                        >So funktioniert Voltigieren</Button
+                    >
+                </div>
+                <dl
+                    class="mt-10 grid gap-4 border-t border-[var(--color-line)] pt-6 sm:grid-cols-3"
+                >
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Gruppen
+                        </dt>
+                        <dd class="mt-2 text-lg font-semibold leading-7">
+                            Schrittgruppe bis M
+                        </dd>
+                    </div>
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Fokus
+                        </dt>
+                        <dd class="mt-2 text-lg font-semibold leading-7">
+                            Sportlich & pferdegerecht
+                        </dd>
+                    </div>
+                    <div>
+                        <dt
+                            class="text-xs uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Ort
+                        </dt>
+                        <dd
+                            class="mt-2 text-base font-semibold leading-7 md:text-lg"
+                        >
+                            {
+                                siteConfig.location
+                                    .split(", ")[1]
+                                    .replace(/^(\d+)\s*/, "")
+                            }
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </Section>
+
+    <Section className="pt-0">
+        <SectionReveal>
+            <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+                <div
+                    class="panel relative min-h-[24rem] overflow-hidden p-8 md:p-10"
+                >
+                    <div
+                        class="absolute inset-0 bg-[linear-gradient(135deg,rgba(47,71,50,0.94),rgba(91,114,86,0.78))]"
+                    >
+                    </div>
+                    <div
+                        class="absolute -right-10 top-6 h-48 w-48 rounded-full border border-white/15"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.18))]"
+                    >
+                    </div>
+                    <div class="relative max-w-xl text-white">
+                        <span
+                            class="eyebrow !text-[rgba(255,255,255,0.7)] before:!bg-current"
+                            >Was Voltigieren ist</span
+                        >
+                        <h2 class="mt-4 text-3xl md:text-5xl">
+                            Ein Teamsport aus Bewegung, Mut und Partnerschaft
+                        </h2>
+                        <p class="mt-4 text-lg leading-8 text-white/80">
+                            Voltigieren ist turnerisch-gymnastischer Sport auf
+                            dem Pferd. Dabei turnen Kinder, Jugendliche und
+                            Erwachsene auf einem an der Longe laufenden Pferd.
+                            Voltigieren fördert Kraft, Balance, Koordination,
+                            Teamgeist, Verantwortungsbewusstsein und Vertrauen
+                            sowohl zum Pferd als auch zwischen den
+                            Voltigierenden. Voltigiert wird im Schritt, Trab
+                            oder Galopp – je nach Können und Altersstufe.
+                            Voltigieren verbindet Sport und Pferdeliebe auf
+                            einmalige Weise und ist häufig der Einstieg in den
+                            Pferdesport.
+                        </p>
+                    </div>
+                </div>
+                <div class="panel flex flex-col justify-between p-8 md:p-10">
+                    <div>
+                        <span class="eyebrow">Neuigkeiten</span>
+                        <h2 class="mt-4 text-3xl md:text-4xl">
+                            Aktuelles aus dem Verein
+                        </h2>
+                    </div>
+                    <div class="mt-6 grid gap-4">
+                        {
+                            featuredNews.map((entry) => (
+                                <NewsCard entry={entry} compact />
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </SectionReveal>
+    </Section>
+
+    <Section id="unsere-pferde" className="pt-0">
+        <SectionReveal>
+            <div
+                class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+            >
+                <div class="prose-flow max-w-3xl">
+                    <span class="eyebrow">Unsere Pferde</span>
+                    <h2 class="text-3xl md:text-5xl">
+                        Jedes Pferd bringt einen eigenen Rhythmus in unser
+                        Training.
+                    </h2>
+                    <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
+                        Unsere Vereinspferde ermöglichen Schrittgruppen, aber
+                        auch Leistungsgruppen das kompetenzorientierte Training.
+                        Die Profile zeigen, welches Pferd seine Stärke in
+                        welchem Bereich hat.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <Button href="/training" variant="secondary">
+                        Training ansehen
+                    </Button>
+                    <Button href={siteConfig.signupUrl}
+                        >Probetraining anfragen</Button
+                    >
+                </div>
+            </div>
+            <div class="mt-8">
+                <HorseRail entries={homepageHorses} />
+            </div>
+        </SectionReveal>
+    </Section>
+
+    <Section className="pt-0">
+        <SectionReveal>
+            <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
+                <div class="panel p-8 md:p-10">
+                    <span class="eyebrow">Trainingsüberblick</span>
+                    <h2 class="mt-4 text-3xl md:text-4xl">
+                        Jede Einheit verbindet Vorbereitung, Technik und
+                        Partnerschaft mit dem Pferd.
+                    </h2>
+                    <ul class="mt-6 space-y-4">
+                        {
+                            trainingHighlights.map((item) => (
+                                <li class="flex gap-3 text-[var(--color-soft-ink)]">
+                                    <span class="mt-1 h-2.5 w-2.5 rounded-full bg-[var(--color-moss)]" />
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                    <div class="mt-8">
+                        <Button href="/training" variant="secondary"
+                            >Training ansehen</Button
+                        >
+                    </div>
+                </div>
+                <div
+                    class="panel relative isolate min-h-[22rem] overflow-hidden p-8 md:p-10"
+                >
+                    <div
+                        class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(91,114,86,0.18),transparent_25%),radial-gradient(circle_at_75%_15%,rgba(183,139,53,0.14),transparent_22%),linear-gradient(145deg,rgba(255,255,255,0.64),rgba(239,227,207,0.78))]"
+                    >
+                    </div>
+                    <div class="relative z-10">
+                        <span class="eyebrow">Unsere Ziele</span>
+                        <h2 class="mt-4 max-w-sm text-3xl md:text-4xl">
+                            Was uns bewegt
+                        </h2>
+                        <p
+                            class="mt-4 max-w-md text-lg leading-8 text-[var(--color-soft-ink)]"
+                        >
+                            Wir möchten Kindern, Jugendlichen und Erwachsenen
+                            den sicheren, fairen und pferdegerechten Umgang mit
+                            dem Pferd vermitteln. Der Spaß am Sport, die
+                            Gemeinschaft und das Wohl unserer Pferde stehen
+                            dabei im Mittelpunkt. Ob Freizeit- oder
+                            Turniergruppe – bei uns sind alle willkommen, die
+                            Freude an Pferden, Bewegung und Teamarbeit haben.
+                        </p>
+                    </div>
+                    <div
+                        class="pointer-events-none absolute bottom-6 right-6 z-0 h-52 w-56"
+                    >
+                        <div
+                            class="absolute bottom-0 right-0 h-34 w-42 rotate-[9deg] rounded-[58%_42%_47%_53%/41%_55%_45%_59%] bg-[linear-gradient(145deg,rgba(47,71,50,0.9),rgba(91,114,86,0.72))] shadow-[0_22px_36px_rgba(28,35,29,0.16)]"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-12 right-20 h-24 w-28 rotate-[-16deg] rounded-[43%_57%_61%_39%/52%_36%_64%_48%] border border-white/45 bg-[rgba(255,252,247,0.8)] backdrop-blur-sm"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-20 right-5 h-28 w-28 rotate-[14deg] rounded-[52%_48%_39%_61%/58%_34%_66%_42%] border border-[rgba(47,71,50,0.14)] bg-[radial-gradient(circle_at_34%_32%,rgba(255,255,255,0.56),transparent_44%),rgba(239,227,207,0.58)]"
+                        >
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-12 h-20 w-20 rounded-[61%_39%_53%_47%/46%_58%_42%_54%] bg-[rgba(255,255,255,0.26)] blur-md"
+                        >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </SectionReveal>
+    </Section>
+
+    <!--
+    <Section className="pt-0">
+        <SectionReveal>
+            <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+                <div class="panel p-8 md:p-10">
+                    <span class="eyebrow">Preise</span>
+                    <h2 class="mt-4 text-3xl md:text-4xl">
+                        Einfache Mitgliedschaftsoptionen mit klaren naechsten
+                        Schritten.
+                    </h2>
+                    <p
+                        class="mt-4 text-lg leading-8 text-[var(--color-soft-ink)]"
+                    >
+                        Die Preisseite ist darauf ausgelegt, in wenigen Sekunden
+                        verstanden zu werden: Gruppentyp, Leistungen und der
+                        schnellste Weg zum Probetraining.
+                    </p>
+                    <div class="mt-8">
+                        <Button href="/pricing">Preise ansehen</Button>
+                    </div>
+                </div>
+                <div class="grid gap-4 md:grid-cols-2">
+                    <div class="panel p-6">
+                        <p
+                            class="text-sm uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Einstieg
+                        </p>
+                        <p class="mt-3 text-4xl font-semibold">Ab 65 EUR</p>
+                        <p class="mt-4 text-[var(--color-soft-ink)]">
+                            Einsteigerfreundliches Training fuer neue
+                            Voltigiererinnen und Voltigierer, die Sicherheit und
+                            Grundlagen aufbauen.
+                        </p>
+                    </div>
+                    <div class="panel p-6">
+                        <p
+                            class="text-sm uppercase tracking-[0.14em] text-[var(--color-moss)]"
+                        >
+                            Leistungsgruppe
+                        </p>
+                        <p class="mt-3 text-4xl font-semibold">Ab 110 EUR</p>
+                        <p class="mt-4 text-[var(--color-soft-ink)]">
+                            Mehrere Einheiten fuer engagierte Athletinnen und
+                            Athleten mit Blick auf Auftritte und
+                            Wettkampfvorbereitung.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </SectionReveal>
+    </Section> -->
+
+    <!-- <Section className="pt-0">
+    <SectionReveal>
+      <div class="flex items-end justify-between gap-6">
+        <div class="prose-flow max-w-2xl">
+          <span class="eyebrow">Aus dem Bereich Aktuelles</span>
+          <h2 class="text-3xl md:text-5xl">Die drei neuesten Meldungen aus dem Verein.</h2>
+          <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
+            Aktuelle Beitraege zeigen Familien schnell, was im Training, im Zeitplan und im Vereinsalltag passiert.
+          </p>
+        </div>
+        <div class="hidden md:block">
+          <Button href="/news" variant="secondary">Alle Meldungen</Button>
+        </div>
+      </div>
+      <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {featuredNews.map((entry) => <NewsCard entry={entry} />)}
+      </div>
+      <div class="mt-6 md:hidden">
+        <Button href="/news" variant="secondary">Alle Meldungen</Button>
+      </div>
+    </SectionReveal>
+  </Section> -->
+
+    <!-- WHY US -->
+    <!-- <Section className="pt-0">
+        <SectionReveal>
+            <div
+                class="panel grid gap-8 overflow-hidden p-8 md:p-10 lg:grid-cols-[1fr_0.9fr]"
+            >
+                <div class="prose-flow">
+                    <span class="eyebrow">Warum wir</span>
+                    <h2 class="text-3xl md:text-5xl">
+                        Klares Coaching. Ruhige Atmosphaere. Ernsthafte
+                        Verantwortung fuer Pferde.
+                    </h2>
+                    <p class="text-lg leading-8 text-[var(--color-soft-ink)]">
+                        Familien entscheiden sich fuer uns, weil die Umgebung
+                        schon beim ersten Besuch verlässlich wirkt. Erwartungen
+                        sind klar, Entwicklung ist strukturiert und Training
+                        bleibt ambitioniert ohne unruhig zu werden.
+                    </p>
+                </div>
+                <ul class="space-y-4">
+                    {
+                        trustPoints.map((point) => (
+                            <li class="rounded-[1.4rem] border border-[var(--color-line)] bg-white/60 px-5 py-4 text-[var(--color-soft-ink)]">
+                                {point}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </SectionReveal>
+    </Section> -->
+
+    <!-- <Section className="pt-0">
+        <div
+            class="panel overflow-hidden bg-[linear-gradient(135deg,#f2e4cb_0%,#efe7d7_45%,#fcfaf5_100%)] p-8 md:p-12"
+        >
+            <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+                <div class="prose-flow">
+                    <span class="eyebrow">Mitmachen</span>
+                    <h2 class="text-3xl md:text-5xl">
+                        Buche ein Probetraining und erlebe, wie sich dein Kind
+                        oder du selbst in der Gruppe fühlt.
+                    </h2>
+                    <p
+                        class="max-w-2xl text-lg leading-8 text-[var(--color-soft-ink)]"
+                    >
+                        Nimm gerne Kontakt mit uns über Google Forms auf. Wir
+                        freuen uns auf dich!
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <Button href={siteConfig.signupUrl}
+                        >Probetraining anfragen</Button
+                    >
+                    <Button href="/contact" variant="secondary"
+                        >Kontakt aufnehmen</Button
+                    >
+                </div>
+            </div>
+        </div>
+    </Section> -->
+
+    <Section className="pt-0">
+        <LocationMap
+            eyebrow="Standort"
+            title="Unser Trainingsort"
+            description="Hier findest du den RFV Vorderrhön. Wenn du uns besuchen oder ein Probetraining planen möchtest, kannst du den Standort direkt in Google Maps aufrufen."
+        />
+    </Section>
+</BaseLayout>

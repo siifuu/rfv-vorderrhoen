@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Button from "@/components/ui/Button.astro";
+import { getCalendarLinks } from "@/lib/calendar";
+
+interface Props {
+    entry: CollectionEntry<"news">;
+    compact?: boolean;
+}
+
+const { entry, compact = false } = Astro.props;
+const links = getCalendarLinks(entry, Astro.site);
+---
+
+{
+    entry.data.isEvent && (
+        <div
+            class:list={[
+                compact
+                    ? "flex flex-wrap gap-3"
+                    : "panel flex flex-wrap items-center gap-3 px-5 py-4 md:px-6",
+            ]}
+        >
+            {
+                !compact && (
+                    <p class="mr-auto text-sm text-[var(--color-soft-ink)]">
+                        Termin direkt in den eigenen Kalender übernehmen.
+                    </p>
+                )
+            }
+            <Button
+                href={links.google}
+                external
+                variant="secondary"
+                className={compact ? "px-4 py-2.5 text-xs" : ""}
+            >
+                Google Kalender
+            </Button>
+            <Button
+                href={links.apple}
+                variant="secondary"
+                className={compact ? "px-4 py-2.5 text-xs" : ""}
+            >
+                Apple Kalender
+            </Button>
+        </div>
+    )
+}

@@ -1,0 +1,21 @@
+---
+interface Props {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+}
+
+const { eyebrow = "RFV Vorderrhön e.V.", title, description } = Astro.props;
+---
+
+<div class="max-w-3xl prose-flow">
+    <span class="eyebrow">{eyebrow}</span>
+    <h1 class="mt-4 text-4xl leading-tight md:text-6xl">{title}</h1>
+    {
+        description && (
+            <p class="text-lg leading-8 text-[var(--color-soft-ink)] md:text-xl">
+                {description}
+            </p>
+        )
+    }
+</div>

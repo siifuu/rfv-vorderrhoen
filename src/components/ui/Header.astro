@@ -1,0 +1,67 @@
+---
+import Button from "@/components/ui/Button.astro";
+import MobileNav from "@/components/ui/MobileNav";
+import { withBase } from "@/lib/paths";
+import { mainNav, siteConfig } from "@/lib/site";
+import rfvImage from "../../../assets/logo.png";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header
+    class="sticky top-0 z-40 border-b border-[var(--color-line)] bg-[rgba(250,246,239,0.82)] backdrop-blur-xl"
+>
+    <div class="container-shell flex items-center justify-between gap-3 py-4 lg:gap-5">
+        <a
+            href={withBase("/")}
+            class="flex min-w-0 flex-1 items-center gap-3 lg:flex-none"
+        >
+            <span
+                class="block h-11 w-12 shrink-0 overflow-hidden rounded-full border border-[var(--color-line)] bg-[var(--color-forest)]"
+            >
+                <img
+                    src={rfvImage.src}
+                    alt="RFV"
+                    class="h-full w-full object-cover"
+                />
+            </span>
+            <div class="min-w-0">
+                <div class="truncate font-serif text-base font-semibold sm:text-lg">
+                    {siteConfig.name}
+                </div>
+                <div
+                    class="truncate text-[0.68rem] uppercase tracking-[0.16em] text-[var(--color-moss)] sm:text-xs sm:tracking-[0.18em]"
+                >
+                    Voltigierverein
+                </div>
+            </div>
+        </a>
+
+        <nav class="hidden flex-1 items-center justify-center gap-3 lg:flex xl:gap-4" aria-label="Primary">
+            {
+                mainNav.map((item) => (
+                    <a
+                        href={item.href}
+                        aria-current={
+                            currentPath === item.href ? "page" : undefined
+                        }
+                        data-active={
+                            currentPath === item.href ? "true" : undefined
+                        }
+                        class:list={["menu-link text-sm font-semibold"]}
+                    >
+                        {item.label}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <div class="hidden shrink-0 lg:block">
+            <Button href={siteConfig.signupUrl}>Probetraining anfragen</Button>
+        </div>
+
+        <div class="relative z-10 shrink-0 lg:hidden">
+            <MobileNav client:load currentPath={currentPath} />
+        </div>
+    </div>
+</header>

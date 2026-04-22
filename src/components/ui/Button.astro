@@ -1,0 +1,42 @@
+---
+import { withBase } from "@/lib/paths";
+
+interface Props {
+    href: string;
+    variant?: "primary" | "secondary" | "ghost";
+    label?: string;
+    className?: string;
+    external?: boolean;
+}
+
+const {
+    href,
+    variant = "primary",
+    label,
+    className = "",
+    external = false,
+} = Astro.props;
+const resolvedHref = withBase(href);
+
+const variants = {
+    primary:
+        "bg-[var(--color-forest)] text-[var(--color-cream-strong)] shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:bg-[#243827]",
+    secondary:
+        "border border-[var(--color-line)] bg-white/60 text-[var(--color-ink)] hover:-translate-y-0.5 hover:border-[var(--color-moss)]",
+    ghost: "text-[var(--color-forest)] hover:text-[#243827]",
+};
+---
+
+<a
+    href={resolvedHref}
+    class:list={[
+        "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold tracking-[0.01em] transition duration-300",
+        variants[variant],
+        className,
+    ]}
+    style={variant === "primary" ? "color: var(--color-cream-strong);" : undefined}
+    target={external ? "_blank" : undefined}
+    rel={external ? "noreferrer" : undefined}
+>
+    <slot>{label}</slot>
+</a>
